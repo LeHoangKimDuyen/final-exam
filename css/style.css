@@ -1,0 +1,528 @@
+/* ==========================================================================
+   DESIGN TOKENS & RESET
+   ========================================================================== */
+
+:root {
+  /* Nền và Bề mặt (Lemon Cream & Trắng ấm) */
+  --clr-bg-main: #f6f0e0; /* Lemon Cream - Nền toàn trang */
+  --clr-surface: #fcf9f0; /* Trắng ấm - Nền card, popup */
+
+  /* Điểm nhấn (Red Wine Palette) */
+  --clr-primary: #7b1113; /* Red Wine - Điểm nhấn chính, nút, tiêu đề nổi bật */
+  --clr-primary-dark: #52090c; /* Red Wine Dark - Trạng thái hover/active */
+  --clr-accent: #c43a3d; /* Điểm nhấn phụ */
+
+  /* Văn bản & Viền - Tuyệt đối không dùng đen tuyệt đối #000000 */
+  --clr-text-main: #2d1a1a; /* Nâu đỏ sẫm - Chữ chính */
+  --clr-text-muted: #7a6363; /* Nâu nhạt - Metadata, mô tả phụ */
+  --clr-border: #e3d8c3; /* Viền mỏng, đường phân cách thanh lịch */
+
+  /* Bo góc chuẩn Anti-AI (Không bo tròn quá mức) */
+  --radius-card: 4px;
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* CSS Reset tối giản đảm bảo tính đồng nhất */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Cuộn trang mượt mà */
+}
+
+body {
+  background-color: var(--clr-bg-main);
+  color: var(--clr-text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hiệu ứng Selective Glassmorphism dùng chung */
+.glass-panel {
+  background: rgba(246, 240, 224, 0.78); /* Lemon Cream bán trong suốt */
+  backdrop-filter: blur(16px); /* Làm mờ hậu cảnh tự nhiên */
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55); /* Viền sáng tinh tế phía dưới */
+}
+
+/* ==========================================================================
+   HEADER / NAVIGATION
+   ========================================================================== */
+
+.site-header {
+  position: fixed; /* Cố định thanh điều hướng ở mép trên cùng */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Đảm bảo Nav luôn nổi trên các tầng nội dung */
+  transition: background-color 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Đẩy Logo sang trái và Menu sang phải */
+  align-items: center;
+  padding: 24px 10%; /* Đồng bộ khoảng thụt lề 10% với nội dung Hero */
+}
+
+.brand-logo {
+  font-family: var(--font-heading);
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: var(--clr-primary); /* Màu Red Wine tạo dấu ấn định danh */
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px; /* Khoảng cách thoáng đãng giữa các mục điều hướng */
+  list-style: none;
+}
+
+.nav-item {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--clr-text-main);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.nav-item:hover {
+  color: var(--clr-primary); /* Đổi màu khi tương tác nhẹ nhàng */
+}
+
+/* ==========================================================================
+   /* === SECTION 1 === */
+/* ==========================================================================
+
+/* Hero Section: Khoảng nghỉ mở màn bất đối xứng với padding bù trừ Header */
+.hero-section {
+  min-height: 100vh;
+  box-sizing: border-box; /* Đảm bảo padding không làm tràn khung hình */
+  display: flex;
+  align-items: center; /* Căn giữa theo trục dọc */
+  padding-top: 120px; /* Bù trừ chiều cao thanh Header fixed */
+  padding-bottom: 60px; /* Khoảng đệm phía dưới */
+  padding-left: 10%; /* Không gian âm lề trái */
+  padding-right: 10%; /* Không gian âm lề phải */
+  background-color: var(--clr-bg-main);
+}
+
+/* Khối Trái: Chiếm đúng 55% độ rộng - Trọng tâm Typography */
+.hero-content {
+  flex: 0 0 55%; /* Cố định tỷ lệ 55% */
+  max-width: 55%; /* Ngăn co giãn vượt quá 55% */
+  box-sizing: border-box;
+  padding-right: 40px; /* Tạo khoảng thở nội bộ trước khối ảnh */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Căn lề trái dứt khoát */
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.8vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--clr-primary);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--clr-text-muted);
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.hero-cta-wrapper {
+  margin-top: 4px;
+}
+
+/* Nút CTA: Tôn vinh hình khối góc cạnh sắc sảo */
+.btn-primary {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  border-radius: 2px;
+  padding: 16px 38px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-primary-dark);
+  border-color: var(--clr-primary-dark);
+}
+
+/* Khối Phải: Chiếm đúng 45% độ rộng - Khung ảnh nghệ thuật */
+.hero-visual-wrapper {
+  flex: 0 0 45%; /* Cố định tỷ lệ 45% */
+  max-width: 45%; /* Ngăn co giãn vượt quá 45% */
+  box-sizing: border-box;
+  padding-left: 40px; /* Tạo khoảng thở nội bộ tiếp giáp khối chữ */
+  width: 100%;
+}
+
+.hero-visual {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: var(--clr-border);
+  border-radius: 4px;
+  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.06);
+}
+
+/* ==========================================================================
+   /* === SECTION 2: MANIFESTO === */
+/* ==========================================================================
+
+/* Manifesto Section: Bố cục lưới Z-Pattern 2 hàng kết hợp nghệ thuật */
+.manifesto-section {
+  padding: 200px 10% 120px 10%; /* Tăng mạnh đệm trên để tách biệt với Hero */
+  background-color: var(--clr-bg-main); /* Giữ nền Lemon Cream đồng nhất */
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Kéo chặt khoảng cách giữa 2 hàng xuống 60px */
+  box-sizing: border-box;
+}
+
+/* Hàng ngang điều phối các khối tử đối ứng */
+.manifesto-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tiêu đề Hook: Giảm kích thước, chiếm 50% độ rộng ở hàng trên */
+.manifesto-hook {
+  flex: 0 0 50%;
+  max-width: 50%;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--clr-primary);
+  letter-spacing: -0.015em;
+}
+
+/* Khối văn bản tự sự: Chiếm 45% độ rộng ở hàng dưới */
+.manifesto-narrative {
+  flex: 0 0 45%;
+  max-width: 45%;
+  margin-top: -20px; /* Kéo nhích lên tạo sự giao thoa nhẹ với khung ảnh visual-lg */
+  text-align: left; /* Giữ chữ căn lề trái chuẩn Editorial */
+  box-sizing: border-box;
+}
+
+.manifesto-narrative p {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--clr-text-main);
+}
+
+/* Khung ảnh nghệ thuật Placeholder */
+.manifesto-visual {
+  background-color: var(
+    --clr-border
+  ); /* Nền nhạt #E3D8C3 thay thế placeholder rác */
+  border-radius: var(--radius-card); /* Bo góc nhẹ 4px chuẩn Anti-AI */
+  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.05);
+}
+
+/* Khung ảnh Hàng 1 (Nằm ngang bên phải) */
+.visual-sm {
+  flex: 0 0 35%;
+  max-width: 35%;
+  aspect-ratio: 4 / 3;
+}
+
+/* Khung ảnh Hàng 2 (Nằm dọc bên trái) */
+.visual-lg {
+  flex: 0 0 40%;
+  max-width: 40%;
+  aspect-ratio: 3 / 4;
+}
+
+/* ==========================================================================
+   /* === SECTION 3: EMOTIONS === */
+/* ==========================================================================
+
+/* Section 3: Cỗ máy Cảm xúc - Tràn lề phải để thanh cuộn trôi tự do */
+.emotions-section {
+  background-color: var(--clr-bg-main);
+  padding: 120px 0 120px 10%; /* Không set padding-right để đường đua tràn sát mép màn hình */
+  box-sizing: border-box;
+  overflow: hidden; /* Giữ layout không gây tràn thanh cuộn toàn trang */
+}
+
+/* Khu vực Header & Bộ lọc */
+.emotions-header {
+  padding-right: 10%; /* Cân chỉnh lề phải cho khối tiêu đề */
+  margin-bottom: 56px;
+}
+
+.emotions-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--clr-primary);
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+/* Nhóm nút lọc cảm xúc - Phong cách Editorial tinh giản */
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.btn-filter {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 0; /* Anti-AI: Tuyệt đối không bo tròn hình viên thuốc */
+  padding: 8px 0; /* Padding tối giản dành cho nút kiểu chữ */
+  cursor: pointer;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.btn-filter:hover,
+.btn-filter.active {
+  color: var(--clr-primary); /* Đổi sang Red Wine khi chọn */
+}
+
+/* Gạch chân mỏng thanh tao khi active hoặc hover */
+.btn-filter::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--clr-primary);
+  transition: width 0.3s ease;
+}
+
+.btn-filter:hover::after,
+.btn-filter.active::after {
+  width: 100%;
+}
+
+/* Đường đua cuộn ngang */
+.emotions-scroll-track {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* [Scroll Snap]: Bắt buộc các thẻ dừng chính xác tại điểm bắt đầu khi cuộn ngang */
+  padding-bottom: 80px; /* Chừa khoảng không gian đệm bên dưới để không bị cắt transform translateY */
+  padding-right: 10%; /* Khoảng thở kết thúc đường đua */
+  -webkit-overflow-scrolling: touch;
+  cursor: grab; /* Con trỏ sẵn sàng kéo cuộn */
+  user-select: none; /* Ngăn bôi đen chữ khi thao tác kéo */
+
+  /* Ẩn hoàn toàn thanh cuộn vật lý để tối ưu thị giác Editorial */
+  -ms-overflow-style: none; /* Cho IE và Edge */
+  scrollbar-width: none; /* Cho Firefox */
+}
+
+.emotions-scroll-track:active {
+  cursor: grabbing; /* Con trỏ siết chặt khi đang giữ chuột kéo */
+}
+
+.emotions-scroll-track::-webkit-scrollbar {
+  display: none; /* Cho Chrome, Safari và Opera */
+}
+
+/* Thẻ Cảm xúc (Bento Card) */
+.emotion-card {
+  flex: 0 0 320px; /* Chiều rộng cố định cho từng thẻ cảm xúc */
+  scroll-snap-align: start; /* Neo mép trái thẻ vào mép cuộn */
+  padding: 36px 32px;
+  background-color: var(--clr-surface); /* Nền trắng ấm thanh nhã */
+  border: 1px solid var(--clr-border); /* Viền mỏng phân tách nhẹ nhàng */
+  border-radius: var(--radius-card); /* Bo góc 4px chuẩn mực */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+  cursor: pointer; /* Bổ sung con trỏ tương tác */
+  box-shadow: 0 8px 24px rgba(45, 26, 26, 0.03);
+  transition:
+    transform 0.4s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng Nhấp nhô Staggered Layout */
+.emotion-card:nth-child(even) {
+  transform: translateY(
+    48px
+  ); /* [Staggered Effect]: Đẩy sole các thẻ chẵn xuống 48px phá vỡ tính đơn điệu ngang hàng */
+}
+
+.emotion-card:hover {
+  border-color: var(--clr-primary); /* Đổi màu viền sang Red Wine */
+  box-shadow: 0 12px 28px rgba(45, 26, 26, 0.05); /* Bóng cực nhạt, tuyệt đối không dùng bóng đen đậm */
+}
+
+.emotion-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+}
+
+.emotion-name {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--clr-primary);
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.emotion-desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--clr-text-main);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 18px 6%;
+  }
+
+  .nav-links {
+    display: none; /* Tạm ẩn link trên màn hình di động nhỏ */
+  }
+
+  /* Chuyển sang bố cục 1 cột đảo ngược: Ảnh lên trước, text xuống dưới */
+  .hero-section {
+    flex-direction: column-reverse; /* Đảo khối visual lên trên hoặc linh hoạt theo content */
+    justify-content: center;
+    gap: 40px;
+    padding: 120px 6% 60px 6%; /* Chừa khoảng trống phía trên tránh bị Header che khuất */
+    min-height: auto;
+  }
+
+  /* Trên mobile cả 2 khối mở rộng chiếm toàn bộ chiều ngang, reset triệt để */
+  .hero-content,
+  .hero-visual-wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-visual-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.25;
+    max-width: 100%;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    max-width: 320px; /* Giới hạn kích thước ảnh tĩnh vật cân đối trên điện thoại */
+    margin: 0 auto;
+  }
+
+  /* Responsive Section 2: Manifesto */
+  .manifesto-section {
+    padding: 100px 6% 60px 6%; /* Giảm padding-top xuống 100px */
+    gap: 60px; /* Giảm khoảng cách giữa 2 hàng */
+  }
+
+  .manifesto-row {
+    flex-direction: column; /* Cả Hàng 1 và Hàng 2 đều lật thành cột */
+    gap: 36px;
+  }
+
+  /* Tất cả phần tử (chữ và hình) đều chiếm 100% chiều rộng */
+  .manifesto-hook,
+  .manifesto-narrative,
+  .visual-sm,
+  .visual-lg {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Responsive Section 3: Emotions */
+  .emotions-section {
+    padding: 80px 0 80px 6%; /* Giảm padding lề trên mobile */
+  }
+
+  .emotions-header {
+    padding-right: 6%;
+    margin-bottom: 40px;
+  }
+
+  .emotions-scroll-track {
+    gap: 20px;
+    padding-bottom: 50px;
+    padding-right: 6%;
+  }
+
+  .emotion-card {
+    flex: 0 0 280px; /* Thu nhỏ thẻ cảm xúc còn 280px */
+    padding: 28px 24px;
+    min-height: 210px;
+  }
+
+  .emotion-card:nth-child(even) {
+    transform: translateY(
+      24px
+    ); /* Giảm biên độ nhấp nhô trên mobile còn 24px */
+  }
+}
