@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triển lãm Nghệ thuật Ngôn từ</title>
+
+    <!-- Tích hợp Google Fonts: Playfair Display (Serif) & Be Vietnam Pro (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet riêng biệt theo tiêu chuẩn cấu trúc dự án -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- === HEADER / NAV === -->
+    <!-- Lớp .glass-panel tạo hiệu ứng kính mờ có chọn lọc cố định ở đầu trang -->
+    <header class="site-header glass-panel">
+      <div class="nav-container">
+        <!-- Logo mang phong cách tạp chí in (Serif - Playfair Display) -->
+        <a href="#" class="brand-logo">L'Écrit</a>
+
+        <!-- Menu mỏ neo điều hướng chính -->
+        <nav class="main-nav" aria-label="Điều hướng chính">
+          <ul class="nav-links">
+            <li><a href="#manifesto" class="nav-item">Tuyên ngôn</a></li>
+            <li><a href="#emotions" class="nav-item">Cảm xúc</a></li>
+            <li><a href="#collection" class="nav-item">Bộ sưu tập</a></li>
+            <li><a href="#spotlight" class="nav-item">Tiêu điểm</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- === SECTION 1 === -->
+      <!-- Hero Section: Khoảng nghỉ mở màn với bố cục bất đối xứng 55% / 45% -->
+      <section class="hero-section" id="hero">
+        <!-- Khối Trái: Chiếm 55% độ rộng, tập trung vào Typography và thông điệp mở màn -->
+        <div class="hero-content">
+          <!-- Trích dẫn kịch bản nguyên bản định hình phong cách văn học (Editorial Serif) -->
+          <h1 class="hero-title">
+            Did my heart love till now?<br />
+            Forswear it, sight!<br />
+            For I ne'er saw true beauty till this night.
+          </h1>
+
+          <!-- Dòng mô tả mang tính tự sự, tạo cảm giác tĩnh lặng và chào đón không áp lực -->
+          <p class="hero-subtitle">
+            Một không gian lưu giữ những thanh âm tinh tế nhất của ngôn từ. Hãy
+            bước vào mà không có bất kỳ kỳ vọng hay ràng buộc nào.
+          </p>
+
+          <!-- CTA duy nhất: Bo góc sắc sảo 2px (không bo viên thuốc), kích hoạt cuộn mượt -->
+          <div class="hero-cta-wrapper">
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="
+                document
+                  .getElementById('manifesto')
+                  ?.scrollIntoView({ behavior: 'smooth' })
+              "
+            >
+              Explore
+            </button>
+          </div>
+        </div>
+
+        <!-- Khối Phải: Chiếm 45% độ rộng, khung ảnh nghệ thuật tĩnh vật tỉ lệ chuẩn 3:4 -->
+        <div class="hero-visual-wrapper">
+          <div
+            class="hero-visual"
+            role="img"
+            aria-label="Bìa sách nghệ thuật tĩnh vật"
+          >
+            <!-- Placeholder chuẩn Design System: Sử dụng nền nhạt #E3D8C3, bo nhẹ 4px, không dùng placeholder chứa text rác -->
+          </div>
+        </div>
+      </section>
+
+      <!-- === SECTION 2: MANIFESTO === -->
+      <!-- Bố cục lưới Z-Pattern 2 hàng kết hợp hình ảnh nghệ thuật -->
+      <section id="manifesto" class="manifesto-section">
+        <!-- Hàng 1 (Trên): Tiêu đề Hook bên trái và Khung ảnh nhỏ nằm ngang bên phải -->
+        <div class="manifesto-row">
+          <h2 class="manifesto-hook">Explore, Dream, and Innovate</h2>
+          <div
+            class="manifesto-visual visual-sm"
+            role="img"
+            aria-label="Hình ảnh nghệ thuật bổ trợ"
+          ></div>
+        </div>
+
+        <!-- Hàng 2 (Dưới): Khung ảnh lớn dạng dọc bên trái và Văn bản tự sự bên phải -->
+        <div class="manifesto-row">
+          <div
+            class="manifesto-visual visual-lg"
+            role="img"
+            aria-label="Hình ảnh tĩnh vật nghệ thuật"
+          ></div>
+          <div class="manifesto-narrative">
+            <p>
+              Nơi đây không có giỏ hàng, không có bảng xếp hạng, và không có áp
+              lực số trang phải hoàn thành. Chúng tôi xây dựng không gian này để
+              giúp bạn gạt bỏ những định kiến khô khan về việc đọc. Hãy cứ bước
+              vào, chọn một tâm trạng, và để một phần văn học của lịch sử loài
+              người tìm đến bạn.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- === SECTION 3: EMOTIONS === -->
+      <!-- Cỗ máy Cảm xúc: Cuộn ngang tràn lề với thẻ nhấp nhô có chủ đích -->
+      <section id="emotions" class="emotions-section">
+        <!-- Tiêu đề & Nhóm lọc cảm xúc -->
+        <div class="emotions-header">
+          <h2 class="emotions-title">Chọn một tâm trạng</h2>
+          <div class="filter-group" role="tablist" aria-label="Bộ lọc cảm xúc">
+            <button type="button" class="btn-filter active">Tất cả</button>
+            <button type="button" class="btn-filter">Suy nghiệm</button>
+            <button type="button" class="btn-filter">Lãng mạn</button>
+            <button type="button" class="btn-filter">Nổi loạn</button>
+            <button type="button" class="btn-filter">U sầu</button>
+          </div>
+        </div>
+
+        <!-- Đường đua cuộn ngang Horizontal Scroll Track -->
+        <div
+          class="emotions-scroll-track"
+          tabindex="0"
+          aria-label="Danh sách thẻ cảm xúc"
+        >
+          <!-- Thẻ 1 -->
+          <article class="emotion-card">
+            <span class="emotion-tag">01 / Cảm thức</span>
+            <h3 class="emotion-name">Suy nghiệm</h3>
+            <p class="emotion-desc">Những triết lý về nhân sinh</p>
+          </article>
+
+          <!-- Thẻ 2 (Chẵn - Nhấp nhô) -->
+          <article class="emotion-card">
+            <span class="emotion-tag">02 / Cảm thức</span>
+            <h3 class="emotion-name">Lãng mạn</h3>
+            <p class="emotion-desc">Tình yêu và những rạn vỡ</p>
+          </article>
+
+          <!-- Thẻ 3 -->
+          <article class="emotion-card">
+            <span class="emotion-tag">03 / Cảm thức</span>
+            <h3 class="emotion-name">Nổi loạn</h3>
+            <p class="emotion-desc">Phá vỡ những quy chuẩn</p>
+          </article>
+
+          <!-- Thẻ 4 (Chẵn - Nhấp nhô) -->
+          <article class="emotion-card">
+            <span class="emotion-tag">04 / Cảm thức</span>
+            <h3 class="emotion-name">U sầu</h3>
+            <p class="emotion-desc">Những góc tối tĩnh lặng</p>
+          </article>
+
+          <!-- Thẻ 5 -->
+          <article class="emotion-card">
+            <span class="emotion-tag">05 / Cảm thức</span>
+            <h3 class="emotion-name">Chữa lành</h3>
+            <p class="emotion-desc">Tìm lại điểm cân bằng</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
