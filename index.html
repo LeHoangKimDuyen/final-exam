@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
 
@@ -21,8 +21,11 @@
     <!-- Lớp .glass-panel tạo hiệu ứng kính mờ có chọn lọc cố định ở đầu trang -->
     <header class="site-header glass-panel">
       <div class="nav-container">
-        <!-- Logo mang phong cách tạp chí in (Serif - Playfair Display) -->
-        <a href="#" class="brand-logo">L'Écrit</a>
+        <!-- Logo mang phong cách tạp chí in (Serif - Cormorant Garamond) -->
+        <a href="#" class="brand-logo">
+          <span class="logo-name">Distil</span>
+          <span class="logo-domain">distilreview.com</span>
+        </a>
 
         <!-- Menu mỏ neo điều hướng chính -->
         <nav class="main-nav" aria-label="Điều hướng chính">
@@ -44,15 +47,13 @@
         <div class="hero-content">
           <!-- Trích dẫn kịch bản nguyên bản định hình phong cách văn học (Editorial Serif) -->
           <h1 class="hero-title">
-            Did my heart love till now?<br />
-            Forswear it, sight!<br />
-            For I ne'er saw true beauty till this night.
+            Mỗi cuốn sách,<br />
+            một thế giới chờ bạn đánh thức!
           </h1>
 
           <!-- Dòng mô tả mang tính tự sự, tạo cảm giác tĩnh lặng và chào đón không áp lực -->
           <p class="hero-subtitle">
-            Một không gian lưu giữ những thanh âm tinh tế nhất của ngôn từ. Hãy
-            bước vào mà không có bất kỳ kỳ vọng hay ràng buộc nào.
+           Đọc sách không phải để tích lũy thật nhiều kiến thức, mà là để tìm thấy sự đồng điệu giữa hàng ngàn dòng chữ. Dành ra vài phút mỗi ngày để chậm lại và cảm nhận.
           </p>
 
           <!-- CTA duy nhất: Bo góc sắc sảo 2px (không bo viên thuốc), kích hoạt cuộn mượt -->
@@ -66,7 +67,7 @@
                   ?.scrollIntoView({ behavior: 'smooth' })
               "
             >
-              Explore
+              Bước Vào Không Gian
             </button>
           </div>
         </div>
@@ -88,7 +89,8 @@
       <section id="manifesto" class="manifesto-section">
         <!-- Hàng 1 (Trên): Tiêu đề Hook bên trái và Khung ảnh nhỏ nằm ngang bên phải -->
         <div class="manifesto-row">
-          <h2 class="manifesto-hook">Explore, Dream, and Innovate</h2>
+          <h4 class="manifesto-hook">Mỗi trang sách <br />
+             Một thế giới mới</h4>
           <div
             class="manifesto-visual visual-sm"
             role="img"
@@ -172,7 +174,94 @@
           </article>
         </div>
       </section>
+
+      <!-- === SECTION 4: EXPLORATION === -->
+      <section id="exploration" class="explore-section">
+        <!-- Header khu vực: Tiêu đề bên trái, nút Trộn sách bên phải -->
+        <div class="explore-header">
+          <h2 class="explore-title">Không gian Khám phá</h2>
+          <button type="button" class="btn-shuffle">Trộn sách</button>
+        </div>
+
+        <!-- Lưới 4 cuốn sách hiển thị tĩnh (placeholder cho dữ liệu sau này) -->
+        <div class="book-grid">
+          <!-- Cuốn sách 1 -->
+          <article class="book-card" data-index="0">
+            <div class="book-cover" role="img" aria-label="Bìa sách Rừng Na Uy"></div>
+            <div class="book-info">
+              <h3 class="book-title">Rừng Na Uy</h3>
+              <p class="book-author">Haruki Murakami</p>
+            </div>
+          </article>
+
+          <!-- Cuốn sách 2 -->
+          <article class="book-card" data-index="1">
+            <div class="book-cover" role="img" aria-label="Bìa sách Chiến Binh Cầu Vồng"></div>
+            <div class="book-info">
+              <h3 class="book-title">Chiến Binh Cầu Vồng</h3>
+              <p class="book-author">Andrea Hirata</p>
+            </div>
+          </article>
+
+          <!-- Cuốn sách 3 -->
+          <article class="book-card" data-index="2">
+            <div class="book-cover" role="img" aria-label="Bìa sách Trăm Năm Cô Đơn"></div>
+            <div class="book-info">
+              <h3 class="book-title">Trăm Năm Cô Đơn</h3>
+              <p class="book-author">Gabriel García Márquez</p>
+            </div>
+          </article>
+
+          <!-- Cuốn sách 4 -->
+          <article class="book-card" data-index="3">
+            <div class="book-cover" role="img" aria-label="Bìa sách Hoàng Tử Bé"></div>
+            <div class="book-info">
+              <h3 class="book-title">Hoàng Tử Bé</h3>
+              <p class="book-author">Antoine de Saint-Exupéry</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Khung Modal Popup tĩnh (kính mờ, ẩn mặc định) -->
+        <div class="modal-overlay glass-backdrop-dark" style="display: none;">
+          <div class="modal-content halo-glow">
+            <!-- Khung tĩnh dự phòng cho JavaScript kích hoạt hiển thị chi tiết sách -->
+          </div>
+        </div>
+      </section>
+
+      <!-- === SECTION 5: EPILOGUE === -->
+      <section id="epilogue" class="epilogue-section">
+        <div class="flip-card-container">
+          <div class="flip-card-inner">
+            <!-- Mặt trước: Dấu hỏi bí ẩn -->
+            <div class="flip-card-front">
+              <span class="flip-question">?</span>
+            </div>
+
+            <!-- Mặt sau: Lời bạt và chữ ký -->
+            <div class="flip-card-back glass-panel">
+              <div class="epilogue-content">
+                <p class="epilogue-quote">
+                  "Văn học không phải để chạy trốn cuộc đời, mà để tìm thấy chính mình trong những chiều không gian khác."
+                </p>
+                <span class="epilogue-sign">Distil — Dự án Khám phá Ngôn từ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- === SECTION 6: FOOTER === -->
+    <footer id="site-footer" class="minimal-footer">
+      <div class="footer-container">
+        <p class="copyright">
+          © 2026 Distil. Curated &amp; Coded by Lê Hoàng Nam, Trường Giang, Gia Hoàng, Văn Lâm, Văn Tâm &amp; Gia Hưng.
+        </p>
+        <a href="#hero" class="back-to-top">Trở về trang bìa</a>
+      </div>
+    </footer>
 
     <script src="js/app.js"></script>
   </body>

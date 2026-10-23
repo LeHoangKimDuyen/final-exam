@@ -75,12 +75,37 @@ body {
 }
 
 .brand-logo {
-  font-family: var(--font-heading);
-  font-size: 1.625rem;
-  font-weight: 700;
-  color: var(--clr-primary); /* Màu Red Wine tạo dấu ấn định danh */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-decoration: none;
-  letter-spacing: 0.04em;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.25s ease;
+}
+
+.brand-logo:hover {
+  opacity: 0.85;
+}
+
+.logo-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.125rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+}
+
+.logo-domain {
+  font-family: var(--font-body);
+  font-size: 0.46rem;
+  font-weight: 500;
+  color: var(--clr-primary);
+  text-transform: lowercase;
+  letter-spacing: 0.22em;
+  line-height: 1.0;
+  margin-top: 4px;
 }
 
 .nav-links {
@@ -422,6 +447,283 @@ body {
 }
 
 /* ==========================================================================
+   <!-- === SECTION 4: EXPLORATION === -->
+   ========================================================================== */
+
+/* Container & Header */
+.explore-section {
+  padding: 120px 10%;
+  background-color: var(--clr-bg-main);
+  box-sizing: border-box;
+}
+
+.explore-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.explore-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--clr-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Nút Shuffle */
+.btn-shuffle {
+  background: transparent;
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-primary);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-shuffle:hover {
+  background-color: var(--clr-primary);
+  color: var(--clr-surface);
+}
+
+/* The Book Grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4vw;
+  margin-top: 60px;
+}
+
+/* Thẻ Sách & Hiệu ứng Cốt lõi (Tĩnh & Hover) */
+.book-card {
+  transform: rotate(15deg);
+  transform-origin: center bottom;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: rotate(0deg) translateY(-16px);
+}
+
+.book-card:hover .book-title {
+  color: var(--clr-primary);
+}
+
+.book-cover {
+  aspect-ratio: 3 / 4;
+  background-color: var(--clr-border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.06);
+  transition: box-shadow 0.4s ease;
+}
+
+.book-card:hover .book-cover {
+  box-shadow: 0 20px 40px rgba(45, 26, 26, 0.12);
+}
+
+.book-info {
+  margin-top: 16px;
+}
+
+.book-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--clr-text-main);
+  transition: color 0.3s ease;
+}
+
+.book-author {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--clr-text-muted);
+  margin-top: 4px;
+}
+
+/* Modal Popup Kính mờ (Khung tĩnh, ẩn mặc định) */
+.glass-backdrop-dark {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 26, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1000;
+}
+
+.halo-glow {
+  background: var(--clr-surface);
+  border-radius: var(--radius-card);
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.12);
+  width: 90%;
+  max-width: 600px;
+  padding: 40px;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+}
+
+/* Responsive Tablet: Lưới 2 cột dưới 1024px */
+@media (max-width: 1024px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6vw;
+  }
+}
+
+/* ==========================================================================
+   <!-- === SECTION 5: EPILOGUE === -->
+   ========================================================================== */
+
+/* 1. Layout Tổng thể */
+.epilogue-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-bg-main);
+  padding: 120px 10%;
+  box-sizing: border-box;
+}
+
+/* 2. Cấu trúc 3D Card */
+.flip-card-container {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Hover State: Lật 180 độ theo trục Y */
+.flip-card-container:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* 3. Mặt Trước: Nền trơn ấm, dấu hỏi bí ẩn */
+.flip-card-front {
+  background-color: #eae1cd;
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.05);
+}
+
+.flip-question {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(8rem, 15vw, 12rem);
+  color: var(--clr-text-muted);
+  opacity: 0.3;
+  line-height: 1;
+  user-select: none;
+}
+
+/* 4. Mặt Sau: Xoay ngược 180deg, hiệu ứng kính mờ glass-panel */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: rgba(246, 240, 224, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 16px 40px rgba(45, 26, 26, 0.08);
+}
+
+.epilogue-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.epilogue-quote {
+  font-family: var(--font-body);
+  color: var(--clr-primary);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.epilogue-sign {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-top: 20px;
+  display: block;
+}
+
+/* ==========================================================================
+   <!-- === SECTION 6: FOOTER === -->
+   ========================================================================== */
+
+.minimal-footer {
+  padding: 60px 10% 40px 10%;
+  background-color: var(--clr-bg-main);
+  border-top: 1px solid var(--clr-border);
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+}
+
+.back-to-top {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--clr-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: var(--clr-primary-dark);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
 
@@ -525,4 +827,58 @@ body {
       24px
     ); /* Giảm biên độ nhấp nhô trên mobile còn 24px */
   }
+
+  /* Responsive Section 4: Exploration */
+  .explore-section {
+    padding: 80px 6%;
+  }
+
+  .explore-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-top: 48px;
+  }
+
+  .book-card {
+    transform: rotate(6deg); /* Giảm góc nghiêng còn 6deg để tránh tràn viền điện thoại */
+  }
+
+  .book-card:hover {
+    transform: rotate(0deg) translateY(-8px);
+  }
+
+  /* Responsive Section 5: Epilogue */
+  .epilogue-section {
+    padding: 80px 6%;
+    min-height: 60vh;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: 28px 20px;
+  }
+
+  .epilogue-quote {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Responsive Section 6: Footer */
+  .minimal-footer {
+    padding: 40px 6%;
+  }
+
+  .footer-container {
+    flex-direction: column-reverse;
+    gap: 24px;
+    text-align: center;
+  }
 }
+
+
+
