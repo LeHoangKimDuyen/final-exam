@@ -455,6 +455,7 @@ body {
   padding: 120px 10%;
   background-color: var(--clr-bg-main);
   box-sizing: border-box;
+  position: relative;
 }
 
 .explore-header {
@@ -491,20 +492,234 @@ body {
   color: var(--clr-surface);
 }
 
-/* The Book Grid */
+/* Lớp nền tối mờ (Dark Backdrop z-index: 999) - Chuẩn màu Red Wine sẫm, không dùng đen tuyệt đối */
+.book-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 26, 26, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.book-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Khung hiển thị nổi (Pop-up Focus Container z-index: 1000) - Split View 2 Cột chuẩn Selective Glassmorphism */
+.book-focus-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.94);
+  z-index: 1000;
+  width: 90%;
+  max-width: 820px;
+  background: rgba(45, 26, 26, 0.94);
+  border: 1px solid rgba(227, 216, 195, 0.22);
+  border-radius: var(--radius-card);
+  box-shadow: 0 24px 60px rgba(45, 26, 26, 0.55), 0 0 70px rgba(252, 249, 240, 0.08);
+  padding: 48px 44px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
+  box-sizing: border-box;
+}
+
+.book-focus-container.is-active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Nút đóng (X) - Tinh giản chuẩn Editorial, không viền tròn viên thuốc */
+.btn-close-focus {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--clr-border);
+  font-family: var(--font-body);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.btn-close-focus:hover {
+  color: var(--clr-surface);
+  transform: scale(1.1);
+}
+
+/* Layout 2 Cột Split View (Flexbox) */
+.focus-split-view {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+/* CỘT TRÁI (Left side): Khung sách dựng thẳng đứng, chuẩn tỉ lệ, chất liệu giấy tối giản */
+.focus-col-left {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.focus-book-preview {
+  perspective: 800px;
+}
+
+.focus-book-cover {
+  aspect-ratio: 3 / 4;
+  width: 210px;
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-card);
+  box-shadow: -6px 14px 32px rgba(45, 26, 26, 0.35);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transform: rotateY(-6deg) rotateX(2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.focus-book-cover:hover {
+  transform: rotateY(0deg) rotateX(0deg);
+  box-shadow: -2px 18px 36px rgba(45, 26, 26, 0.45);
+}
+
+.focus-book-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(45, 26, 26, 0.12), rgba(45, 26, 26, 0.02) 80%, transparent);
+  border-right: 1px solid rgba(45, 26, 26, 0.08);
+  pointer-events: none;
+}
+
+.focus-book-inner {
+  border: 1px solid rgba(123, 17, 19, 0.22);
+  margin: 14px 14px 14px 24px;
+  height: calc(100% - 28px);
+  padding: 18px 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.focus-book-tag {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  display: block;
+}
+
+.focus-book-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--clr-primary);
+  margin: auto 0;
+}
+
+.focus-book-author {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+}
+
+/* CỘT PHẢI (Right side): Bảng nội dung giới thiệu chi tiết với chữ sáng trên nền tối */
+.focus-col-right {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.detail-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--clr-bg-main);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.detail-author {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--clr-border);
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.detail-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-surface);
+  background: rgba(123, 17, 19, 0.55);
+  border: 1px solid rgba(196, 58, 61, 0.55);
+  padding: 5px 14px;
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+
+.detail-summary {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--clr-surface);
+  border-left: 2px solid var(--clr-accent);
+  padding-left: 18px;
+  margin: 0;
+}
+
+/* The Book Grid với không gian 3D */
 .book-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4vw;
   margin-top: 60px;
+  perspective: 1200px;
+  position: relative;
 }
 
 /* Thẻ Sách & Hiệu ứng Cốt lõi (Tĩnh & Hover) */
 .book-card {
+  position: relative;
   transform: rotate(15deg);
   transform-origin: center bottom;
-  transition: all 0.5s ease-out;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, opacity 0.3s ease, box-shadow 0.4s ease;
   cursor: pointer;
+  outline: none;
 }
 
 .book-card:hover {
@@ -517,18 +732,34 @@ body {
 
 .book-cover {
   aspect-ratio: 3 / 4;
-  background-color: var(--clr-border);
+  background-color: #f2ebd9; /* Tông giấy ngà ấm tối giản theo Design System */
+  border: 1px solid var(--clr-border);
   border-radius: var(--radius-card);
-  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.06);
-  transition: box-shadow 0.4s ease;
+  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.08);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dải gáy sách giấy thủ công thanh lịch */
+.book-cover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(45, 26, 26, 0.08), transparent);
+  pointer-events: none;
 }
 
 .book-card:hover .book-cover {
-  box-shadow: 0 20px 40px rgba(45, 26, 26, 0.12);
+  box-shadow: 0 20px 40px rgba(45, 26, 26, 0.15);
 }
 
 .book-info {
   margin-top: 16px;
+  transition: opacity 0.3s ease;
 }
 
 .book-title {
@@ -548,28 +779,9 @@ body {
   margin-top: 4px;
 }
 
-/* Modal Popup Kính mờ (Khung tĩnh, ẩn mặc định) */
-.glass-backdrop-dark {
-  position: fixed;
-  inset: 0;
-  background: rgba(45, 26, 26, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  z-index: 1000;
-}
-
-.halo-glow {
-  background: var(--clr-surface);
-  border-radius: var(--radius-card);
-  box-shadow: 0 0 80px rgba(255, 255, 255, 0.12);
-  width: 90%;
-  max-width: 600px;
-  padding: 40px;
-  margin: auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  box-sizing: border-box;
+/* Khi một cuốn sách đang active trong Grid */
+.book-card.is-active .book-title {
+  color: var(--clr-primary);
 }
 
 /* Responsive Tablet: Lưới 2 cột dưới 1024px */
@@ -850,6 +1062,38 @@ body {
 
   .book-card:hover {
     transform: rotate(0deg) translateY(-8px);
+  }
+
+  /* Responsive Focus Split View trên Mobile */
+  .book-focus-container {
+    padding: 36px 20px 28px;
+    width: 92%;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+
+  .focus-split-view {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .focus-col-left {
+    flex: 0 0 auto;
+  }
+
+  .focus-book-cover {
+    width: 170px;
+    transform: none;
+  }
+
+  .focus-col-right {
+    text-align: center;
+  }
+
+  .detail-summary {
+    text-align: left;
+    font-size: 0.9375rem;
   }
 
   /* Responsive Section 5: Epilogue */

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -177,56 +177,110 @@
 
       <!-- === SECTION 4: EXPLORATION === -->
       <section id="exploration" class="explore-section">
+        <!-- Lớp nền tối mờ toàn màn hình (Overlay z-index: 999) -->
+        <div class="book-overlay" aria-hidden="true"></div>
+
+        <!-- Khung hiển thị nổi (Pop-up Focus Container z-index: 1000) - Split View 2 Cột -->
+        <div class="book-focus-container" role="dialog" aria-modal="true" aria-label="Chi tiết cuốn sách">
+          <!-- Nút đóng (X) -->
+          <button type="button" class="btn-close-focus" aria-label="Đóng chi tiết">&times;</button>
+
+          <div class="focus-split-view">
+            <!-- CỘT TRÁI (Left side): Khung sách dựng thẳng đứng, chuẩn tỉ lệ, phong cách giấy tối giản -->
+            <div class="focus-col-left">
+              <div class="focus-book-preview">
+                <div class="focus-book-cover" role="img" aria-label="Bìa sách trưng bày">
+                  <div class="focus-book-spine"></div>
+                  <div class="focus-book-inner">
+                    <span class="focus-book-tag">Distil Edition</span>
+                    <h4 class="focus-book-title">Tên Cuốn Sách</h4>
+                    <p class="focus-book-author">Tác giả</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CỘT PHẢI (Right side): Bảng nội dung giới thiệu chi tiết -->
+            <div class="focus-col-right">
+              <h3 class="detail-title">Tên Cuốn Sách</h3>
+              <p class="detail-author">Tác giả: Tên Tác Giả</p>
+              <div class="detail-badge">Thể loại / Cảm xúc</div>
+              <p class="detail-summary">"Đoạn văn bản tóm tắt ngắn gọn hoặc trích dẫn sâu sắc của cuốn sách nằm ở đây..."</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Header khu vực: Tiêu đề bên trái, nút Trộn sách bên phải -->
         <div class="explore-header">
           <h2 class="explore-title">Không gian Khám phá</h2>
           <button type="button" class="btn-shuffle">Trộn sách</button>
         </div>
 
-        <!-- Lưới 4 cuốn sách hiển thị tĩnh (placeholder cho dữ liệu sau này) -->
+        <!-- Lưới 4 cuốn sách tương tác 3D -->
         <div class="book-grid">
           <!-- Cuốn sách 1 -->
-          <article class="book-card" data-index="0">
+          <article class="book-card" data-index="0" tabindex="0" role="button" aria-label="Khám phá sách Rừng Na Uy">
             <div class="book-cover" role="img" aria-label="Bìa sách Rừng Na Uy"></div>
             <div class="book-info">
               <h3 class="book-title">Rừng Na Uy</h3>
               <p class="book-author">Haruki Murakami</p>
             </div>
+            <!-- Cấu trúc nội dung chi tiết mẫu (để bạn tự sửa/thêm nội dung) -->
+            <div class="book-detail-data" hidden>
+              <h3 class="detail-title">Rừng Na Uy</h3>
+              <p class="detail-author">Tác giả: Haruki Murakami</p>
+              <div class="detail-badge">Lãng mạn &amp; Suy nghiệm</div>
+              <p class="detail-summary">"Một khúc bi ca thanh xuân đượm buồn về tình yêu, nỗi mất mát và hành trình tìm kiếm bản ngã giữa Tokyo thập niên 60 đầy biến động. Chết không phải là đối nghịch của sống, mà là một phần của sự sống."</p>
+            </div>
           </article>
 
           <!-- Cuốn sách 2 -->
-          <article class="book-card" data-index="1">
+          <article class="book-card" data-index="1" tabindex="0" role="button" aria-label="Khám phá sách Chiến Binh Cầu Vồng">
             <div class="book-cover" role="img" aria-label="Bìa sách Chiến Binh Cầu Vồng"></div>
             <div class="book-info">
               <h3 class="book-title">Chiến Binh Cầu Vồng</h3>
               <p class="book-author">Andrea Hirata</p>
             </div>
+            <!-- Cấu trúc nội dung chi tiết mẫu (để bạn tự sửa/thêm nội dung) -->
+            <div class="book-detail-data" hidden>
+              <h3 class="detail-title">Chiến Binh Cầu Vồng</h3>
+              <p class="detail-author">Tác giả: Andrea Hirata</p>
+              <div class="detail-badge">Nghị lực &amp; Chữa lành</div>
+              <p class="detail-summary">"Câu chuyện truyền cảm hứng lay động về nghị lực phi thường của mười đứa trẻ nghèo đảo Belitong vượt qua nghịch cảnh để chạm tới ước mơ tri thức. Hãy tiếp tục mơ ước, bởi ước mơ chính là sợi chỉ dẫn đường kỳ diệu nhất."</p>
+            </div>
           </article>
 
           <!-- Cuốn sách 3 -->
-          <article class="book-card" data-index="2">
+          <article class="book-card" data-index="2" tabindex="0" role="button" aria-label="Khám phá sách Trăm Năm Cô Đơn">
             <div class="book-cover" role="img" aria-label="Bìa sách Trăm Năm Cô Đơn"></div>
             <div class="book-info">
               <h3 class="book-title">Trăm Năm Cô Đơn</h3>
               <p class="book-author">Gabriel García Márquez</p>
             </div>
+            <!-- Cấu trúc nội dung chi tiết mẫu (để bạn tự sửa/thêm nội dung) -->
+            <div class="book-detail-data" hidden>
+              <h3 class="detail-title">Trăm Năm Cô Đơn</h3>
+              <p class="detail-author">Tác giả: Gabriel García Márquez</p>
+              <div class="detail-badge">Kinh điển &amp; Huyền ảo</div>
+              <p class="detail-summary">"Kiệt tác hiện thực huyền ảo đồ sộ phác họa sự hưng thịnh và suy tàn của bảy thế hệ gia tộc Buendía cùng ngôi làng huyền thoại Macondo. Cái chết không đến với tuổi già, mà đến cùng sự lãng quên."</p>
+            </div>
           </article>
 
           <!-- Cuốn sách 4 -->
-          <article class="book-card" data-index="3">
+          <article class="book-card" data-index="3" tabindex="0" role="button" aria-label="Khám phá sách Hoàng Tử Bé">
             <div class="book-cover" role="img" aria-label="Bìa sách Hoàng Tử Bé"></div>
             <div class="book-info">
               <h3 class="book-title">Hoàng Tử Bé</h3>
               <p class="book-author">Antoine de Saint-Exupéry</p>
             </div>
+            <!-- Cấu trúc nội dung chi tiết mẫu (để bạn tự sửa/thêm nội dung) -->
+            <div class="book-detail-data" hidden>
+              <h3 class="detail-title">Hoàng Tử Bé</h3>
+              <p class="detail-author">Tác giả: Antoine de Saint-Exupéry</p>
+              <div class="detail-badge">Triết lý &amp; Trong trẻo</div>
+              <p class="detail-summary">"Thiên truyện triết lý bất hủ về chuyến phiêu lưu giữa các vì sao, nhắc nhở con người về những giá trị nguyên sơ và thuần khiết nhất của trái tim. Người ta chỉ thấy rõ bằng trái tim, những gì cốt lõi đều vô hình trong mắt trần."</p>
+            </div>
           </article>
-        </div>
-
-        <!-- Khung Modal Popup tĩnh (kính mờ, ẩn mặc định) -->
-        <div class="modal-overlay glass-backdrop-dark" style="display: none;">
-          <div class="modal-content halo-glow">
-            <!-- Khung tĩnh dự phòng cho JavaScript kích hoạt hiển thị chi tiết sách -->
-          </div>
         </div>
       </section>
 
