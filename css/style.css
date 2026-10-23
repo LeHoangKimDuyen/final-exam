@@ -75,12 +75,37 @@ body {
 }
 
 .brand-logo {
-  font-family: var(--font-heading);
-  font-size: 1.625rem;
-  font-weight: 700;
-  color: var(--clr-primary); /* Màu Red Wine tạo dấu ấn định danh */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-decoration: none;
-  letter-spacing: 0.04em;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.25s ease;
+}
+
+.brand-logo:hover {
+  opacity: 0.85;
+}
+
+.logo-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.125rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+}
+
+.logo-domain {
+  font-family: var(--font-body);
+  font-size: 0.46rem;
+  font-weight: 500;
+  color: var(--clr-primary);
+  text-transform: lowercase;
+  letter-spacing: 0.22em;
+  line-height: 1.0;
+  margin-top: 4px;
 }
 
 .nav-links {
@@ -422,6 +447,495 @@ body {
 }
 
 /* ==========================================================================
+   <!-- === SECTION 4: EXPLORATION === -->
+   ========================================================================== */
+
+/* Container & Header */
+.explore-section {
+  padding: 120px 10%;
+  background-color: var(--clr-bg-main);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.explore-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.explore-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--clr-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Nút Shuffle */
+.btn-shuffle {
+  background: transparent;
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-primary);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-shuffle:hover {
+  background-color: var(--clr-primary);
+  color: var(--clr-surface);
+}
+
+/* Lớp nền tối mờ (Dark Backdrop z-index: 999) - Chuẩn màu Red Wine sẫm, không dùng đen tuyệt đối */
+.book-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 26, 26, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.book-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Khung hiển thị nổi (Pop-up Focus Container z-index: 1000) - Split View 2 Cột chuẩn Selective Glassmorphism */
+.book-focus-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.94);
+  z-index: 1000;
+  width: 90%;
+  max-width: 820px;
+  background: rgba(45, 26, 26, 0.94);
+  border: 1px solid rgba(227, 216, 195, 0.22);
+  border-radius: var(--radius-card);
+  box-shadow: 0 24px 60px rgba(45, 26, 26, 0.55), 0 0 70px rgba(252, 249, 240, 0.08);
+  padding: 48px 44px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
+  box-sizing: border-box;
+}
+
+.book-focus-container.is-active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Nút đóng (X) - Tinh giản chuẩn Editorial, không viền tròn viên thuốc */
+.btn-close-focus {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--clr-border);
+  font-family: var(--font-body);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.btn-close-focus:hover {
+  color: var(--clr-surface);
+  transform: scale(1.1);
+}
+
+/* Layout 2 Cột Split View (Flexbox) */
+.focus-split-view {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+/* CỘT TRÁI (Left side): Khung sách dựng thẳng đứng, chuẩn tỉ lệ, chất liệu giấy tối giản */
+.focus-col-left {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.focus-book-preview {
+  perspective: 800px;
+}
+
+.focus-book-cover {
+  aspect-ratio: 3 / 4;
+  width: 210px;
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-card);
+  box-shadow: -6px 14px 32px rgba(45, 26, 26, 0.35);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transform: rotateY(-6deg) rotateX(2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.focus-book-cover:hover {
+  transform: rotateY(0deg) rotateX(0deg);
+  box-shadow: -2px 18px 36px rgba(45, 26, 26, 0.45);
+}
+
+.focus-book-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(45, 26, 26, 0.12), rgba(45, 26, 26, 0.02) 80%, transparent);
+  border-right: 1px solid rgba(45, 26, 26, 0.08);
+  pointer-events: none;
+}
+
+.focus-book-inner {
+  border: 1px solid rgba(123, 17, 19, 0.22);
+  margin: 14px 14px 14px 24px;
+  height: calc(100% - 28px);
+  padding: 18px 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.focus-book-tag {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  display: block;
+}
+
+.focus-book-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--clr-primary);
+  margin: auto 0;
+}
+
+.focus-book-author {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+}
+
+/* CỘT PHẢI (Right side): Bảng nội dung giới thiệu chi tiết với chữ sáng trên nền tối */
+.focus-col-right {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.detail-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--clr-bg-main);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.detail-author {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--clr-border);
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.detail-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-surface);
+  background: rgba(123, 17, 19, 0.55);
+  border: 1px solid rgba(196, 58, 61, 0.55);
+  padding: 5px 14px;
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+
+.detail-summary {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--clr-surface);
+  border-left: 2px solid var(--clr-accent);
+  padding-left: 18px;
+  margin: 0;
+}
+
+/* The Book Grid với không gian 3D */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4vw;
+  margin-top: 60px;
+  perspective: 1200px;
+  position: relative;
+}
+
+/* Thẻ Sách & Hiệu ứng Cốt lõi (Tĩnh & Hover) */
+.book-card {
+  position: relative;
+  transform: rotate(15deg);
+  transform-origin: center bottom;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, opacity 0.3s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.book-card:hover {
+  transform: rotate(0deg) translateY(-16px);
+}
+
+.book-card:hover .book-title {
+  color: var(--clr-primary);
+}
+
+.book-cover {
+  aspect-ratio: 3 / 4;
+  background-color: #f2ebd9; /* Tông giấy ngà ấm tối giản theo Design System */
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.08);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dải gáy sách giấy thủ công thanh lịch */
+.book-cover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(45, 26, 26, 0.08), transparent);
+  pointer-events: none;
+}
+
+.book-card:hover .book-cover {
+  box-shadow: 0 20px 40px rgba(45, 26, 26, 0.15);
+}
+
+.book-info {
+  margin-top: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.book-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--clr-text-main);
+  transition: color 0.3s ease;
+}
+
+.book-author {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--clr-text-muted);
+  margin-top: 4px;
+}
+
+/* Khi một cuốn sách đang active trong Grid */
+.book-card.is-active .book-title {
+  color: var(--clr-primary);
+}
+
+/* Responsive Tablet: Lưới 2 cột dưới 1024px */
+@media (max-width: 1024px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6vw;
+  }
+}
+
+/* ==========================================================================
+   <!-- === SECTION 5: EPILOGUE === -->
+   ========================================================================== */
+
+/* 1. Layout Tổng thể */
+.epilogue-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-bg-main);
+  padding: 120px 10%;
+  box-sizing: border-box;
+}
+
+/* 2. Cấu trúc 3D Card */
+.flip-card-container {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Hover State: Lật 180 độ theo trục Y */
+.flip-card-container:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* 3. Mặt Trước: Nền trơn ấm, dấu hỏi bí ẩn */
+.flip-card-front {
+  background-color: #eae1cd;
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 12px 32px rgba(45, 26, 26, 0.05);
+}
+
+.flip-question {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(8rem, 15vw, 12rem);
+  color: var(--clr-text-muted);
+  opacity: 0.3;
+  line-height: 1;
+  user-select: none;
+}
+
+/* 4. Mặt Sau: Xoay ngược 180deg, hiệu ứng kính mờ glass-panel */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: rgba(246, 240, 224, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 16px 40px rgba(45, 26, 26, 0.08);
+}
+
+.epilogue-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.epilogue-quote {
+  font-family: var(--font-body);
+  color: var(--clr-primary);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.epilogue-sign {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-top: 20px;
+  display: block;
+}
+
+/* ==========================================================================
+   <!-- === SECTION 6: FOOTER === -->
+   ========================================================================== */
+
+.minimal-footer {
+  padding: 60px 10% 40px 10%;
+  background-color: var(--clr-bg-main);
+  border-top: 1px solid var(--clr-border);
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+}
+
+.back-to-top {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--clr-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: var(--clr-primary-dark);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
 
@@ -525,4 +1039,90 @@ body {
       24px
     ); /* Giảm biên độ nhấp nhô trên mobile còn 24px */
   }
+
+  /* Responsive Section 4: Exploration */
+  .explore-section {
+    padding: 80px 6%;
+  }
+
+  .explore-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-top: 48px;
+  }
+
+  .book-card {
+    transform: rotate(6deg); /* Giảm góc nghiêng còn 6deg để tránh tràn viền điện thoại */
+  }
+
+  .book-card:hover {
+    transform: rotate(0deg) translateY(-8px);
+  }
+
+  /* Responsive Focus Split View trên Mobile */
+  .book-focus-container {
+    padding: 36px 20px 28px;
+    width: 92%;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+
+  .focus-split-view {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .focus-col-left {
+    flex: 0 0 auto;
+  }
+
+  .focus-book-cover {
+    width: 170px;
+    transform: none;
+  }
+
+  .focus-col-right {
+    text-align: center;
+  }
+
+  .detail-summary {
+    text-align: left;
+    font-size: 0.9375rem;
+  }
+
+  /* Responsive Section 5: Epilogue */
+  .epilogue-section {
+    padding: 80px 6%;
+    min-height: 60vh;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: 28px 20px;
+  }
+
+  .epilogue-quote {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Responsive Section 6: Footer */
+  .minimal-footer {
+    padding: 40px 6%;
+  }
+
+  .footer-container {
+    flex-direction: column-reverse;
+    gap: 24px;
+    text-align: center;
+  }
 }
+
+
+
