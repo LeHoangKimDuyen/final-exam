@@ -106,6 +106,12 @@ main {
   opacity: 0.85;
 }
 
+.logo-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .logo-name {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.125rem;
@@ -113,6 +119,18 @@ main {
   color: var(--clr-primary);
   line-height: 1;
   letter-spacing: 0.01em;
+}
+
+.brand-logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.05);
 }
 
 .logo-domain {
@@ -649,14 +667,15 @@ main {
   transform: translate(-50%, -50%) scale(0.94);
   z-index: 1000;
   width: 90%;
-  max-width: 820px;
+  max-width: 880px;
+  max-height: min(85vh, 550px);
   background: rgba(45, 26, 26, 0.94);
   border: 1px solid rgba(227, 216, 195, 0.22);
   border-radius: var(--radius-card);
   box-shadow:
     0 24px 60px rgba(45, 26, 26, 0.55),
     0 0 70px rgba(252, 249, 240, 0.08);
-  padding: 48px 44px;
+  padding: 44px 44px 40px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -665,6 +684,10 @@ main {
     opacity 0.35s ease,
     visibility 0.35s ease;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .book-focus-container.is-active {
@@ -701,25 +724,32 @@ main {
 /* Layout 2 Cột Split View (Flexbox) */
 .focus-split-view {
   display: flex;
-  gap: 48px;
+  gap: 32px;
   align-items: center;
+  width: 100%;
+  max-height: 100%;
 }
 
-/* CỘT TRÁI (Left side): Khung sách dựng thẳng đứng, chuẩn tỉ lệ, chất liệu giấy tối giản */
+/* CỘT TRÁI (Left side): Khung sách chiếm khoảng 30% - 35% diện tích ngang */
 .focus-col-left {
-  flex: 0 0 220px;
+  flex: 0 0 32%;
+  max-width: 32%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .focus-book-preview {
   perspective: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .focus-book-cover {
   aspect-ratio: 3 / 4;
-  width: 210px;
+  width: 100%;
+  max-width: 220px;
   background-color: var(--clr-surface);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-card);
@@ -794,10 +824,15 @@ main {
   color: var(--clr-text-muted);
 }
 
-/* CỘT PHẢI (Right side): Bảng nội dung giới thiệu chi tiết với chữ sáng trên nền tối */
+/* CỘT PHẢI (Right side): Bảng nội dung giới thiệu chiếm ưu tiên rộng hơn (khoảng 65% - 70%) */
 .focus-col-right {
-  flex: 1;
+  flex: 0 0 calc(68% - 32px);
+  flex-grow: 1;
   min-width: 0;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: left;
 }
 
@@ -836,12 +871,13 @@ main {
 
 .detail-summary {
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.9375rem;
+  line-height: 1.8;
   color: var(--clr-surface);
   border-left: 2px solid var(--clr-accent);
   padding-left: 18px;
   margin: 0;
+  white-space: pre-line;
 }
 
 /* The Book Grid với không gian 3D */
@@ -972,29 +1008,35 @@ main {
 
 /* Khối cuộn văn bản tóm tắt */
 .scrollable-summary {
-  max-height: 250px;
+  max-height: 240px;
   overflow-y: auto;
-  padding-right: 12px;
-  margin-top: 16px;
+  overscroll-behavior: contain;
+  padding-right: 14px;
+  margin-top: 14px;
 }
 
-/* Tùy chỉnh thanh cuộn siêu mỏng */
+/* Tùy chỉnh thanh cuộn nhỏ gọn, tiệp màu tối với giao diện */
 .scrollable-summary::-webkit-scrollbar {
   width: 4px;
 }
 
 .scrollable-summary::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(20, 10, 10, 0.4);
+  border-radius: 2px;
 }
 
 .scrollable-summary::-webkit-scrollbar-thumb {
-  background-color: var(--clr-border);
+  background-color: rgba(227, 216, 195, 0.35);
   border-radius: 2px;
+}
+
+.scrollable-summary::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(227, 216, 195, 0.6);
 }
 
 .scrollable-summary {
   scrollbar-width: thin;
-  scrollbar-color: var(--clr-border) transparent;
+  scrollbar-color: rgba(227, 216, 195, 0.35) rgba(20, 10, 10, 0.4);
 }
 
 /* Dải gáy sách giấy thủ công thanh lịch */
@@ -1720,6 +1762,12 @@ main {
 
   .focus-col-left {
     flex: 0 0 auto;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .focus-book-preview {
+    justify-content: center;
   }
 
   .focus-book-cover {
@@ -1728,6 +1776,8 @@ main {
   }
 
   .focus-col-right {
+    flex: 0 0 auto;
+    max-width: 100%;
     text-align: center;
   }
 
