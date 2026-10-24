@@ -66,14 +66,26 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeNext, 300);
   }
 
-  // 2. Kích hoạt thư viện AOS (Animate On Scroll) với chuyển động từ tốn, mượt mà
-  if (typeof AOS !== "undefined") {
-    AOS.init({
-      once: true,
-      offset: 100,
-      duration: 1200,
-      easing: "ease-in-out",
-    });
+  // 2. Chuyen dong cuon muot ma thuan Vanilla JS (Intersection Observer chuan Anti-AI)
+  const revealElements = document.querySelectorAll("[data-aos]");
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("aos-animate");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px",
+      },
+    );
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add("aos-animate"));
   }
 
   // 3. Hiệu ứng đổi màu nền toàn cục theo độ cuộn chuột (Scroll Background Overlay)

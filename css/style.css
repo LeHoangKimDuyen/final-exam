@@ -229,6 +229,14 @@ main {
   line-height: 1;
 }
 
+#nav-user-avatar {
+  display: none;
+}
+
+.pause-icon {
+  display: none;
+}
+
 /* ==========================================================================
    /* === SECTION 1 === */
 /* ==========================================================================
@@ -368,7 +376,7 @@ main {
   flex: 0 0 50%;
   max-width: 50%;
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.15;
   color: var(--clr-primary);
