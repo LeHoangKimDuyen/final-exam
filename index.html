@@ -13,10 +13,16 @@
       rel="stylesheet"
     />
 
+    <!-- Thư viện AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Stylesheet riêng biệt theo tiêu chuẩn cấu trúc dự án -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Lớp nền chuyển đổi mượt mà toàn cục theo độ cuộn chuột -->
+    <div id="scroll-bg-overlay"></div>
+
     <!-- === HEADER / NAV === -->
     <!-- Lớp .glass-panel tạo hiệu ứng kính mờ có chọn lọc cố định ở đầu trang -->
     <header class="site-header glass-panel">
@@ -30,12 +36,24 @@
         <!-- Menu mỏ neo điều hướng chính -->
         <nav class="main-nav" aria-label="Điều hướng chính">
           <ul class="nav-links">
-            <li><a href="#manifesto" class="nav-item">Tuyên ngôn</a></li>
+            <li><a href="#manifesto" class="nav-item">Giới thiệu</a></li>
             <li><a href="#emotions" class="nav-item">Cảm xúc</a></li>
-            <li><a href="#collection" class="nav-item">Bộ sưu tập</a></li>
-            <li><a href="#spotlight" class="nav-item">Tiêu điểm</a></li>
           </ul>
         </nav>
+
+        <!-- Khu vực Xác thực (Auth Area) -->
+        <div class="auth-area">
+          <a href="auth.html" id="nav-login-btn" class="btn-login">Đăng nhập</a>
+          <a
+            href="profile.html"
+            id="nav-user-avatar"
+            class="user-avatar"
+            style="display: none"
+            aria-label="Hồ sơ cá nhân"
+          >
+            <span class="avatar-initial">?</span>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -47,13 +65,14 @@
         <div class="hero-content">
           <!-- Trích dẫn kịch bản nguyên bản định hình phong cách văn học (Editorial Serif) -->
           <h1 class="hero-title">
-            Mỗi cuốn sách,<br />
-            một thế giới chờ bạn đánh thức!
+            Mỗi một cuốn sách là một thế giới đang chờ bạn đánh thức.
           </h1>
 
           <!-- Dòng mô tả mang tính tự sự, tạo cảm giác tĩnh lặng và chào đón không áp lực -->
           <p class="hero-subtitle">
-           Đọc sách không phải để tích lũy thật nhiều kiến thức, mà là để tìm thấy sự đồng điệu giữa hàng ngàn dòng chữ. Dành ra vài phút mỗi ngày để chậm lại và cảm nhận.
+            Đọc sách không phải để tích lũy thật nhiều kiến thức, mà là để tìm
+            thấy sự đồng điệu giữa hàng ngàn dòng chữ. Dành ra vài phút mỗi ngày
+            để chậm lại và cảm nhận.
           </p>
 
           <!-- CTA duy nhất: Bo góc sắc sảo 2px (không bo viên thuốc), kích hoạt cuộn mượt -->
@@ -76,35 +95,48 @@
         <div class="hero-visual-wrapper">
           <div
             class="hero-visual"
-            role="img"
-            aria-label="Bìa sách nghệ thuật tĩnh vật"
           >
-            <!-- Placeholder chuẩn Design System: Sử dụng nền nhạt #E3D8C3, bo nhẹ 4px, không dùng placeholder chứa text rác -->
+            <img
+              src="images/background/frame-1.jpg"
+              alt="Distil Cinematic Moment"
+            />
           </div>
         </div>
       </section>
 
       <!-- === SECTION 2: MANIFESTO === -->
       <!-- Bố cục lưới Z-Pattern 2 hàng kết hợp hình ảnh nghệ thuật -->
-      <section id="manifesto" class="manifesto-section">
+      <section
+        id="manifesto"
+        class="manifesto-section"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <!-- Hàng 1 (Trên): Tiêu đề Hook bên trái và Khung ảnh nhỏ nằm ngang bên phải -->
         <div class="manifesto-row">
-          <h4 class="manifesto-hook">Mỗi trang sách <br />
-             Một thế giới mới</h4>
-          <div
-            class="manifesto-visual visual-sm"
-            role="img"
-            aria-label="Hình ảnh nghệ thuật bổ trợ"
-          ></div>
+          <h6
+            class="manifesto-hook"
+            style="font-size: clamp(1.5rem, 3vw, 3.5rem)"
+          >
+            " Một người mê đọc sách<br />
+            sống hàng nghìn cuộc đời trước khi anh ta chết... "
+          </h6>
+          <div class="manifesto-visual visual-sm">
+            <img
+              src="images/background/frame-2.jpg"
+              alt="Distil Cinematic Moment"
+            />
+          </div>
         </div>
 
         <!-- Hàng 2 (Dưới): Khung ảnh lớn dạng dọc bên trái và Văn bản tự sự bên phải -->
         <div class="manifesto-row">
-          <div
-            class="manifesto-visual visual-lg"
-            role="img"
-            aria-label="Hình ảnh tĩnh vật nghệ thuật"
-          ></div>
+          <div class="manifesto-visual visual-lg">
+            <img
+              src="images/background/frame-3.jpg"
+              alt="Distil Cinematic Moment"
+            />
+          </div>
           <div class="manifesto-narrative">
             <p>
               Nơi đây không có giỏ hàng, không có bảng xếp hạng, và không có áp
@@ -117,19 +149,78 @@
         </div>
       </section>
 
-      <!-- === SECTION 3: EMOTIONS === -->
+
+      <!-- === SECTION 3: SOUNDSCAPE === -->
+      <section
+        id="soundscape"
+        class="soundscape-section"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div class="soundscape-container">
+          <!-- Cột trái: Văn bản đơn giản -->
+          <div class="soundscape-text-col">
+            <span class="sub-label">— Audio Experience</span>
+            <h2 class="soundscape-title">Hãy để không gian chạm đến bạn</h2>
+          </div>
+
+          <!-- Cột phải: Khung tròn đĩa than -->
+          <div class="soundscape-vinyl-col">
+            <div class="vinyl-wrapper" id="vinylWrapper">
+              <div class="vinyl-disc" id="vinylDisc">
+                <img
+                  src="images/background/frame-1.jpg"
+                  alt="Vinyl Art"
+                  class="vinyl-img"
+                />
+                <div class="vinyl-center-hole"></div>
+              </div>
+              <button
+                class="vinyl-toggle-btn"
+                id="vinylToggleBtn"
+                aria-label="Play/Pause Audio"
+              >
+                <svg
+                  class="play-icon"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <svg
+                  class="pause-icon"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  style="display: none"
+                >
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+              </button>
+            </div>
+            <audio
+              id="soundscapeAudio"
+              src="audio/fairytale-from-shrek.mp3"
+              loop
+            ></audio>
+          </div>
+        </div>
+      </section>
+
+      <!-- === SECTION 4: EMOTIONS === -->
       <!-- Cỗ máy Cảm xúc: Cuộn ngang tràn lề với thẻ nhấp nhô có chủ đích -->
-      <section id="emotions" class="emotions-section">
-        <!-- Tiêu đề & Nhóm lọc cảm xúc -->
+      <section
+        id="emotions"
+        class="emotions-section"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <!-- Tiêu đề (Đã lược bỏ nhóm lọc cảm xúc) -->
         <div class="emotions-header">
           <h2 class="emotions-title">Chọn một tâm trạng</h2>
-          <div class="filter-group" role="tablist" aria-label="Bộ lọc cảm xúc">
-            <button type="button" class="btn-filter active">Tất cả</button>
-            <button type="button" class="btn-filter">Suy nghiệm</button>
-            <button type="button" class="btn-filter">Lãng mạn</button>
-            <button type="button" class="btn-filter">Nổi loạn</button>
-            <button type="button" class="btn-filter">U sầu</button>
-          </div>
         </div>
 
         <!-- Đường đua cuộn ngang Horizontal Scroll Track -->
@@ -139,57 +230,78 @@
           aria-label="Danh sách thẻ cảm xúc"
         >
           <!-- Thẻ 1 -->
-          <article class="emotion-card">
+          <article class="emotion-card" data-emotion="hoi-hop">
             <span class="emotion-tag">01 / Cảm thức</span>
-            <h3 class="emotion-name">Suy nghiệm</h3>
+            <h3 class="emotion-name">Hồi hộp</h3>
             <p class="emotion-desc">Những triết lý về nhân sinh</p>
           </article>
 
           <!-- Thẻ 2 (Chẵn - Nhấp nhô) -->
-          <article class="emotion-card">
+          <article class="emotion-card" data-emotion="xao-xuyen">
             <span class="emotion-tag">02 / Cảm thức</span>
-            <h3 class="emotion-name">Lãng mạn</h3>
+            <h3 class="emotion-name">Xao xuyến</h3>
             <p class="emotion-desc">Tình yêu và những rạn vỡ</p>
           </article>
 
           <!-- Thẻ 3 -->
-          <article class="emotion-card">
+          <article class="emotion-card" data-emotion="thau-cam">
             <span class="emotion-tag">03 / Cảm thức</span>
-            <h3 class="emotion-name">Nổi loạn</h3>
+            <h3 class="emotion-name">Thấu cảm</h3>
             <p class="emotion-desc">Phá vỡ những quy chuẩn</p>
           </article>
 
           <!-- Thẻ 4 (Chẵn - Nhấp nhô) -->
-          <article class="emotion-card">
+          <article class="emotion-card" data-emotion="ngot-ngat">
             <span class="emotion-tag">04 / Cảm thức</span>
-            <h3 class="emotion-name">U sầu</h3>
+            <h3 class="emotion-name">Ngột ngạt</h3>
             <p class="emotion-desc">Những góc tối tĩnh lặng</p>
           </article>
 
           <!-- Thẻ 5 -->
-          <article class="emotion-card">
+          <article class="emotion-card" data-emotion="choang-ngop">
             <span class="emotion-tag">05 / Cảm thức</span>
-            <h3 class="emotion-name">Chữa lành</h3>
+            <h3 class="emotion-name">Choáng ngợp</h3>
             <p class="emotion-desc">Tìm lại điểm cân bằng</p>
           </article>
         </div>
       </section>
 
-      <!-- === SECTION 4: EXPLORATION === -->
-      <section id="exploration" class="explore-section">
+      <!-- === SECTION 5: EXPLORATION === -->
+      <section
+        id="exploration"
+        class="explore-section"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <!-- Lớp nền tối mờ toàn màn hình (Overlay z-index: 999) -->
         <div class="book-overlay" aria-hidden="true"></div>
 
         <!-- Khung hiển thị nổi (Pop-up Focus Container z-index: 1000) - Split View 2 Cột -->
-        <div class="book-focus-container" role="dialog" aria-modal="true" aria-label="Chi tiết cuốn sách">
+        <div
+          class="book-focus-container"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Chi tiết cuốn sách"
+        >
           <!-- Nút đóng (X) -->
-          <button type="button" class="btn-close-focus" aria-label="Đóng chi tiết">&times;</button>
+          <button
+            type="button"
+            class="btn-close-focus"
+            aria-label="Đóng chi tiết"
+          >
+            &times;
+          </button>
 
           <div class="focus-split-view">
             <!-- CỘT TRÁI (Left side): Khung sách dựng thẳng đứng, chuẩn tỉ lệ, phong cách giấy tối giản -->
             <div class="focus-col-left">
               <div class="focus-book-preview">
-                <div class="focus-book-cover" role="img" aria-label="Bìa sách trưng bày">
+                <div
+                  class="focus-book-cover"
+                  role="img"
+                  aria-label="Bìa sách trưng bày"
+                >
+                  <img src="" alt="" />
                   <div class="focus-book-spine"></div>
                   <div class="focus-book-inner">
                     <span class="focus-book-tag">Distil Edition</span>
@@ -202,10 +314,28 @@
 
             <!-- CỘT PHẢI (Right side): Bảng nội dung giới thiệu chi tiết -->
             <div class="focus-col-right">
-              <h3 class="detail-title">Tên Cuốn Sách</h3>
+              <div class="detail-header-row">
+                <h3 class="detail-title">Tên Cuốn Sách</h3>
+                <button
+                  type="button"
+                  class="btn-heart-modal"
+                  aria-label="Yêu thích"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    />
+                  </svg>
+                </button>
+              </div>
               <p class="detail-author">Tác giả: Tên Tác Giả</p>
               <div class="detail-badge">Thể loại / Cảm xúc</div>
-              <p class="detail-summary">"Đoạn văn bản tóm tắt ngắn gọn hoặc trích dẫn sâu sắc của cuốn sách nằm ở đây..."</p>
+              <div class="scrollable-summary">
+                <p class="detail-summary">
+                  "Đoạn văn bản tóm tắt ngắn gọn hoặc trích dẫn sâu sắc của cuốn
+                  sách nằm ở đây..."
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -219,8 +349,16 @@
         <!-- Lưới 4 cuốn sách tương tác 3D -->
         <div class="book-grid">
           <!-- Cuốn sách 1 -->
-          <article class="book-card" data-index="0" tabindex="0" role="button" aria-label="Khám phá sách Rừng Na Uy">
-            <div class="book-cover" role="img" aria-label="Bìa sách Rừng Na Uy"></div>
+          <article
+            class="book-card"
+            data-index="0"
+            tabindex="0"
+            role="button"
+            aria-label="Khám phá sách Rừng Na Uy"
+          >
+            <div class="book-cover" role="img" aria-label="Bìa sách Rừng Na Uy">
+              <img src="" alt="" />
+            </div>
             <div class="book-info">
               <h3 class="book-title">Rừng Na Uy</h3>
               <p class="book-author">Haruki Murakami</p>
@@ -230,13 +368,30 @@
               <h3 class="detail-title">Rừng Na Uy</h3>
               <p class="detail-author">Tác giả: Haruki Murakami</p>
               <div class="detail-badge">Lãng mạn &amp; Suy nghiệm</div>
-              <p class="detail-summary">"Một khúc bi ca thanh xuân đượm buồn về tình yêu, nỗi mất mát và hành trình tìm kiếm bản ngã giữa Tokyo thập niên 60 đầy biến động. Chết không phải là đối nghịch của sống, mà là một phần của sự sống."</p>
+              <p class="detail-summary">
+                "Một khúc bi ca thanh xuân đượm buồn về tình yêu, nỗi mất mát và
+                hành trình tìm kiếm bản ngã giữa Tokyo thập niên 60 đầy biến
+                động. Chết không phải là đối nghịch của sống, mà là một phần của
+                sự sống."
+              </p>
             </div>
           </article>
 
           <!-- Cuốn sách 2 -->
-          <article class="book-card" data-index="1" tabindex="0" role="button" aria-label="Khám phá sách Chiến Binh Cầu Vồng">
-            <div class="book-cover" role="img" aria-label="Bìa sách Chiến Binh Cầu Vồng"></div>
+          <article
+            class="book-card"
+            data-index="1"
+            tabindex="0"
+            role="button"
+            aria-label="Khám phá sách Chiến Binh Cầu Vồng"
+          >
+            <div
+              class="book-cover"
+              role="img"
+              aria-label="Bìa sách Chiến Binh Cầu Vồng"
+            >
+              <img src="" alt="" />
+            </div>
             <div class="book-info">
               <h3 class="book-title">Chiến Binh Cầu Vồng</h3>
               <p class="book-author">Andrea Hirata</p>
@@ -246,13 +401,30 @@
               <h3 class="detail-title">Chiến Binh Cầu Vồng</h3>
               <p class="detail-author">Tác giả: Andrea Hirata</p>
               <div class="detail-badge">Nghị lực &amp; Chữa lành</div>
-              <p class="detail-summary">"Câu chuyện truyền cảm hứng lay động về nghị lực phi thường của mười đứa trẻ nghèo đảo Belitong vượt qua nghịch cảnh để chạm tới ước mơ tri thức. Hãy tiếp tục mơ ước, bởi ước mơ chính là sợi chỉ dẫn đường kỳ diệu nhất."</p>
+              <p class="detail-summary">
+                "Câu chuyện truyền cảm hứng lay động về nghị lực phi thường của
+                mười đứa trẻ nghèo đảo Belitong vượt qua nghịch cảnh để chạm tới
+                ước mơ tri thức. Hãy tiếp tục mơ ước, bởi ước mơ chính là sợi
+                chỉ dẫn đường kỳ diệu nhất."
+              </p>
             </div>
           </article>
 
           <!-- Cuốn sách 3 -->
-          <article class="book-card" data-index="2" tabindex="0" role="button" aria-label="Khám phá sách Trăm Năm Cô Đơn">
-            <div class="book-cover" role="img" aria-label="Bìa sách Trăm Năm Cô Đơn"></div>
+          <article
+            class="book-card"
+            data-index="2"
+            tabindex="0"
+            role="button"
+            aria-label="Khám phá sách Trăm Năm Cô Đơn"
+          >
+            <div
+              class="book-cover"
+              role="img"
+              aria-label="Bìa sách Trăm Năm Cô Đơn"
+            >
+              <img src="" alt="" />
+            </div>
             <div class="book-info">
               <h3 class="book-title">Trăm Năm Cô Đơn</h3>
               <p class="book-author">Gabriel García Márquez</p>
@@ -262,13 +434,30 @@
               <h3 class="detail-title">Trăm Năm Cô Đơn</h3>
               <p class="detail-author">Tác giả: Gabriel García Márquez</p>
               <div class="detail-badge">Kinh điển &amp; Huyền ảo</div>
-              <p class="detail-summary">"Kiệt tác hiện thực huyền ảo đồ sộ phác họa sự hưng thịnh và suy tàn của bảy thế hệ gia tộc Buendía cùng ngôi làng huyền thoại Macondo. Cái chết không đến với tuổi già, mà đến cùng sự lãng quên."</p>
+              <p class="detail-summary">
+                "Kiệt tác hiện thực huyền ảo đồ sộ phác họa sự hưng thịnh và suy
+                tàn của bảy thế hệ gia tộc Buendía cùng ngôi làng huyền thoại
+                Macondo. Cái chết không đến với tuổi già, mà đến cùng sự lãng
+                quên."
+              </p>
             </div>
           </article>
 
           <!-- Cuốn sách 4 -->
-          <article class="book-card" data-index="3" tabindex="0" role="button" aria-label="Khám phá sách Hoàng Tử Bé">
-            <div class="book-cover" role="img" aria-label="Bìa sách Hoàng Tử Bé"></div>
+          <article
+            class="book-card"
+            data-index="3"
+            tabindex="0"
+            role="button"
+            aria-label="Khám phá sách Hoàng Tử Bé"
+          >
+            <div
+              class="book-cover"
+              role="img"
+              aria-label="Bìa sách Hoàng Tử Bé"
+            >
+              <img src="" alt="" />
+            </div>
             <div class="book-info">
               <h3 class="book-title">Hoàng Tử Bé</h3>
               <p class="book-author">Antoine de Saint-Exupéry</p>
@@ -278,28 +467,132 @@
               <h3 class="detail-title">Hoàng Tử Bé</h3>
               <p class="detail-author">Tác giả: Antoine de Saint-Exupéry</p>
               <div class="detail-badge">Triết lý &amp; Trong trẻo</div>
-              <p class="detail-summary">"Thiên truyện triết lý bất hủ về chuyến phiêu lưu giữa các vì sao, nhắc nhở con người về những giá trị nguyên sơ và thuần khiết nhất của trái tim. Người ta chỉ thấy rõ bằng trái tim, những gì cốt lõi đều vô hình trong mắt trần."</p>
+              <p class="detail-summary">
+                "Thiên truyện triết lý bất hủ về chuyến phiêu lưu giữa các vì
+                sao, nhắc nhở con người về những giá trị nguyên sơ và thuần
+                khiết nhất của trái tim. Người ta chỉ thấy rõ bằng trái tim,
+                những gì cốt lõi đều vô hình trong mắt trần."
+              </p>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- === SECTION 5: EPILOGUE === -->
-      <section id="epilogue" class="epilogue-section">
-        <div class="flip-card-container">
-          <div class="flip-card-inner">
-            <!-- Mặt trước: Dấu hỏi bí ẩn -->
-            <div class="flip-card-front">
-              <span class="flip-question">?</span>
-            </div>
+      <!-- === SECTION: CÓ THỂ BẠN CHƯA BIẾT (BENTO FLIP GRID) === -->
+      <section
+        id="did-you-know"
+        class="did-you-know-section"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div class="section-header">
+          <span class="sub-label">— Khám phá văn học</span>
+          <h2>Có thể bạn chưa biết</h2>
+        </div>
 
-            <!-- Mặt sau: Lời bạt và chữ ký -->
-            <div class="flip-card-back glass-panel">
-              <div class="epilogue-content">
-                <p class="epilogue-quote">
-                  "Văn học không phải để chạy trốn cuộc đời, mà để tìm thấy chính mình trong những chiều không gian khác."
+        <div class="bento-flip-grid">
+          <!-- Thẻ 1 -->
+          <div class="flip-card card-item-1">
+            <div class="flip-card-inner">
+              <!-- MẶT TRƯỚC -->
+              <div class="flip-card-front">
+                <img
+                  src="images/tin-tuc/orange-prize-song-of-achilles.jpg"
+                  alt="Trường ca Achilles"
+                />
+                <div class="card-overlay-text">
+                  <h3>Trường ca Achilles</h3>
+                  <p>Giải thưởng Orange Prize for Fiction</p>
+                </div>
+              </div>
+              <!-- MẶT SAU -->
+              <div class="flip-card-back">
+                <h3>Trường ca Achilles</h3>
+                <p>
+                  Tác phẩm đầu tay của Madeline Miller đã xuất sắc vượt qua nhiều
+                  tên tuổi lớn để đoạt giải Orange Prize for Fiction năm 2012,
+                  tái hiện thiên tình sử bi tráng và huyền thoại thành Troy dưới
+                  góc nhìn nhân văn sâu sắc.
                 </p>
-                <span class="epilogue-sign">Distil — Dự án Khám phá Ngôn từ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thẻ 2 -->
+          <div class="flip-card card-item-2">
+            <div class="flip-card-inner">
+              <!-- MẶT TRƯỚC -->
+              <div class="flip-card-front">
+                <img
+                  src="images/tin-tuc/harry-potter-1.jpg"
+                  alt="Harry Potter và Hòn đá Phù thủy"
+                />
+                <div class="card-overlay-text">
+                  <h3>Harry Potter</h3>
+                  <p>Giải Vàng Nestlé Smarties Book Prize</p>
+                </div>
+              </div>
+              <!-- MẶT SAU -->
+              <div class="flip-card-back">
+                <h3>Harry Potter &amp; Hòn đá Phù thủy</h3>
+                <p>
+                  Cuốn sách mở màn cho kỷ nguyên huyền thoại đã chiến thắng giải
+                  vàng Nestlé Smarties Book Prize danh giá và trở thành hiện
+                  tượng văn hóa toàn cầu được dịch sang hơn 80 ngôn ngữ.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thẻ 3 -->
+          <div class="flip-card card-item-3">
+            <div class="flip-card-inner">
+              <!-- MẶT TRƯỚC -->
+              <div class="flip-card-front">
+                <img
+                  src="images/tin-tuc/tuoi-tho-du-doi-giai-van-hoc.webp"
+                  alt="Tuổi thơ dữ dội"
+                />
+                <div class="card-overlay-text">
+                  <h3>Tuổi thơ dữ dội</h3>
+                  <p>Giải A Văn học Thiếu nhi Hội Nhà văn</p>
+                </div>
+              </div>
+              <!-- MẶT SAU -->
+              <div class="flip-card-back">
+                <h3>Tuổi thơ dữ dội</h3>
+                <p>
+                  Thiên tiểu thuyết sử thi hào hùng của nhà văn Phùng Quán về
+                  những chiến sĩ liên lạc nhỏ tuổi tại chiến khu Bình Trị Thiên,
+                  đoạt giải thưởng Hội Nhà văn Việt Nam và trở thành bản hùng ca
+                  bất tử của tuổi trẻ yêu nước.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thẻ 4 -->
+          <div class="flip-card card-item-4">
+            <div class="flip-card-inner">
+              <!-- MẶT TRƯỚC -->
+              <div class="flip-card-front">
+                <img
+                  src="images/tin-tuc/va-roi-chang-con-ai-tieu-thuyet.png"
+                  alt="Và rồi chẳng còn ai"
+                />
+                <div class="card-overlay-text">
+                  <h3>Và rồi chẳng còn ai</h3>
+                  <p>Tiểu thuyết trinh thám bán chạy nhất mọi thời đại</p>
+                </div>
+              </div>
+              <!-- MẶT SAU -->
+              <div class="flip-card-back">
+                <h3>Và rồi chẳng còn ai</h3>
+                <p>
+                  Kiệt tác đỉnh cao của Nữ hoàng trinh thám Agatha Christie với
+                  hơn 100 triệu bản được bán ra, giữ kỷ lục cuốn tiểu thuyết
+                  trinh thám - ly kỳ ăn khách nhất trong lịch sử văn học nhân loại.
+                </p>
               </div>
             </div>
           </div>
@@ -307,16 +600,47 @@
       </section>
     </main>
 
-    <!-- === SECTION 6: FOOTER === -->
-    <footer id="site-footer" class="minimal-footer">
+    <!-- === SECTION 6: FOOTER (EDITORIAL 3 CỘT VỚI SDG 4) === -->
+    <footer id="site-footer" class="editorial-footer">
       <div class="footer-container">
-        <p class="copyright">
-          © 2026 Distil. Curated &amp; Coded by Lê Hoàng Nam, Trường Giang, Gia Hoàng, Văn Lâm, Văn Tâm &amp; Gia Hưng.
-        </p>
-        <a href="#hero" class="back-to-top">Trở về trang bìa</a>
-      </div>
+        <!-- Cột 1: Thương hiệu -->
+        <div class="footer-col footer-col-brand">
+          <a href="#" class="footer-brand-logo">Distil</a>
+          <p class="footer-tagline">Không gian triển lãm văn học tương tác.</p>
+        </div>
+
+        <!-- Cột 2: Thông điệp SDG 4 (Mục tiêu Giáo dục) -->
+        <div class="footer-col footer-col-sdg">
+          <h4 class="sdg-title">
+            <span class="sdg-tag">SDG 04:</span> GIÁO DỤC CHẤT LƯỢNG
+          </h4>
+          <p class="sdg-quote">
+            <em>"Vì tri thức là đặc quyền không của riêng ai."</em>
+          </p>
+          <p class="sdg-desc">
+            Distil đồng hành cùng sứ mệnh kiến tạo một không gian tri thức phi
+            ranh giới. Chúng tôi tin rằng một nền giáo dục hòa nhập, công bằng
+            và hành trình học tập suốt đời chính là chiếc chìa khóa vạn năng
+            khơi dậy tiềm năng vô hạn của mỗi con người. Mỗi trang sách mở ra là
+            một cơ hội được thắp sáng.
+          </p>
+        </div>
+
+        <!-- Cột 3: Điều hướng & Credits -->
+        <div class="footer-col footer-col-nav">
+          <a href="#hero" class="btn-back-top">TRỞ VỀ TRANG BÌA</a>
+          <div class="copyright">
+            © 2026 Distil. Curated <br>
+            Coded by Le Hoang Kim Duyen &amp;
+            Nguyen Thi Minh Thu.
+      </div></div>
     </footer>
 
+    <!-- Thư viện AOS (Animate On Scroll) JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Script chính của dự án -->
     <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
