@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Không gian Cá nhân — Triển lãm Nghệ thuật Ngôn từ</title>
+
+    <!-- Google Fonts: Playfair Display & Be Vietnam Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet dùng chung của toàn dự án -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* Bổ sung tùy chỉnh riêng cho trang Profile */
+      .profile-main {
+        padding: 140px 10% 100px 10%;
+        max-width: 1440px;
+        margin: 0 auto;
+        min-height: calc(100vh - 100px);
+      }
+
+      /* Khu vực Profile: Avatar & Tên người dùng */
+      .profile-hero {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--clr-border);
+      }
+
+      .profile-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--clr-surface);
+        border: 2px solid var(--clr-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: var(--clr-primary);
+        flex-shrink: 0;
+        box-shadow: 0 4px 16px rgba(45, 26, 26, 0.04);
+      }
+
+      .profile-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .profile-name {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--clr-text-main);
+        line-height: 1.2;
+      }
+
+      .profile-role {
+        font-size: 0.875rem;
+        color: var(--clr-text-muted);
+        letter-spacing: 0.04em;
+      }
+
+      /* Điều hướng Tabs (Yêu thích & Lịch sử) */
+      .profile-tabs {
+        display: flex;
+        gap: 40px;
+        margin: 48px 0 36px 0;
+      }
+
+      .tab-btn {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--clr-text-muted);
+        background: transparent;
+        border: none;
+        padding: 10px 0;
+        cursor: pointer;
+        position: relative;
+        transition: color 0.25s ease;
+      }
+
+      .tab-btn:hover {
+        color: var(--clr-primary);
+      }
+
+      .tab-btn.active {
+        font-weight: 600;
+        color: var(--clr-primary);
+      }
+
+      .tab-btn::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--clr-primary);
+        transition: width 0.3s ease;
+      }
+
+      .tab-btn.active::after {
+        width: 100%;
+      }
+
+      /* Lưới sách trang Profile: Grid 4 cột */
+      .profile-book-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        min-height: 280px;
+      }
+
+      /* Định dạng thẻ sách trên Profile */
+      .profile-book-grid .book-card {
+        transform: none; /* Thẻ sách trên profile giữ thẳng đứng thanh lịch */
+        background-color: var(--clr-surface);
+        border: 1px solid var(--clr-border);
+        border-radius: var(--radius-card);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 24px rgba(45, 26, 26, 0.03);
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .profile-book-grid .book-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--clr-primary);
+        box-shadow: 0 12px 32px rgba(45, 26, 26, 0.06);
+      }
+
+      .profile-book-grid .book-cover {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 1024px) {
+        .profile-book-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .profile-main {
+          padding: 110px 6% 60px 6%;
+        }
+
+        .profile-hero {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
+
+        .profile-tabs {
+          gap: 24px;
+          margin: 32px 0 24px 0;
+        }
+
+        .profile-book-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER NỔI (FIXED GLASS PANEL) -->
+    <header class="site-header glass-panel">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+          <span class="logo-name">Distil</span>
+          <span class="logo-domain">distilreview.com</span>
+        </a>
+        <nav class="main-nav" aria-label="Điều hướng chính">
+          <ul class="nav-links">
+            <li>
+              <a href="index.html#manifesto" class="nav-item">Giới thiệu</a>
+            </li>
+            <li><a href="index.html#emotions" class="nav-item">Cảm xúc</a></li>
+          </ul>
+        </nav>
+        <div class="auth-area">
+          <a href="index.html" class="nav-item" style="font-size: 0.875rem"
+            >Trang chủ</a
+          >
+          <a href="auth.html" class="btn-login" id="logout-btn">Đăng xuất</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH CÁ NHÂN -->
+    <main class="profile-main">
+      <!-- Hero Profile: Avatar & Tên người dùng -->
+      <section class="profile-hero">
+        <div class="profile-avatar" aria-label="Avatar người dùng">
+          <span>A</span>
+        </div>
+        <div class="profile-info">
+          <h3 class="profile-name">An Yên</h3>
+          <p class="profile-role">Người gìn giữ những trang sách</p>
+        </div>
+      </section>
+
+      <!-- Điều hướng Tabs -->
+      <nav
+        class="profile-tabs"
+        role="tablist"
+        aria-label="Lựa chọn danh mục lưu trữ"
+      >
+        <button
+          type="button"
+          class="tab-btn active"
+          role="tab"
+          aria-selected="true"
+          id="tab-favorites"
+        >
+          Sách Yêu Thích
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          role="tab"
+          aria-selected="false"
+          id="tab-history"
+        >
+          Lịch Sử Xem
+        </button>
+      </nav>
+
+      <!-- Lưới Thẻ Sách (Container trống để JS tự động render) -->
+      <section
+        class="profile-book-grid"
+        aria-label="Danh sách sách đã lưu"
+      ></section>
+    </main>
+
+    <!-- === FOOTER (EDITORIAL 3 CỘT VỚI SDG 4) === -->
+    <footer id="site-footer" class="editorial-footer">
+      <div class="footer-container">
+        <!-- Cột 1: Thương hiệu -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-brand-logo">L'Écrit</a>
+          <p class="footer-tagline">Không gian triển lãm văn học tương tác.</p>
+        </div>
+
+        <!-- Cột 2: Thông điệp SDG 4 (Mục tiêu Giáo dục) -->
+        <div class="footer-col footer-col-sdg">
+          <h4 class="sdg-title">
+            <span class="sdg-tag">SDG 04:</span> GIÁO DỤC CHẤT LƯỢNG
+          </h4>
+          <p class="sdg-quote">
+            <em>"Vì tri thức là đặc quyền không của riêng ai."</em>
+          </p>
+          <p class="sdg-desc">
+            Distil đồng hành cùng sứ mệnh kiến tạo một không gian tri thức phi
+            ranh giới. Chúng tôi tin rằng một nền giáo dục hòa nhập, công bằng
+            và hành trình học tập suốt đời chính là chiếc chìa khóa vạn năng
+            khơi dậy tiềm năng vô hạn của mỗi con người. Mỗi trang sách mở ra là
+            một cơ hội được thắp sáng.
+          </p>
+        </div>
+
+        <!-- Cột 3: Điều hướng & Credits -->
+        <div class="footer-col footer-col-nav">
+          <a
+            href="#"
+            class="btn-back-top"
+            onclick="
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              return false;
+            "
+            >TRỞ VỀ ĐẦU TRANG</a
+          >
+          <p class="copyright">
+            © 2026 Distil. Curated &amp; Coded by Le Hoang Kim Duyen &amp;
+            Nguyen Thi Minh Thu.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================================================
+       POPUP FOCUS MODAL (ĐỒNG BỘ NGUYÊN VẸN TỪ INDEX.HTML)
+       ========================================================================== -->
+    <!-- Lớp nền tối mờ toàn màn hình (Overlay z-index: 999) -->
+    <div class="book-overlay" aria-hidden="true"></div>
+
+    <!-- Khung hiển thị nổi (Pop-up Focus Container z-index: 1000) - Split View 2 Cột -->
+    <div
+      class="book-focus-container"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Chi tiết cuốn sách"
+    >
+      <!-- Nút đóng (X) -->
+      <button type="button" class="btn-close-focus" aria-label="Đóng chi tiết">
+        &times;
+      </button>
+
+      <div class="focus-split-view">
+        <!-- CỘT TRÁI (Left side): Khung sách dựng thẳng đứng, phong cách giấy tối giản -->
+        <div class="focus-col-left">
+          <div class="focus-book-preview">
+            <div
+              class="focus-book-cover"
+              role="img"
+              aria-label="Bìa sách trưng bày"
+            >
+              <img src="" alt="" />
+              <div class="focus-book-spine"></div>
+              <div class="focus-book-inner">
+                <span class="focus-book-tag">Distil Edition</span>
+                <h4 class="focus-book-title">Tên Cuốn Sách</h4>
+                <p class="focus-book-author">Tác giả</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI (Right side): Bảng nội dung giới thiệu chi tiết -->
+        <div class="focus-col-right">
+          <div class="detail-header-row">
+            <h3 class="detail-title">Tên Cuốn Sách</h3>
+            <button
+              type="button"
+              class="btn-heart-modal"
+              aria-label="Yêu thích"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </button>
+          </div>
+          <p class="detail-author">Tác giả: Tên Tác Giả</p>
+          <div class="detail-badge">Thể loại / Cảm xúc</div>
+          <div class="scrollable-summary">
+            <p class="detail-summary">
+              "Đoạn văn bản tóm tắt ngắn gọn hoặc trích dẫn sâu sắc của cuốn
+              sách nằm ở đây..."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script xử lý trang Profile & Modal -->
+    <script>
+      /* ==========================================================================
+         PROFILE SCRIPT: AUTH STATE, TABS, DYNAMIC RENDER & MODAL FOCUS
+         ========================================================================== */
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabFavorites = document.getElementById("tab-favorites");
+        const tabHistory = document.getElementById("tab-history");
+        const bookGrid = document.querySelector(".profile-book-grid");
+        const logoutBtn = document.getElementById("logout-btn");
+
+        const avatarInitialEl = document.querySelector(".profile-avatar span");
+        const profileNameEl = document.querySelector(".profile-name");
+
+        // Các phần tử Focus Modal
+        const bookOverlay = document.querySelector(".book-overlay");
+        const focusContainer = document.querySelector(".book-focus-container");
+        const closeBtn = document.querySelector(".btn-close-focus");
+
+        const focusTitle = focusContainer
+          ? focusContainer.querySelector(".focus-book-title")
+          : null;
+        const focusAuthor = focusContainer
+          ? focusContainer.querySelector(".focus-book-author")
+          : null;
+        const focusBookCoverImg = focusContainer
+          ? focusContainer.querySelector(".focus-book-cover img")
+          : null;
+        const detailTitle = focusContainer
+          ? focusContainer.querySelector(".detail-title")
+          : null;
+        const detailAuthor = focusContainer
+          ? focusContainer.querySelector(".detail-author")
+          : null;
+        const detailBadge = focusContainer
+          ? focusContainer.querySelector(".detail-badge")
+          : null;
+        const detailSummary = focusContainer
+          ? focusContainer.querySelector(".detail-summary")
+          : null;
+        const heartBtn = focusContainer
+          ? focusContainer.querySelector(".btn-heart-modal")
+          : null;
+
+        let currentActiveBook = null;
+        let currentTabType = "favorites";
+
+        // 1. Kiểm tra trạng thái xác thực và cập nhật UI thông tin người dùng
+        function checkAuthState() {
+          try {
+            const rawUser = localStorage.getItem("currentUser");
+            if (!rawUser) {
+              window.location.href = "auth.html";
+              return;
+            }
+
+            const user = JSON.parse(rawUser);
+            const name = (user && (user.name || user.username)) || "Độc giả";
+            const initial = name.trim().charAt(0).toUpperCase() || "A";
+
+            if (profileNameEl) profileNameEl.textContent = name;
+            if (avatarInitialEl) avatarInitialEl.textContent = initial;
+          } catch (err) {
+            console.error("Lỗi parse currentUser:", err);
+            window.location.href = "auth.html";
+          }
+        }
+
+        // 2. Logic Modal Focus
+        const updateModalHeartUI = (bookId) => {
+          if (!heartBtn) return;
+          try {
+            const raw = localStorage.getItem("favoriteBooks");
+            const favs = raw ? JSON.parse(raw) : [];
+            const isFav = favs.some((b) => String(b.id) === String(bookId));
+            if (isFav) {
+              heartBtn.classList.add("is-loved");
+              heartBtn.setAttribute("aria-pressed", "true");
+            } else {
+              heartBtn.classList.remove("is-loved");
+              heartBtn.setAttribute("aria-pressed", "false");
+            }
+          } catch (err) {
+            console.error("Lỗi đọc favoriteBooks:", err);
+          }
+        };
+
+        const closeFocus = () => {
+          if (!focusContainer || !bookOverlay) return;
+          focusContainer.classList.remove("is-active");
+          bookOverlay.classList.remove("is-active");
+          const allCards = document.querySelectorAll(
+            ".profile-book-grid .book-card",
+          );
+          allCards.forEach((c) => c.classList.remove("is-active"));
+          document.body.style.overflow = "";
+          currentActiveBook = null;
+        };
+
+        const openFocus = (card) => {
+          if (!focusContainer || !bookOverlay) return;
+
+          // Trích xuất dữ liệu từ dataset hoặc khối book-detail-data
+          const id = card.dataset.id || "0";
+          const detailData = card.querySelector(".book-detail-data");
+
+          const title =
+            card.dataset.title ||
+            detailData?.querySelector(".detail-title")?.textContent ||
+            card.querySelector(".book-title")?.textContent ||
+            "Tác phẩm";
+          const author =
+            card.dataset.author ||
+            detailData
+              ?.querySelector(".detail-author")
+              ?.textContent?.replace(/^Tác giả:\s*/i, "") ||
+            card.querySelector(".book-author")?.textContent ||
+            "Tác giả";
+          const badge =
+            card.dataset.badge ||
+            detailData?.querySelector(".detail-badge")?.textContent ||
+            "Kỳ quan Văn học";
+          const summary =
+            card.dataset.summary ||
+            detailData?.querySelector(".detail-summary")?.textContent ||
+            "";
+          const cover =
+            card.dataset.cover ||
+            card.querySelector(".book-cover img")?.getAttribute("src") ||
+            "";
+
+          currentActiveBook = { id, title, author, badge, summary, cover };
+
+          // Đổ dữ liệu vào Cột Phải
+          if (detailTitle) detailTitle.textContent = title;
+          if (detailAuthor) detailAuthor.textContent = `Tác giả: ${author}`;
+          if (detailBadge) detailBadge.textContent = badge;
+          if (detailSummary) detailSummary.textContent = summary;
+
+          // Đổ dữ liệu vào Cột Trái
+          if (focusTitle) focusTitle.textContent = title;
+          if (focusAuthor) focusAuthor.textContent = author;
+          if (focusBookCoverImg) {
+            focusBookCoverImg.src = cover;
+            focusBookCoverImg.alt = `Bìa sách ${title}`;
+          }
+
+          updateModalHeartUI(id);
+
+          // Kích hoạt hiển thị Modal
+          const allCards = document.querySelectorAll(
+            ".profile-book-grid .book-card",
+          );
+          allCards.forEach((c) => c.classList.remove("is-active"));
+          card.classList.add("is-active");
+          bookOverlay.classList.add("is-active");
+          focusContainer.classList.add("is-active");
+          document.body.style.overflow = "hidden";
+        };
+
+        // 3. Render danh sách sách theo Tab
+        function renderBooks(type) {
+          if (!bookGrid) return;
+          currentTabType = type;
+
+          const storageKey =
+            type === "history" ? "readHistory" : "favoriteBooks";
+          let books = [];
+
+          try {
+            const rawData = localStorage.getItem(storageKey);
+            books = rawData ? JSON.parse(rawData) : [];
+          } catch (e) {
+            console.error(`Lỗi đọc ${storageKey}:`, e);
+            books = [];
+          }
+
+          // Lấy danh sách ID yêu thích để check hiển thị icon tim
+          let favoriteIds = new Set();
+          try {
+            const rawFavs = localStorage.getItem("favoriteBooks");
+            const favList = rawFavs ? JSON.parse(rawFavs) : [];
+            favoriteIds = new Set(favList.map((b) => String(b.id)));
+          } catch (e) {
+            console.error("Lỗi đọc favoriteBooks:", e);
+          }
+
+          bookGrid.innerHTML = "";
+
+          // Trạng thái trống (Empty State)
+          if (books.length === 0) {
+            const emptyMsg =
+              type === "history"
+                ? "Bạn chưa xem cuốn sách nào gần đây."
+                : "Chưa có cuốn sách nào trong danh sách yêu thích.";
+
+            bookGrid.innerHTML = `
+              <div style="grid-column: 1 / -1; padding: 60px 0; text-align: left; color: var(--clr-text-muted);">
+                <p style="font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8;">
+                  ${emptyMsg}
+                </p>
+              </div>
+            `;
+            return;
+          }
+
+          // Tạo chuỗi HTML cho danh sách sách
+          const cardsHTML = books
+            .map((book) => {
+              const isFav =
+                type === "favorites" || favoriteIds.has(String(book.id));
+              const heartIconHTML = isFav
+                ? `
+                <svg class="card-heart-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                `
+                : "";
+
+              const bookCoverSrc = book.cover || book.image || "";
+              const badgeText =
+                book.badge ||
+                (type === "history" ? "Lịch sử xem" : "Yêu thích");
+              const summaryText =
+                book.summary ||
+                `Tác phẩm kinh điển "${book.title}" của tác giả ${book.author}. Một áng văn lắng đọng mang lại nhiều chiêm nghiệm sâu sắc cho độc giả.`;
+
+              return `
+              <article class="book-card" 
+                data-id="${book.id}" 
+                data-title="${book.title}" 
+                data-author="${book.author}" 
+                data-cover="${bookCoverSrc}" 
+                data-badge="${badgeText}" 
+                data-summary="${summaryText}"
+                tabindex="0"
+                role="button"
+                aria-label="Khám phá chi tiết sách ${book.title}"
+              >
+                ${heartIconHTML}
+                <div class="book-cover" role="img" aria-label="Bìa sách ${book.title}">
+                  <img src="${bookCoverSrc}" alt="Bìa sách ${book.title}" />
+                </div>
+                <div class="book-details">
+                  <h4 class="book-title">${book.title}</h4>
+                  <p class="book-author">${book.author}</p>
+                </div>
+                <!-- Khối dữ liệu chi tiết ẩn dành cho Modal -->
+                <div class="book-detail-data" hidden>
+                  <h3 class="detail-title">${book.title}</h3>
+                  <p class="detail-author">Tác giả: ${book.author}</p>
+                  <div class="detail-badge">${badgeText}</div>
+                  <p class="detail-summary">${summaryText}</p>
+                </div>
+              </article>
+            `;
+            })
+            .join("");
+
+          bookGrid.insertAdjacentHTML("beforeend", cardsHTML);
+
+          // Gắn sự kiện click mở Focus Modal cho các thẻ sách vừa render
+          const renderedCards = bookGrid.querySelectorAll(".book-card");
+          renderedCards.forEach((card) => {
+            card.addEventListener("click", () => {
+              openFocus(card);
+            });
+
+            card.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openFocus(card);
+              }
+            });
+          });
+        }
+
+        // 4. Thao tác nút Tim trong Modal
+        if (heartBtn) {
+          heartBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (!currentActiveBook) return;
+
+            try {
+              const raw = localStorage.getItem("favoriteBooks");
+              let favs = raw ? JSON.parse(raw) : [];
+              const idx = favs.findIndex(
+                (b) => String(b.id) === String(currentActiveBook.id),
+              );
+
+              if (idx !== -1) {
+                // Bỏ yêu thích
+                favs.splice(idx, 1);
+                heartBtn.classList.remove("is-loved");
+                heartBtn.setAttribute("aria-pressed", "false");
+              } else {
+                // Thêm yêu thích
+                favs.push(currentActiveBook);
+                heartBtn.classList.add("is-loved");
+                heartBtn.setAttribute("aria-pressed", "true");
+              }
+
+              localStorage.setItem("favoriteBooks", JSON.stringify(favs));
+
+              // Tự động re-render lại tab nếu đang ở tab favorites để cập nhật danh sách
+              if (currentTabType === "favorites") {
+                renderBooks("favorites");
+              } else {
+                // Cập nhật lại icon tim trên thẻ trong tab history
+                const targetCard = bookGrid.querySelector(
+                  `.book-card[data-id="${currentActiveBook.id}"]`,
+                );
+                if (targetCard) {
+                  let existingIcon =
+                    targetCard.querySelector(".card-heart-icon");
+                  const isFavNow = favs.some(
+                    (b) => String(b.id) === String(currentActiveBook.id),
+                  );
+                  if (isFavNow && !existingIcon) {
+                    targetCard.insertAdjacentHTML(
+                      "afterbegin",
+                      `<svg class="card-heart-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                      </svg>`,
+                    );
+                  } else if (!isFavNow && existingIcon) {
+                    existingIcon.remove();
+                  }
+                }
+              }
+            } catch (err) {
+              console.error("Lỗi cập nhật favoriteBooks:", err);
+            }
+          });
+        }
+
+        // Đóng modal
+        if (bookOverlay) bookOverlay.addEventListener("click", closeFocus);
+        if (closeBtn) {
+          closeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeFocus();
+          });
+        }
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            focusContainer &&
+            focusContainer.classList.contains("is-active")
+          ) {
+            closeFocus();
+          }
+        });
+
+        // 5. Xử lý chuyển Tabs
+        if (tabFavorites && tabHistory) {
+          tabFavorites.addEventListener("click", () => {
+            tabFavorites.classList.add("active");
+            tabFavorites.setAttribute("aria-selected", "true");
+            tabHistory.classList.remove("active");
+            tabHistory.setAttribute("aria-selected", "false");
+            renderBooks("favorites");
+          });
+
+          tabHistory.addEventListener("click", () => {
+            tabHistory.classList.add("active");
+            tabHistory.setAttribute("aria-selected", "true");
+            tabFavorites.classList.remove("active");
+            tabFavorites.setAttribute("aria-selected", "false");
+            renderBooks("history");
+          });
+        }
+
+        // 6. Xử lý Đăng xuất
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.removeItem("currentUser");
+            window.location.href = "index.html";
+          });
+        }
+
+        // Khởi chạy khi load trang
+        checkAuthState();
+        renderBooks("favorites");
+      });
+    </script>
+  </body>
+</html>
