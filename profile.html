@@ -183,7 +183,14 @@
     <header class="site-header glass-panel">
       <div class="nav-container">
         <a href="index.html" class="brand-logo">
-          <span class="logo-name">Distil</span>
+          <div class="logo-brand-row">
+            <span class="logo-name">Distil</span>
+            <img
+              src="images/LogoTD.PNG"
+              alt="Distil Logo"
+              class="brand-logo-img"
+            />
+          </div>
           <span class="logo-domain">distilreview.com</span>
         </a>
         <nav class="main-nav" aria-label="Điều hướng chính">
@@ -406,6 +413,7 @@
 
         let currentActiveBook = null;
         let currentTabType = "favorites";
+        let currentUserId = "guest";
 
         // 1. Kiểm tra trạng thái xác thực và cập nhật UI thông tin người dùng
         function checkAuthState() {
@@ -418,21 +426,34 @@
 
             const user = JSON.parse(rawUser);
             const name = (user && (user.name || user.username)) || "Độc giả";
+            currentUserId =
+              (user && (user.username || user.email || user.name || user.id)) ||
+              "guest";
             const initial = name.trim().charAt(0).toUpperCase() || "A";
 
             if (profileNameEl) profileNameEl.textContent = name;
             if (avatarInitialEl) avatarInitialEl.textContent = initial;
+
+            const profileRoleEl = document.querySelector(".profile-role");
+            if (profileRoleEl) {
+              if (user && user.email) {
+                profileRoleEl.textContent = `${user.email} • Không gian lưu trữ cá nhân`;
+              } else {
+                profileRoleEl.textContent = "Không gian lưu trữ cá nhân";
+              }
+            }
           } catch (err) {
             console.error("Lỗi parse currentUser:", err);
             window.location.href = "auth.html";
           }
         }
 
-        // 2. Logic Modal Focus
+        // 2. Logic Modal Focus (Phân biệt theo tài khoản)
         const updateModalHeartUI = (bookId) => {
           if (!heartBtn) return;
+          const favKey = `favorites_${currentUserId}`;
           try {
-            const raw = localStorage.getItem("favoriteBooks");
+            const raw = localStorage.getItem(favKey);
             const favs = raw ? JSON.parse(raw) : [];
             const isFav = favs.some((b) => String(b.id) === String(bookId));
             if (isFav) {
@@ -443,7 +464,7 @@
               heartBtn.setAttribute("aria-pressed", "false");
             }
           } catch (err) {
-            console.error("Lỗi đọc favoriteBooks:", err);
+            console.error(`Lỗi đọc ${favKey}:`, err);
           }
         };
 
@@ -520,13 +541,15 @@
           document.body.style.overflow = "hidden";
         };
 
-        // 3. Render danh sách sách theo Tab
+        // 3. Render danh sách sách theo Tab (Theo tài khoản hiện tại)
         function renderBooks(type) {
           if (!bookGrid) return;
           currentTabType = type;
 
           const storageKey =
-            type === "history" ? "readHistory" : "favoriteBooks";
+            type === "history"
+              ? `viewHistory_${currentUserId}`
+              : `favorites_${currentUserId}`;
           let books = [];
 
           try {
@@ -537,14 +560,14 @@
             books = [];
           }
 
-          // Lấy danh sách ID yêu thích để check hiển thị icon tim
+          // Lấy danh sách ID yêu thích của tài khoản hiện tại để check hiển thị icon tim
           let favoriteIds = new Set();
           try {
-            const rawFavs = localStorage.getItem("favoriteBooks");
+            const rawFavs = localStorage.getItem(`favorites_${currentUserId}`);
             const favList = rawFavs ? JSON.parse(rawFavs) : [];
             favoriteIds = new Set(favList.map((b) => String(b.id)));
           } catch (e) {
-            console.error("Lỗi đọc favoriteBooks:", e);
+            console.error(`Lỗi đọc favorites_${currentUserId}:`, e);
           }
 
           bookGrid.innerHTML = "";
@@ -637,14 +660,15 @@
           });
         }
 
-        // 4. Thao tác nút Tim trong Modal
+        // 4. Thao tác nút Tim trong Modal (Theo tài khoản hiện tại)
         if (heartBtn) {
           heartBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             if (!currentActiveBook) return;
 
+            const favKey = `favorites_${currentUserId}`;
             try {
-              const raw = localStorage.getItem("favoriteBooks");
+              const raw = localStorage.getItem(favKey);
               let favs = raw ? JSON.parse(raw) : [];
               const idx = favs.findIndex(
                 (b) => String(b.id) === String(currentActiveBook.id),
@@ -662,7 +686,7 @@
                 heartBtn.setAttribute("aria-pressed", "true");
               }
 
-              localStorage.setItem("favoriteBooks", JSON.stringify(favs));
+              localStorage.setItem(favKey, JSON.stringify(favs));
 
               // Tự động re-render lại tab nếu đang ở tab favorites để cập nhật danh sách
               if (currentTabType === "favorites") {
@@ -691,7 +715,7 @@
                 }
               }
             } catch (err) {
-              console.error("Lỗi cập nhật favoriteBooks:", err);
+              console.error(`Lỗi cập nhật ${favKey}:`, err);
             }
           });
         }

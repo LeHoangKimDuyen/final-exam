@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
 
@@ -68,14 +68,57 @@
         border-right: 1px solid var(--clr-border);
       }
 
-      .brand-back-link {
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
+      .brand-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        align-self: flex-start;
+        transition: opacity 0.25s ease;
+      }
+
+      .brand-logo:hover {
+        opacity: 0.85;
+      }
+
+      .logo-brand-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.125rem;
         font-weight: 700;
         color: var(--clr-primary);
-        text-decoration: none;
-        letter-spacing: 0.04em;
-        align-self: flex-start;
+        line-height: 1;
+        letter-spacing: 0.01em;
+      }
+
+      .brand-logo-img {
+        height: 36px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .brand-logo:hover .brand-logo-img {
+        transform: scale(1.05);
+      }
+
+      .logo-domain {
+        font-family: var(--font-body);
+        font-size: 0.46rem;
+        font-weight: 500;
+        color: var(--clr-primary);
+        text-transform: lowercase;
+        letter-spacing: 0.22em;
+        line-height: 1;
+        margin-top: 4px;
       }
 
       .quote-wrapper {
@@ -220,6 +263,63 @@
         text-decoration: underline;
       }
 
+      /* Liên kết trợ giúp & Quên mật khẩu */
+      .form-help-row {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -16px;
+        margin-bottom: 24px;
+      }
+
+      .forgot-link {
+        font-size: 0.8125rem;
+        color: var(--clr-text-muted);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        transition: color 0.2s ease;
+      }
+
+      .forgot-link:hover {
+        color: var(--clr-primary);
+        text-decoration: underline;
+      }
+
+      /* Khối thông báo lỗi / thành công chuẩn Editorial */
+      .auth-alert {
+        display: none;
+        padding: 12px 16px;
+        border-radius: 2px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        transition: opacity 0.25s ease;
+      }
+
+      .auth-alert.is-visible {
+        display: block;
+      }
+
+      .auth-alert-error {
+        background-color: #fbf0ee;
+        border: 1px solid var(--clr-primary);
+        color: var(--clr-primary);
+      }
+
+      .auth-alert-success {
+        background-color: #f2f7f2;
+        border: 1px solid #2d6a4f;
+        color: #1b4332;
+      }
+
+      /* Chuyển đổi mượt mà giữa Đăng nhập và Đăng ký */
+      .auth-view {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .auth-view.is-hidden {
+        display: none;
+      }
+
       /* ==========================================================================
        RESPONSIVE DESIGN (MOBILE - DƯỚI 768PX)
        ========================================================================== */
@@ -245,7 +345,17 @@
     <main class="auth-container">
       <!-- KHỐI TRÁI: Trích dẫn văn học nghệ thuật (45%) -->
       <aside class="auth-quote-panel">
-        <a href="index.html" class="brand-back-link">L'Écrit</a>
+        <a href="index.html" class="brand-logo" aria-label="Trở về trang chủ Distil">
+          <div class="logo-brand-row">
+            <span class="logo-name">Distil</span>
+            <img
+              src="images/LogoTD.PNG"
+              alt="Distil Logo"
+              class="brand-logo-img"
+            />
+          </div>
+          <span class="logo-domain">distilreview.com</span>
+        </a>
 
         <div class="quote-wrapper">
           <blockquote class="editorial-quote">
@@ -261,110 +371,663 @@
       <!-- KHỐI PHẢI: Form Đăng nhập (55%) -->
       <section class="auth-form-panel">
         <div class="auth-form-wrapper">
-          <header class="form-header">
-            <h2 class="form-title">Đăng nhập</h2>
-            <p class="form-subtitle">
-              Bước vào hành trình chiêm nghiệm và lưu giữ những áng văn bất tận.
-            </p>
-          </header>
+          <!-- VIEW 1: FORM ĐĂNG NHẬP -->
+          <div id="login-view" class="auth-view">
+            <header class="form-header">
+              <h2 class="form-title">Đăng nhập</h2>
+              <p class="form-subtitle">
+                Bước vào hành trình chiêm nghiệm và lưu giữ những áng văn bất tận.
+              </p>
+            </header>
 
-          <form id="login-form" novalidate>
-            <div class="form-group">
-              <label for="username-input" class="form-label"
-                >Tên tài khoản</label
-              >
-              <input
-                type="text"
-                id="username-input"
-                name="username"
-                class="form-input"
-                placeholder="Nhập tên tài khoản..."
-                autocomplete="username"
-                required
-              />
-            </div>
+            <div id="login-alert" class="auth-alert" role="alert"></div>
 
-            <div class="form-group">
-              <label for="password-input" class="form-label">Mật khẩu</label>
-              <input
-                type="password"
-                id="password-input"
-                name="password"
-                class="form-input"
-                placeholder="••••••••"
-                autocomplete="current-password"
-                required
-              />
-            </div>
+            <form id="login-form" novalidate>
+              <div class="form-group">
+                <label for="username-input" class="form-label"
+                  >Tên tài khoản hoặc Gmail</label
+                >
+                <input
+                  type="text"
+                  id="username-input"
+                  name="username"
+                  class="form-input"
+                  placeholder="Nhập username hoặc dia_chi@gmail.com..."
+                  autocomplete="username"
+                  required
+                />
+              </div>
 
-            <button type="submit" class="btn-submit">Tiếp tục</button>
+              <div class="form-group">
+                <label for="password-input" class="form-label">Mật khẩu</label>
+                <input
+                  type="password"
+                  id="password-input"
+                  name="password"
+                  class="form-input"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
 
-            <footer class="form-footer">
-              <p>Chưa có tài khoản? <a href="#">Đăng ký lưu trữ</a></p>
-            </footer>
-          </form>
+              <div class="form-help-row">
+                <a href="#" id="go-to-forgot" class="forgot-link">Quên mật khẩu?</a>
+              </div>
+
+              <button type="submit" class="btn-submit">Đăng nhập</button>
+
+              <footer class="form-footer">
+                <p>
+                  Chưa có tài khoản?
+                  <a href="#" id="go-to-register">Đăng ký lưu trữ</a>
+                </p>
+              </footer>
+            </form>
+          </div>
+
+          <!-- VIEW 2: FORM ĐĂNG KÝ -->
+          <div id="register-view" class="auth-view is-hidden">
+            <header class="form-header">
+              <h2 class="form-title">Đăng ký tài khoản</h2>
+              <p class="form-subtitle">
+                Khởi tạo không gian riêng để lưu giữ những áng văn bạn yêu quý.
+              </p>
+            </header>
+
+            <div id="register-alert" class="auth-alert" role="alert"></div>
+
+            <form id="register-form" novalidate>
+              <div class="form-group">
+                <label for="reg-username-input" class="form-label"
+                  >Tên tài khoản</label
+                >
+                <input
+                  type="text"
+                  id="reg-username-input"
+                  name="reg-username"
+                  class="form-input"
+                  placeholder="Chọn tên tài khoản..."
+                  autocomplete="username"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="reg-email-input" class="form-label"
+                  >Email (Gmail)</label
+                >
+                <input
+                  type="email"
+                  id="reg-email-input"
+                  name="reg-email"
+                  class="form-input"
+                  placeholder="dia_chi@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="reg-password-input" class="form-label"
+                  >Mật khẩu</label
+                >
+                <input
+                  type="password"
+                  id="reg-password-input"
+                  name="reg-password"
+                  class="form-input"
+                  placeholder="Nhập mật khẩu (tối thiểu 3 ký tự)..."
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="reg-confirm-password-input" class="form-label"
+                  >Nhập lại mật khẩu</label
+                >
+                <input
+                  type="password"
+                  id="reg-confirm-password-input"
+                  name="reg-confirm-password"
+                  class="form-input"
+                  placeholder="Xác nhận lại mật khẩu..."
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="btn-submit">Tạo tài khoản</button>
+
+              <footer class="form-footer">
+                <p>
+                  Đã có tài khoản?
+                  <a href="#" id="go-to-login">Quay lại đăng nhập</a>
+                </p>
+              </footer>
+            </form>
+          </div>
+
+          <!-- VIEW 3: FORM QUÊN MẬT KHẨU -->
+          <div id="forgot-view" class="auth-view is-hidden">
+            <header class="form-header">
+              <h2 class="form-title">Khôi phục mật khẩu</h2>
+              <p class="form-subtitle">
+                Nhập địa chỉ Gmail đã đăng ký để xác minh và thiết lập mật khẩu mới.
+              </p>
+            </header>
+
+            <div id="forgot-alert" class="auth-alert" role="alert"></div>
+
+            <form id="forgot-form" novalidate>
+              <div class="form-group">
+                <label for="forgot-email-input" class="form-label"
+                  >Gmail đã đăng ký</label
+                >
+                <input
+                  type="email"
+                  id="forgot-email-input"
+                  name="forgot-email"
+                  class="form-input"
+                  placeholder="dia_chi@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="forgot-new-password-input" class="form-label"
+                  >Mật khẩu mới</label
+                >
+                <input
+                  type="password"
+                  id="forgot-new-password-input"
+                  name="forgot-new-password"
+                  class="form-input"
+                  placeholder="Nhập mật khẩu mới (tối thiểu 3 ký tự)..."
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="forgot-confirm-password-input" class="form-label"
+                  >Nhập lại mật khẩu mới</label
+                >
+                <input
+                  type="password"
+                  id="forgot-confirm-password-input"
+                  name="forgot-confirm-password"
+                  class="form-input"
+                  placeholder="Xác nhận lại mật khẩu mới..."
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="btn-submit">Đặt lại mật khẩu</button>
+
+              <footer class="form-footer">
+                <p>
+                  Đã nhớ mật khẩu?
+                  <a href="#" id="forgot-to-login">Quay lại đăng nhập</a>
+                </p>
+              </footer>
+            </form>
+          </div>
         </div>
       </section>
     </main>
   </body>
   <script>
     /* ==========================================================================
-       AUTH SCRIPT: GIẢ LẬP ĐĂNG NHẬP BẰNG LOCALSTORAGE
+       AUTH SCRIPT: XÁC THỰC ĐĂNG NHẬP, ĐĂNG KÝ, QUÊN MẬT KHẨU & LOCALSTORAGE
        ========================================================================== */
     document.addEventListener("DOMContentLoaded", () => {
+      // Các phần tử View
+      const loginView = document.getElementById("login-view");
+      const registerView = document.getElementById("register-view");
+      const forgotView = document.getElementById("forgot-view");
+
+      const goToRegister = document.getElementById("go-to-register");
+      const goToLogin = document.getElementById("go-to-login");
+      const goToForgot = document.getElementById("go-to-forgot");
+      const forgotToLogin = document.getElementById("forgot-to-login");
+
+      // Login Form elements
       const loginForm = document.getElementById("login-form");
       const usernameInput = document.getElementById("username-input");
+      const passwordInput = document.getElementById("password-input");
+      const loginAlert = document.getElementById("login-alert");
 
-      if (!loginForm || !usernameInput) return;
+      // Register Form elements
+      const registerForm = document.getElementById("register-form");
+      const regUsernameInput = document.getElementById("reg-username-input");
+      const regEmailInput = document.getElementById("reg-email-input");
+      const regPasswordInput = document.getElementById("reg-password-input");
+      const regConfirmPasswordInput = document.getElementById(
+        "reg-confirm-password-input",
+      );
+      const registerAlert = document.getElementById("register-alert");
 
-      loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+      // Forgot Form elements
+      const forgotForm = document.getElementById("forgot-form");
+      const forgotEmailInput = document.getElementById("forgot-email-input");
+      const forgotNewPasswordInput = document.getElementById(
+        "forgot-new-password-input",
+      );
+      const forgotConfirmPasswordInput = document.getElementById(
+        "forgot-confirm-password-input",
+      );
+      const forgotAlert = document.getElementById("forgot-alert");
 
-        const username = usernameInput.value.trim();
-        if (!username) {
-          usernameInput.focus();
-          return;
+      // Hàm hiển thị thông báo
+      function showAlert(el, msg, type = "error") {
+        if (!el) return;
+        el.textContent = msg;
+        el.className = `auth-alert is-visible auth-alert-${type}`;
+      }
+
+      function hideAlert(el) {
+        if (!el) return;
+        el.textContent = "";
+        el.className = "auth-alert";
+      }
+
+      // Hàm chuyển đổi giữa các View mượt mà
+      function switchView(targetView) {
+        [loginAlert, registerAlert, forgotAlert].forEach(hideAlert);
+        [loginView, registerView, forgotView].forEach((v) => {
+          if (v) v.classList.add("is-hidden");
+        });
+        if (targetView) targetView.classList.remove("is-hidden");
+      }
+
+      // Kiểm tra định dạng Gmail hợp lệ
+      function isValidGmail(email) {
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
+        return gmailRegex.test(email);
+      }
+
+      // Khởi tạo tài khoản mẫu ban đầu nếu registered_users chưa tồn tại hoặc thiếu Gmail
+      function initSampleUser() {
+        try {
+          const raw = localStorage.getItem("registered_users");
+          let users = raw ? JSON.parse(raw) : [];
+          const adminIdx = users.findIndex(
+            (u) => u.username && u.username.toLowerCase() === "admin",
+          );
+
+          if (adminIdx === -1) {
+            users.unshift({
+              username: "admin",
+              email: "admin@gmail.com",
+              password: "123",
+              createdAt: new Date().toISOString(),
+            });
+            localStorage.setItem("registered_users", JSON.stringify(users));
+          } else if (!users[adminIdx].email) {
+            users[adminIdx].email = "admin@gmail.com";
+            localStorage.setItem("registered_users", JSON.stringify(users));
+          }
+        } catch (e) {
+          console.error("Lỗi khởi tạo registered_users:", e);
         }
+      }
+      initSampleUser();
 
-        // Lưu thông tin người dùng vào localStorage
-        const userObj = {
-          name: username,
-          loggedInAt: new Date().toISOString(),
-        };
-        localStorage.setItem("currentUser", JSON.stringify(userObj));
+      // Điều hướng giữa các View
+      if (goToRegister) {
+        goToRegister.addEventListener("click", (e) => {
+          e.preventDefault();
+          switchView(registerView);
+          if (regUsernameInput) regUsernameInput.focus();
+        });
+      }
 
-        // Chuyển hướng về trang chủ
-        window.location.href = "index.html";
-      });
-    });
-    /* ==========================================================================
-       AUTH SCRIPT: GIẢ LẬP ĐĂNG NHẬP BẰNG LOCALSTORAGE
-       ========================================================================== */
-    document.addEventListener("DOMContentLoaded", () => {
-      const loginForm = document.getElementById("login-form");
-      const usernameInput = document.getElementById("username-input");
+      if (goToLogin) {
+        goToLogin.addEventListener("click", (e) => {
+          e.preventDefault();
+          switchView(loginView);
+          if (usernameInput) usernameInput.focus();
+        });
+      }
 
-      if (!loginForm || !usernameInput) return;
+      if (goToForgot) {
+        goToForgot.addEventListener("click", (e) => {
+          e.preventDefault();
+          switchView(forgotView);
+          if (forgotEmailInput) forgotEmailInput.focus();
+        });
+      }
 
-      loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+      if (forgotToLogin) {
+        forgotToLogin.addEventListener("click", (e) => {
+          e.preventDefault();
+          switchView(loginView);
+          if (usernameInput) usernameInput.focus();
+        });
+      }
 
-        const username = usernameInput.value.trim();
-        if (!username) {
-          usernameInput.focus();
-          return;
-        }
+      // 1. Xử lý ĐĂNG NHẬP (Bằng Username hoặc Gmail)
+      if (loginForm) {
+        loginForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          hideAlert(loginAlert);
 
-        // Lưu thông tin người dùng vào localStorage
-        const userObj = {
-          name: username,
-          loggedInAt: new Date().toISOString(),
-        };
-        localStorage.setItem("currentUser", JSON.stringify(userObj));
+          const identifier = usernameInput ? usernameInput.value.trim() : "";
+          const password = passwordInput ? passwordInput.value : "";
 
-        // Chuyển hướng về trang chủ
-        window.location.href = "index.html";
-      });
+          // Kiểm tra để trống
+          if (!identifier || !password) {
+            showAlert(
+              loginAlert,
+              "Vui lòng nhập đầy đủ tên tài khoản/Gmail và mật khẩu!",
+              "error",
+            );
+            if (!identifier && usernameInput) usernameInput.focus();
+            else if (!password && passwordInput) passwordInput.focus();
+            return;
+          }
+
+          // Lấy danh sách tài khoản trong localStorage
+          let users = [];
+          try {
+            const raw = localStorage.getItem("registered_users");
+            users = raw ? JSON.parse(raw) : [];
+          } catch (err) {
+            console.error("Lỗi đọc registered_users:", err);
+          }
+
+          // Cho phép đăng nhập bằng Username HOẶC Gmail
+          const matchedUser = users.find(
+            (u) =>
+              (u.username &&
+                u.username.toLowerCase() === identifier.toLowerCase()) ||
+              (u.email && u.email.toLowerCase() === identifier.toLowerCase()),
+          );
+
+          if (!matchedUser || matchedUser.password !== password) {
+            showAlert(
+              loginAlert,
+              "Tên đăng nhập / Gmail hoặc mật khẩu không chính xác!",
+              "error",
+            );
+            if (passwordInput) {
+              passwordInput.value = "";
+              passwordInput.focus();
+            }
+            return;
+          }
+
+          // Đăng nhập hợp lệ -> lưu currentUser vào localStorage với thông tin nhất quán
+          const userObj = {
+            id: matchedUser.username,
+            username: matchedUser.username,
+            email: matchedUser.email || "",
+            name: matchedUser.username,
+            loggedInAt: new Date().toISOString(),
+          };
+          localStorage.setItem("currentUser", JSON.stringify(userObj));
+
+          // Chuyển hướng sang trang chủ
+          window.location.href = "index.html";
+        });
+      }
+
+      // 2. Xử lý ĐĂNG KÝ (Bắt buộc Gmail, kiểm tra duy nhất)
+      if (registerForm) {
+        registerForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          hideAlert(registerAlert);
+
+          const username = regUsernameInput ? regUsernameInput.value.trim() : "";
+          const email = regEmailInput ? regEmailInput.value.trim() : "";
+          const password = regPasswordInput ? regPasswordInput.value : "";
+          const confirmPassword = regConfirmPasswordInput
+            ? regConfirmPasswordInput.value
+            : "";
+
+          // Kiểm tra để trống
+          if (!username || !email || !password || !confirmPassword) {
+            showAlert(
+              registerAlert,
+              "Vui lòng điền đầy đủ tất cả các trường thông tin!",
+              "error",
+            );
+            return;
+          }
+
+          // Kiểm tra độ dài tên tài khoản
+          if (username.length < 3) {
+            showAlert(
+              registerAlert,
+              "Tên tài khoản phải có độ dài tối thiểu từ 3 ký tự!",
+              "error",
+            );
+            if (regUsernameInput) regUsernameInput.focus();
+            return;
+          }
+
+          // Kiểm tra định dạng Gmail
+          if (!isValidGmail(email)) {
+            showAlert(
+              registerAlert,
+              "Vui lòng nhập đúng định dạng Gmail (kết thúc bằng @gmail.com)!",
+              "error",
+            );
+            if (regEmailInput) regEmailInput.focus();
+            return;
+          }
+
+          // Kiểm tra độ dài mật khẩu tối thiểu
+          if (password.length < 3) {
+            showAlert(
+              registerAlert,
+              "Mật khẩu phải có độ dài tối thiểu từ 3 ký tự!",
+              "error",
+            );
+            if (regPasswordInput) regPasswordInput.focus();
+            return;
+          }
+
+          // Kiểm tra khớp mật khẩu xác nhận
+          if (password !== confirmPassword) {
+            showAlert(
+              registerAlert,
+              "Mật khẩu xác nhận không trùng khớp!",
+              "error",
+            );
+            if (regConfirmPasswordInput) {
+              regConfirmPasswordInput.value = "";
+              regConfirmPasswordInput.focus();
+            }
+            return;
+          }
+
+          // Lấy danh sách tài khoản hiện có
+          let users = [];
+          try {
+            const raw = localStorage.getItem("registered_users");
+            users = raw ? JSON.parse(raw) : [];
+          } catch (err) {
+            console.error("Lỗi đọc registered_users:", err);
+          }
+
+          // Kiểm tra trùng lặp tên tài khoản
+          const isUsernameTaken = users.some(
+            (u) => u.username && u.username.toLowerCase() === username.toLowerCase(),
+          );
+          if (isUsernameTaken) {
+            showAlert(
+              registerAlert,
+              "Tên tài khoản này đã được sử dụng! Vui lòng chọn tên khác.",
+              "error",
+            );
+            if (regUsernameInput) regUsernameInput.focus();
+            return;
+          }
+
+          // Kiểm tra ràng buộc quan trọng: 1 Gmail chỉ được đăng ký duy nhất 1 tài khoản
+          const isEmailTaken = users.some(
+            (u) => u.email && u.email.toLowerCase() === email.toLowerCase(),
+          );
+          if (isEmailTaken) {
+            showAlert(
+              registerAlert,
+              "Email này đã được sử dụng cho một tài khoản khác",
+              "error",
+            );
+            if (regEmailInput) regEmailInput.focus();
+            return;
+          }
+
+          // Thêm tài khoản mới vào hệ thống
+          const newUser = {
+            username: username,
+            email: email.toLowerCase(),
+            password: password,
+            createdAt: new Date().toISOString(),
+          };
+          users.push(newUser);
+          localStorage.setItem("registered_users", JSON.stringify(users));
+
+          // Thông báo thành công
+          showAlert(
+            registerAlert,
+            "Đăng ký tài khoản thành công! Đang chuyển về màn hình đăng nhập...",
+            "success",
+          );
+
+          // Reset form đăng ký
+          registerForm.reset();
+
+          // Tự động chuyển về form đăng nhập và điền sẵn email/username
+          setTimeout(() => {
+            switchView(loginView);
+            if (usernameInput) {
+              usernameInput.value = email;
+            }
+            if (passwordInput) {
+              passwordInput.value = "";
+              passwordInput.focus();
+            }
+          }, 1200);
+        });
+      }
+
+      // 3. Xử lý QUÊN MẬT KHẨU (Khôi phục bằng Gmail xác thực)
+      if (forgotForm) {
+        forgotForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          hideAlert(forgotAlert);
+
+          const email = forgotEmailInput ? forgotEmailInput.value.trim() : "";
+          const newPassword = forgotNewPasswordInput
+            ? forgotNewPasswordInput.value
+            : "";
+          const confirmPassword = forgotConfirmPasswordInput
+            ? forgotConfirmPasswordInput.value
+            : "";
+
+          // Kiểm tra để trống
+          if (!email || !newPassword || !confirmPassword) {
+            showAlert(
+              forgotAlert,
+              "Vui lòng điền đầy đủ tất cả các trường thông tin!",
+              "error",
+            );
+            return;
+          }
+
+          // Kiểm tra định dạng Gmail
+          if (!isValidGmail(email)) {
+            showAlert(
+              forgotAlert,
+              "Vui lòng nhập đúng định dạng Gmail (kết thúc bằng @gmail.com)!",
+              "error",
+            );
+            if (forgotEmailInput) forgotEmailInput.focus();
+            return;
+          }
+
+          // Lấy danh sách tài khoản
+          let users = [];
+          try {
+            const raw = localStorage.getItem("registered_users");
+            users = raw ? JSON.parse(raw) : [];
+          } catch (err) {
+            console.error("Lỗi đọc registered_users:", err);
+          }
+
+          // Kiểm tra Gmail có tồn tại trong hệ thống không
+          const userIndex = users.findIndex(
+            (u) => u.email && u.email.toLowerCase() === email.toLowerCase(),
+          );
+
+          if (userIndex === -1) {
+            showAlert(
+              forgotAlert,
+              "Email này chưa được đăng ký trong hệ thống!",
+              "error",
+            );
+            if (forgotEmailInput) forgotEmailInput.focus();
+            return;
+          }
+
+          // Kiểm tra độ dài mật khẩu mới
+          if (newPassword.length < 3) {
+            showAlert(
+              forgotAlert,
+              "Mật khẩu mới phải có độ dài tối thiểu từ 3 ký tự!",
+              "error",
+            );
+            if (forgotNewPasswordInput) forgotNewPasswordInput.focus();
+            return;
+          }
+
+          // Kiểm tra khớp mật khẩu mới
+          if (newPassword !== confirmPassword) {
+            showAlert(
+              forgotAlert,
+              "Mật khẩu xác nhận không trùng khớp!",
+              "error",
+            );
+            if (forgotConfirmPasswordInput) {
+              forgotConfirmPasswordInput.value = "";
+              forgotConfirmPasswordInput.focus();
+            }
+            return;
+          }
+
+          // Cập nhật mật khẩu mới cho tài khoản
+          users[userIndex].password = newPassword;
+          localStorage.setItem("registered_users", JSON.stringify(users));
+
+          // Thông báo thành công
+          showAlert(
+            forgotAlert,
+            "Đặt lại mật khẩu thành công! Đang chuyển về màn hình đăng nhập...",
+            "success",
+          );
+
+          // Reset form quên mật khẩu
+          forgotForm.reset();
+
+          // Chuyển về màn hình đăng nhập và điền sẵn Gmail
+          setTimeout(() => {
+            switchView(loginView);
+            if (usernameInput) {
+              usernameInput.value = email;
+            }
+            if (passwordInput) {
+              passwordInput.value = "";
+              passwordInput.focus();
+            }
+          }, 1200);
+        });
+      }
     });
   </script>
 </html>

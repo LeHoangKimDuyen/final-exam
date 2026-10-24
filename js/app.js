@@ -14,7 +14,7 @@ const bookDatabase = [
     badge: "Trinh thám Cổ điển",
     cover: "images/hoi-hop/an-mang-tren-chuyen-tau-toc-hanh-phuong-dong.webp",
     summary:
-      "Giữa bão tuyết chia cắt đoàn tàu tốc hành với thế giới văn minh, một tội ác hoàn hảo đã được dàn dựng với mười hai nhát dao đầy thù hận. Hercule Poirot không chỉ đối mặt với một câu đố logic hóc búa, mà còn đứng trước lằn ranh mong manh giữa luật pháp trần thế và công lý của lương tri. 'Điều không thể đã xảy ra, vì vậy điều không thể ấy ắt phải là sự thật.'",
+      "Đêm mùa đông buốt giá băng qua bán đảo Balkan, chuyến tàu sang trọng phương Đông bất ngờ bị bão tuyết cô lập giữa vùng hoang dã. Khi bình minh lên, triệu phú người Mỹ Samuel Ratchett được phát hiện đã chết trong khoang kín với mười hai nhát dao kỳ lạ mang nhiều góc độ và lực đâm khác nhau.\n\nHercule Poirot bước vào cuộc thẩm vấn mười hai hành khách với những xuất thân, quốc tịch và giai tầng hoàn toàn khác biệt. Tuy nhiên, mọi bằng chứng ngoại phạm đều hoàn hảo đến mức đáng ngờ, tựa như một vở kịch được chuẩn bị tỉ mỉ đến từng chi tiết.\n\nCàng đào sâu vào quá khứ, Poirot càng nhận ra vụ án mạng không đơn thuần là một cuộc thanh toán tư thù, mà là tiếng vọng đau thương từ một bi kịch bắt cóc trẻ em rúng động nhiều năm về trước.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Liệu kẻ thủ ác là một bóng ma đột nhập từ bên ngoài, hay chính mười hai con người trên tàu đều đang che giấu một bí mật chung? Và khi luật pháp trần thế bất lực, công lý đích thực sẽ thuộc về ai?",
   },
   {
     id: "hh-2",
@@ -24,7 +24,7 @@ const bookDatabase = [
     badge: "Tâm lý Tội phạm",
     cover: "images/hoi-hop/bach-da-hanh.jpg",
     summary:
-      "Một khúc ca bi tráng và lạnh lẽo về hai linh hồn bước đi trong đêm trắng, nương tựa vào nhau bằng những tội ác không thể tha thứ. Từng trang sách siết chặt lồng ngực người đọc bằng bầu không khí ngột ngạt của sự truy đuổi kiên trì suốt mười chín năm ròng rã. 'Bầu trời của tôi không có mặt trời, luôn luôn là đêm đen, nhưng có thứ ánh sáng khác thay thế mặt trời.'",
+      "Khởi đầu từ cái chết bí ẩn của một người đàn ông tại công trường bỏ hoang ở Osaka năm 1973, vụ án nhanh chóng đi vào ngõ cụt khi nghi can số một cũng đột ngột qua đời trong một tai nạn đáng ngờ.\n\nVụ án khép lại nhưng bóng tối của nó kéo dài suốt mười chín năm, âm thầm bao phủ lấy cuộc đời của hai đứa trẻ: Ryo - con trai nạn nhân, và Yukiho - con gái nghi can. Hai con người tưởng chừng như hai đường thẳng song song, không hề quen biết, nhưng bất kỳ ai cản đường họ đều lần lượt gặp phải những bất hạnh kinh hoàng.\n\nBằng sự kiên trì bền bỉ đến kiệt cùng của viên cảnh sát già Sasagaki, bức màn che đậy mối liên kết nghiệt ngã giữa hai tâm hồn cô độc bước đi dưới ánh sáng ban ngày giả tạo dần được kéo mở.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Liệu tội ác kinh hoàng có thể sinh ra từ một tình yêu thuần khiết? Và bóng đêm trắng sẽ dẫn lối hai linh hồn ấy về miền cứu rỗi hay đẩy họ xuống vực sâu vĩnh viễn?",
   },
   {
     id: "hh-3",
@@ -34,7 +34,7 @@ const bookDatabase = [
     badge: "Hiện thực & Điều tra",
     cover: "images/hoi-hop/ghi-chep-phap-y.jpg",
     summary:
-      "Dưới mũi dao giải phẫu sắc lạnh, người chết cất lên lời trần tình sau cùng về bản chất tăm tối và phức tạp khôn cùng của nhân tâm. Từng vụ án được bóc tách với độ chân thực đến rợn ngợp, biến mỗi trang viết thành cuộc đối thoại nghẹt thở giữa sự sống và sự diệt vong. 'Xương cốt và máu thịt không biết nói dối, chỉ có lòng người mới biết ngụy trang.'",
+      "Đằng sau cánh cửa phòng giải phẫu lạnh lẽo là nơi những thi thể bất động cất lên lời trần tình sau cùng. Từng vụ án mạng rùng rợn, từ xác chết không đầu trong bể nước, thi thể đóng băng trong tủ lạnh đến những hiện trường bị xáo trộn tinh vi đều được phơi bày dưới nhãn quan sắc bén của một bác sĩ pháp y dạn dày kinh nghiệm.\n\nCuốn sách dẫn dắt người đọc lần theo từng dấu vết vi mô: vết hoen tử thi, cặn đất dưới móng tay, độc chất trong dịch mô để tái hiện lại giây phút kinh hoàng của nạn nhân trước khi trút hơi thở cuối cùng.\n\nMỗi vụ án được làm sáng tỏ là một lần đạo đức và nhân tính bị đặt lên bàn cân thử thách, vạch trần những góc khuất tăm tối và biến dị nhất trong tâm lý con người giữa xã hội hiện đại.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Xương cốt và máu thịt không bao giờ biết nói dối, nhưng liệu khoa học pháp y có thể soi tỏ được những mưu mô hiểm độc sâu kín nhất của lòng người?",
   },
   {
     id: "hh-4",
@@ -44,7 +44,7 @@ const bookDatabase = [
     badge: "Đấu trí & Tình yêu",
     cover: "images/hoi-hop/phia-sau-nghi-can-x.webp",
     summary:
-      "Cuộc đối đầu vĩ đại giữa hai bộ óc thiên tài toán học và vật lý xoay quanh một chứng cứ ngoại phạm hoàn mỹ đến kinh ngạc. Ẩn sâu dưới lớp vỏ của một vụ án mạng rúng động là sự hy sinh tuyệt đối, thuần khiết đến mức bi thương của một kẻ si tình. 'Thiết lập một bài toán khó và giải một bài toán khó, việc nào khó hơn?'",
+      "Khi Yasuko lỡ tay giết chết gã chồng cũ độc ác để tự vệ và bảo vệ đứa con gái nhỏ, cô nghĩ cuộc đời mình đã hoàn toàn chấm dứt. Đúng lúc ấy, người hàng xóm ít nói - thầy giáo dạy toán thiên tài Ishigami - đã bất ngờ xuất hiện và đề nghị giúp đỡ hai mẹ con thiết lập một hiện trường giả hoàn mỹ.\n\nMột cuộc đối đầu cân não đỉnh cao diễn ra giữa viên cảnh sát Kusanagi cùng giáo sư vật lý thiên tài Yukawa với bộ óc toán học siêu việt của Ishigami. Mọi giả thuyết điều tra, mọi cuộc kiểm tra ngoại phạm đều bị vô hiệu hóa trước mạng lưới logic toán học không tì vết.\n\nKhi bức màn che đậy dần hạ xuống, Yukawa kinh hoàng nhận ra chân lý đằng sau bài toán ngoại phạm: Ishigami không chỉ giải một bài toán, mà anh đã đặt cược cả sinh mạng và danh dự vào một sự hy sinh tột cùng của tình yêu thầm lặng.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Giữa việc tạo ra một bài toán hóc búa và giải bài toán ấy, điều nào khó khăn hơn? Và một người có thể vì tình yêu mà đi xa đến đâu trên con đường tự hủy diệt?",
   },
   {
     id: "hh-5",
@@ -54,7 +54,7 @@ const bookDatabase = [
     badge: "Suy luận Cổ điển",
     cover: "images/hoi-hop/sherlock-holmes-1.webp",
     summary:
-      "Thành London chìm trong sương mù dày đặc và những bí ẩn ma quái được rọi sáng bởi nhãn quan suy luận sắc như dao cạo của vị thám tử vĩ đại nhất lịch sử. Mỗi bước chân đuổi theo hung thủ trên phố Baker đều mang lại cảm giác phấn khích đến tột cùng cho trí tưởng tượng. 'Khi bạn đã loại trừ những điều không thể, thì những gì còn lại, dù khó tin đến đâu, vẫn là sự thật.'",
+      "Thành London thế kỷ 19 chìm trong sương mù dày đặc, nơi những con hẻm lầy lội và những dinh thự quý tộc cổ kính ẩn chứa vô số tội ác tinh vi và những bí mật gia tộc đen tối.\n\nTừ căn phòng số 221B phố Baker, vị thám tử lập dị Sherlock Holmes cùng người bạn đồng hành trung thành - bác sĩ Watson - bước vào những cuộc điều tra ly kỳ vượt xa trí tưởng tượng của cảnh sát Scotland Yard. Nhờ phép suy luận quy nạp độc nhất vô nhị, từng tàn thuốc, vết bùn hay sợi chỉ mỏng manh đều trở thành bằng chứng thép vạch mặt thủ phạm.\n\nNhững vụ án ngày càng trở nên phức tạp, đỉnh điểm là cuộc chạm trán định mệnh giữa Holmes và giáo sư Moriarty - kẻ thao túng toàn bộ thế giới ngầm châu Âu.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Khi bạn đã loại trừ tất cả những điều không thể, liệu điều còn lại, dù khó tin đến đâu, có thực sự là chân lý duy nhất?",
   },
   {
     id: "hh-6",
@@ -64,7 +64,7 @@ const bookDatabase = [
     badge: "Kinh dị Tâm lý",
     cover: "images/hoi-hop/su-im-lang-cua-bay-cuu.webp",
     summary:
-      "Một cuộc khiêu vũ tâm lý rùng rợn giữa nữ đặc vụ FBI tập sự Clarice Starling và bộ óc quỷ quyệt của bác sĩ ăn thịt người Hannibal Lecter. Nỗi sợ hãi len lỏi qua từng câu chữ, bóp nghẹt nhịp tim khi ranh giới giữa kẻ săn mồi và con mồi bị xóa nhòa. 'Tiếng kêu của bầy cừu non trong đêm tối đã ngừng lại chưa, Clarice?'",
+      "Nước Mỹ rúng động trước hàng loạt vụ sát hại phụ nữ dã man của tên giết người hàng loạt mang biệt danh Buffalo Bill. Trong cơn bế tắc tột cùng, FBI buộc phải cử nữ thực tập sinh Clarice Starling đến tìm kiếm sự giúp đỡ từ một kẻ sát nhân bệnh hoạn đang bị giam cầm: Tiến sĩ tâm thần học Hannibal Lecter.\n\nCuộc gặp gỡ giữa Clarice và Hannibal trở thành một ván cờ tâm lý rùng rợn theo nguyên tắc trao đổi sòng phẳng. Hannibal ban phát từng manh mối vụ án nhỏ giọt để đổi lấy những ký ức tổn thương tuổi thơ sâu kín nhất của Clarice về tiếng kêu thảm thiết của bầy cừu non trước giờ bị giết mổ.\n\nMột cuộc chạy đua nghẹt thở với thời gian khi con gái của một thượng nghị sĩ bị bắt cóc, trong khi Hannibal chuẩn bị cho một kế hoạch đào tẩu kinh hoàng khiến cả hệ thống an ninh sững sờ.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Liệu Clarice có thể giải cứu con tin trước khi tiếng kêu của bầy cừu trong tâm trí cô dứt hẳn, hay chính cô sẽ trở thành con mồi tiếp theo trong trò chơi quỷ quyệt của Hannibal?",
   },
   {
     id: "hh-7",
@@ -74,7 +74,7 @@ const bookDatabase = [
     badge: "Trinh thám Huyền bí",
     cover: "images/hoi-hop/trai-hoa-do.webp",
     summary:
-      "Vùng núi cao mù sương với thung lũng hoa đỏ rực rỡ trở thành mồ chôn cho những bí mật dòng họ truyền đời cùng hàng loạt cái chết ma mị, quái đản. Tác phẩm dệt nên một bầu không khí u uất, rợn người đậm chất văn hóa bản địa, đưa người đọc vào vòng xoáy hoài nghi không lối thoát. 'Hoa càng đỏ thắm, đất bên dưới càng nhuốm nhiều máu tanh.'",
+      "Giữa núi rừng Tây Bắc hoang vu và sương mù bao phủ, doanh nhân Lưu cùng người yêu Trang tìm đến một trang trại tách biệt với thung lũng ngập tràn hoa đỏ rực rỡ để nghỉ dưỡng và xúc tiến dự án sinh thái.\n\nBầu không khí bình yên nhanh chóng bị xé toạc bởi hàng loạt hiện tượng ma quái và những cái chết ghê rợn liên tiếp xảy ra. Những xác chết trôi sông, bóng người thoắt ẩn thoắt hiện trong đêm tối cùng những lời nguyền truyền đời của người bản địa tạo nên một cơn ác mộng kinh hoàng.\n\nCảnh sát Phan bước vào cuộc điều tra giữa muôn vàn nghi hoặc, nơi ranh giới giữa những truyền thuyết tâm linh ma mị và âm mưu tội ác tàn nhẫn của con người bị xóa nhòa.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Màu hoa đỏ thắm nơi thung lũng là vẻ đẹp hoang sơ của thiên nhiên hay được nuôi dưỡng bằng máu của những oan hồn mang mối hận thù truyền kiếp?",
   },
   {
     id: "hh-8",
@@ -84,7 +84,7 @@ const bookDatabase = [
     badge: "Mười Nhân vật & Một Hòn đảo",
     cover: "images/hoi-hop/va-roi-chang-con-ai.webp",
     summary:
-      "Mười con người mang trong mình những tội lỗi chưa từng bị phán xét cùng tề tựu trên hòn đảo biệt lập, để rồi từng người gục ngã theo một bài đồng dao cổ quái. Cảm giác hồi hộp tột bực dâng trào khi nhận ra kẻ hành quyết vô hình lại đang ẩn náu ngay giữa những nạn nhân còn sống sót. 'Mười người da đen nhỏ đi ăn tối; một người bị nghẹn và thế là còn chín...'",
+      "Mười con người mang xuất thân, tính cách và địa vị hoàn toàn khác nhau cùng nhận được lời mời bí ẩn đến nghỉ dưỡng tại hòn đảo Chiến Binh biệt lập ngoài khơi bờ biển Devon.\n\nKhi bữa tối vừa bắt đầu, một chiếc đĩa than tự động phát lên lời vạch trần tội ác giết người chưa từng bị pháp luật trừng phạt của từng vị khách. Ngay sau đó, lần lượt từng người bị sát hại theo đúng những chi tiết rùng rợn trong bài đồng dao cổ về mười người lính nhỏ treo trên tường.\n\nHòn đảo hoàn toàn bị cô lập giữa giông bão, không có lối thoát và cũng không có bất kỳ ai khác ẩn nấp. Nỗi nghi ngờ biến thành sự hoảng loạn tột độ khi họ nhận ra kẻ hành quyết vô hình chính là một trong số những người đang ngồi cùng bàn ăn.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Khi từng người gục ngã và chẳng còn ai sống sót trên đảo, bàn tay công lý vô hình nào đã dàn dựng nên vụ hành quyết hoàn hảo bậc nhất lịch sử văn học này?",
   },
 
   // --- Cảm xúc: choang-ngop ---
@@ -96,7 +96,7 @@ const bookDatabase = [
     badge: "Thần thoại Hy Lạp",
     cover: "images/choang-ngop/circe.webp",
     summary:
-      "Khúc tráng ca tái sinh đầy mê hoặc về nữ thần phù thủy cô độc giữa hòn đảo Aiaia hoang sơ và kỳ vĩ. Văn phong rực rỡ lộng lẫy thêu dệt nên một thần thoại cổ xưa nhưng mang hơi thở dữ dội của người phụ nữ tự mình rèn giũa quyền năng. 'Tôi sẽ không bao giờ để bất kỳ ai khác định đoạt số phận của mình nữa, dù là thần linh hay người phàm.'",
+      "Sinh ra trong cung điện rực rỡ của thần Mặt Trời Helios, nàng tiên nữ Circe bị gia đình thần linh khinh miệt và hắt hủi vì ngoại hình tầm thường và giọng nói kỳ dị tựa người phàm trần.\n\nSau khi phát hiện ra quyền năng cấm kỵ của thảo dược phù thủy, Circe bị đày ải đến hòn đảo Aiaia hoang vu. Tại đây, giữa rừng sâu và bầy thú dữ, nàng tự mình mài giũa pháp thuật, đối mặt với những quái vật biển cả, thần linh ngạo mạn và những anh hùng kiêu hãnh của thần thoại Hy Lạp như Odysseus và Daedalus.\n\nĐứng giữa quyền năng bất tử vô cảm của thần linh và sự mong manh nhưng ngập tràn yêu thương của kiếp người phàm trần, Circe phải đưa ra lựa chọn định mệnh cho số phận của chính mình.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Liệu một nữ phù thủy bị cả thế giới thần thánh ruồng bỏ có thể tìm thấy tự do đích thực bằng chính sức mạnh và lòng trắc ẩn của mình?",
   },
   {
     id: "cn-2",
@@ -106,7 +106,7 @@ const bookDatabase = [
     badge: "Giả tưởng Kỳ ảo",
     cover: "images/choang-ngop/harry-potter-va-hon-da-phu-thuy.webp",
     summary:
-      "Cánh cổng dẫn vào tòa lâu đài Hogwarts cổ kính mở ra cả một vũ trụ kỳ diệu của phép thuật, tình bạn và lòng can đảm thuần khiết. Lần đầu tiên nhìn thấy Đại sảnh đường lung linh dưới hàng ngàn ngọn nến bay là khoảnh khắc kỳ quan thắp sáng tâm hồn của biết bao thế hệ độc giả. 'Thực sự cần rất nhiều lòng dũng cảm để chống lại kẻ thù, nhưng cần nhiều hơn thế để đứng lên trước bạn bè.'",
+      "Cậu bé mồ côi Harry Potter sống chuỗi ngày cơ cực dưới gầm cầu thang nhà dượng Dursley mà không hề hay biết thân phận thực sự của mình, cho đến ngày nhận được lá thư nhập học từ trường Pháp thuật và Ma thuật Hogwarts.\n\nBước qua Bức tường Sân ga 9¾, Harry bước vào một thế giới diệu kỳ ngập tràn phép thuật, những cây chổi bay, các sinh vật huyền bí và tình bạn chân thành với Ron và Hermione. Nhưng bóng đen quá khứ chưa bao giờ buông tha cậu.\n\nNhững bí mật ẩn giấu dưới hành lang cấm tầng ba về Hòn đá Phù thủy - báu vật ban phát sự bất tử - dần hé lộ âm mưu trỗi dậy của Chúa tể Hắc ám Voldemort, kẻ đã sát hại cha mẹ Harry mười một năm trước.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Liệu lòng can đảm và tình bạn thuần khiết của ba đứa trẻ mười một tuổi có đủ sức chống lại thế lực bóng tối tàn bạo nhất thế giới phù thủy?",
   },
   {
     id: "cn-3",
@@ -116,7 +116,7 @@ const bookDatabase = [
     badge: "Cổ tích Hiện đại",
     cover: "images/choang-ngop/loi-nguyen-cua-man-dem.webp",
     summary:
-      "Bức tranh huyền ảo đan dệt giữa những vì sao đêm thẳm và vẻ đẹp thuần túy của màu da mang sắc trời đêm vô tận. Tác phẩm tựa như một giấc mơ thị giác diệu kỳ, đưa tâm hồn người đọc phiêu lãng vào không gian vũ trụ bao la để chiêm ngưỡng ánh sáng nội tại. 'Khi đêm tối buông xuống, vũ trụ mới hé lộ những bí mật rực rỡ nhất của nó.'",
+      "Cô bé Sulwe sinh ra với làn da đen tuyền thăm thẳm như màu của nửa đêm, khác biệt hoàn toàn với gia đình và bạn bè xung quanh, khiến em luôn cảm thấy tự ti và khao khát có được một làn da sáng màu rực rỡ.\n\nLời nguyện cầu tha thiết của cô bé đưa em vào một giấc mơ siêu thực diệu kỳ giữa các vì sao, nơi em được lắng nghe huyền thoại cổ xưa về hai chị em Ánh Sáng và Bóng Đêm - hai nửa không thể tách rời của tạo hóa.\n\nQua chuyến hành trình bay lượn trên bầu trời sao, Sulwe nhận ra rằng nếu không có bóng đêm sâu thẳm, những vì sao sẽ không thể lấp lánh và cuộc sống sẽ không bao giờ có được sự bình yên, sâu lắng.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Đã bao giờ bạn chối bỏ vẻ đẹp độc bản của chính mình chỉ vì ánh nhìn của người khác? Và làm thế nào để ta học cách trân trọng ánh sáng nội tại tiềm ẩn trong mỗi chúng ta?",
   },
   {
     id: "cn-4",
@@ -126,7 +126,7 @@ const bookDatabase = [
     badge: "Sử thi Kỳ ảo",
     cover: "images/choang-ngop/loi-the-tan-nhan.webp",
     summary:
-      "Chiến trường của các vị thần cổ đại rung chuyển dữ dội dưới ngòi bút miêu tả tráng lệ, nơi những lá thư thần diệu nối liền hai trái tim giữa khói lửa điêu tàn. Một thế giới vừa hoang tàn bi tráng vừa đong đầy thi vị nghệ thuật, làm choáng ngợp bất kỳ ai say mê sử thi lãng mạn. 'Chiến tranh có thể san bằng thành lũy, nhưng không thể chôn vùi lời hẹn ước khắc sâu vào linh hồn.'",
+      "Cuộc chiến tàn khốc giữa các vị thần cổ đại Dacre và Enva tiếp tục xé toạc thành phố Oath, biến chiến trường thành biển lửa và chia cắt đôi phóng viên trẻ Iris Winnow và Roman Kitt.\n\nMất trí nhớ và bị giam cầm dưới quyền lực của thần Dacre, Roman chỉ còn lại cảm xúc mơ hồ về một người con gái qua những bức thư thần thoại lướt qua gầm tủ áo. Ở bên kia chiến tuyến, Iris dùng ngòi bút quả cảm của mình để tiếp lửa cho cuộc kháng chiến của người phàm.\n\nNhững lá thư đánh máy màu nhiệm nối liền hai tâm hồn qua bom đạn, mở ra những bí mật chấn động về nguồn gốc sự hủy diệt của các vị thần và cái giá của sự tự do.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Giữa khói lửa chiến tranh thần thánh, liệu những lời hẹn ước được viết bằng tình yêu và ký ức có thể đánh bại được sự tha hóa của quyền lực vĩnh cửu?",
   },
   {
     id: "cn-5",
@@ -136,7 +136,7 @@ const bookDatabase = [
     badge: "Ngụ ngôn Cổ tích",
     cover: "images/choang-ngop/quai-vat-ickabog.webp",
     summary:
-      "Từ vương quốc Cornucopia phồn vinh bậc nhất đến đầm lầy huyền bí nơi sinh vật huyền thoại Ickabog ẩn náu, câu chuyện mở ra thế giới ngụ ngôn đầy sắc màu và xúc cảm. Sự đối lập giữa lòng tham lam quyền lực và sự ngây thơ quả cảm của trẻ thơ tạo nên một thiên trường ca kỳ thú. 'Một huyền thoại được kể đủ nhiều lần sẽ trở thành sự thật trong tâm trí con người.'",
+      "Vương quốc Cornucopia từng là xứ sở hạnh phúc và phồn thịnh bậc nhất thế giới, nổi tiếng với những món ăn ngon tuyệt hảo, cho đến khi truyền thuyết về quái vật ăn thịt Ickabog vùng đầm lầy phía Bắc bị đánh thức.\n\nLợi dụng sự hoang mang của vị vua Fred khờ khạo, những kẻ cận thần tham lam đã dựng lên một cái bẫy quyền lực thâm độc, biến sự sợ hãi thành công cụ cai trị tàn bạo, đẩy vương quốc vào cảnh bần cùng và chia rẽ.\n\nHai đứa trẻ dũng cảm Bert và Daisy quyết định bước vào đầm lầy huyền bí để tìm kiếm sự thật, đối mặt với sinh vật trong truyền thuyết và vạch trần bộ mặt dối trá của những kẻ cầm quyền.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Một lời nói dối khi được lặp lại đủ nhiều lần liệu có thể biến thành quái vật hủy diệt cả một quốc gia? Và lòng dũng cảm chân chính nằm ở thanh gươm hay ở lòng trắc ẩn?",
   },
   {
     id: "cn-6",
@@ -146,7 +146,7 @@ const bookDatabase = [
     badge: "Huyền bí Đô thị",
     cover: "images/choang-ngop/tong-dai-ke-chuyen-luc-0h.webp",
     summary:
-      "Khi kim đồng hồ điểm khắc chuyển giao ngày mới, những tần số kỳ bí phát đi muôn vàn mẩu chuyện siêu thực đan xen giữa hiện thực và ảo ảnh. Không gian đêm đặc quánh bỗng bừng nở những thế giới song song kỳ lạ, kích thích mọi giác quan người nghe trong tĩnh lặng. 'Lúc nửa đêm, ranh giới giữa những gì ta tưởng tượng và thực tại chỉ mỏng manh như một sợi chỉ.'",
+      "Khi thành phố chìm vào giấc ngủ và kim đồng hồ điểm 0 giờ, một tần số sóng phát thanh bí ẩn cất lên, mở ra kênh kết nối giữa những linh hồn cô độc và những thực tại song song kỳ dị.\n\nNhững cuộc gọi lúc nửa đêm mang đến muôn vàn mảnh ghép siêu thực: một chuyến xe bus không có điểm dừng, chiếc gương soi thấy tương lai mười năm sau, hay giai điệu âm nhạc có thể xóa sạch ký ức của người nghe.\n\nMỗi câu chuyện là một tấm gương phản chiếu những tổn thương, ám ảnh tội lỗi và khát vọng thầm kín nhất của con người giữa nhịp sống đô thị vô cảm và ngột ngạt.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Lúc nửa đêm, ranh giới giữa những gì ta tưởng tượng và hiện thực mong manh đến mức nào? Và điều đáng sợ hơn là bóng tối ngoài kia hay bóng tối trong lòng chính ta?",
   },
   {
     id: "cn-7",
@@ -156,7 +156,7 @@ const bookDatabase = [
     badge: "Giả tưởng Hắc ám",
     cover: "images/choang-ngop/trai-tre-dac-biet-cua-co-peregrine.webp",
     summary:
-      "Sự kết hợp độc nhất vô nhị giữa lời văn kỳ bí và những bức ảnh cổ điển ma mị đưa ta lạc vào vòng lặp thời gian trên một hòn đảo xa xôi ở xứ Wales. Nơi trú ẩn của những đứa trẻ mang dị năng phi thường vừa quyến rũ vừa ẩn chứa hiểm nguy khôn lường từ bóng tối. 'Chúng tôi gắn bó với thời gian này vì thế giới ngoài kia đã không còn chỗ cho những điều kỳ diệu.'",
+      "Sau cái chết bi thảm và bí ẩn của người ông nội kính yêu, thiếu niên Jacob Portman lần theo những bức ảnh cổ điển kỳ quái để tìm đến một hòn đảo xa xôi ngoài khơi xứ Wales.\n\nTại đây, Jacob khám phá ra một trại trẻ mồ côi dường như đã bị bom đạn phá hủy từ Thế chiến thứ hai, nhưng thực chất lại đang tồn tại vĩnh cửu trong một vòng lặp thời gian được bảo vệ bởi cô Peregrine - người có khả năng hóa chim ưng. Nơi này che chở cho những đứa trẻ mang dị năng phi thường: cô bé lơ lửng, cậu bé vô hình, người tạo ra lửa từ đôi tay.\n\nSự xuất hiện của những sinh vật bóng tối Hồn Rỗng đe dọa phá vỡ vòng lặp, buộc Jacob phải thức tỉnh năng lực tiềm ẩn của bản thân để bảo vệ những người bạn phi thường.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Liệu quá khứ có thực sự an toàn hơn hiện tại? Và Jacob sẽ chọn trở về cuộc sống đời thường tẻ nhạt hay ở lại chiến đấu vì một thế giới kỳ diệu đang lâm nguy?",
   },
   {
     id: "cn-8",
@@ -166,7 +166,7 @@ const bookDatabase = [
     badge: "Cổ tích Giả tưởng",
     cover: "images/choang-ngop/xu-so-mien-man.webp",
     summary:
-      "Một vùng đất huyền nhiệm được thêu dệt từ ký ức tuổi thơ, nơi những đồ vật cũ kỹ bỗng cất tiếng nói và đưa nhân vật chính vào chuyến phiêu lưu choáng ngợp sắc màu. Tác phẩm tựa như một cơn mưa ngọt lành tưới tắm những tâm hồn người lớn đã mỏi mệt trong thế giới thực tại. 'Đi qua bao nhiêu giông bão, xứ sở ấm áp nhất vẫn là nơi trái tim ta còn giữ lại sự ngây thơ.'",
+      "Một người cha đơn thân mải mê với những lo toan cơm áo gạo tiền của cuộc sống hiện đại bỗng vô tình lạc bước vào vùng đất kỳ ảo được thêu dệt từ ký ức tuổi thơ và những món đồ chơi cũ kỹ của con mình.\n\nCùng những người bạn ngộ nghĩnh như chú mèo Mèo Mập, Chú Lính Nhựa hay Búp Bê Gỗ, anh bước vào chuyến phiêu lưu băng qua những xứ sở kỳ lạ, đối mặt với những thử thách đại diện cho nỗi sợ lãng quên và sự chai sạn của người lớn.\n\nGiữa những biến cố huyền diệu, người cha dần nhận ra vết nứt trong tâm hồn mình và khoảng cách vô hình giữa anh với đứa con bé bỏng mà bấy lâu nay anh không hề hay biết.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Ta đã bỏ quên đứa trẻ ngây thơ trong lòng mình từ bao giờ? Và liệu có bao giờ là quá muộn để chậm lại, lắng nghe và ôm lấy những người thân yêu bằng cả trái tim?",
   },
 
   // --- Cảm xúc: ngot-ngat ---
@@ -178,7 +178,7 @@ const bookDatabase = [
     badge: "Giật gân Tâm lý",
     cover: "images/ngot-ngat/co-hau-gai.webp",
     summary:
-      "Căn phòng gác mái chật hẹp chỉ có thể khóa từ bên ngoài của gia đình Winchester chứa đựng những bí mật khiến không khí trong nhà trở nên đặc quánh, bức bối. Từng ngày trôi qua là một cuộc rình rập nghẹt thở, nơi sự thật xoay chiều chóng mặt sau mỗi cánh cửa đóng kín. 'Đừng bao giờ đánh giá thấp một kẻ đang đứng ở đáy vực sâu không còn gì để mất.'",
+      "Millie - một cô gái có quá khứ tù tội đang tuyệt vọng tìm kiếm việc làm - may mắn được gia đình Winchester giàu có nhận vào làm người giúp việc tại căn biệt thự lộng lẫy nhưng cô lập.\n\nCông việc trong mơ nhanh chóng biến thành địa ngục khi nữ chủ nhà Nina liên tục thể hiện những hành vi tâm thần thất thường, trong khi căn phòng gác mái của Millie chỉ có một chiếc khóa duy nhất... nằm ở phía bên ngoài.\n\nNhững bí mật kinh tởm trong cuộc hôn nhân hoàn hảo dần bị bóc trần, đẩy Millie vào thế cờ sinh tử nơi mọi phán đoán về kẻ săn mồi và con mồi đều bị đảo ngược hoàn toàn.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Ai mới thực sự là nạn nhân sau cánh cửa gác mái đóng kín? Và một kẻ không còn gì để mất sẽ làm gì để giành giật lại quyền sinh tồn?",
   },
   {
     id: "nn-2",
@@ -188,7 +188,7 @@ const bookDatabase = [
     badge: "Hiện thực Đen tối",
     cover: "images/ngot-ngat/dem-truoc-dong-tri.jpg",
     summary:
-      "Cái lạnh buốt giá của mùa đông không tê tái bằng sự băng giá trong tâm hồn những con người bị giam hãm trong vòng xoáy thù hận và bế tắc luân thường. Nhịp điệu dồn dập, bức bối như chiếc thòng lọng vô hình siết chặt lấy từng số phận lầm lỡ trước ngưỡng cửa ánh sáng. 'Bóng tối trước ngày đông chí dài dằng dặc, như thể mặt trời sẽ không bao giờ mọc lại nữa.'",
+      "Đêm trước ngày đông chí dài dằng dặc và lạnh lẽo, một vụ án mạng bế tắc trong căn nhà trọ tồi tàn mở ra những góc khuất u tối của tầng lớp dưới đáy xã hội.\n\nCác nhân vật bị cuốn vào vòng xoáy của thù hận, nợ nần và những ràng buộc luân lý ngột ngạt. Từng lời khai chắp vá, từng hành động lầm lỡ đều đẩy họ tiến gần hơn đến bờ vực của sự tha hóa không lối thoát.\n\nKhi sự thật được phơi bày dưới ánh đèn đường leo lét, người đọc nhận ra cái lạnh thấu xương không đến từ thời tiết mùa đông, mà đến từ sự băng giá và vô cảm của lòng người trước bi kịch đồng loại.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Liệu ánh mặt trời của ngày đông chí có bao giờ sưởi ấm được những tâm hồn đã lún sâu vào bùn lầy tội lỗi?",
   },
   {
     id: "nn-3",
@@ -198,7 +198,7 @@ const bookDatabase = [
     badge: "Tâm lý Bế tắc",
     cover: "images/ngot-ngat/dung-bao-gio-noi-doi.webp",
     summary:
-      "Bão tuyết cô lập một cặp vợ chồng trẻ trong ngôi biệt thự cũ từng thuộc về một bác sĩ tâm thần bị mất tích đầy bí ẩn. Những cuộn băng ghi âm bệnh nhân được bật lên giữa bóng tối mang theo những lời thú tội rùng mình, biến không gian thành một nhà tù nghẹt thở. 'Một lời nói dối có thể cứu rỗi bạn hôm nay, nhưng sẽ chôn vùi bạn vào ngày mai.'",
+      "Cặp vợ chồng mới cưới Tricia và Ethan bị bão tuyết cô lập trong một dinh thự hẻo lánh từng thuộc về Tiến sĩ tâm thần học Adrienne Hale - người đã biến mất không dấu vết ba năm trước.\n\nĐể giết thời gian, Tricia tình cờ phát hiện ra một căn phòng bí mật chứa toàn bộ những cuộn băng cassette ghi âm các buổi trị liệu của Adrienne. Từng cuộn băng được bật lên giữa đêm tối mang theo những lời thú tội rùng mình của những bệnh nhân tâm thần.\n\nNhững mảnh ghép trong quá khứ dần kết nối với thực tại, hé lộ một âm mưu trả thù tàn độc đang chờ đợi đôi vợ chồng trẻ ngay trong căn nhà kín bưng.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Một lời nói dối có thể cứu rỗi bạn hôm nay, nhưng liệu nó có chôn vùi bạn vào ngày mai khi sự thật tìm đường lộ diện?",
   },
   {
     id: "nn-4",
@@ -208,7 +208,7 @@ const bookDatabase = [
     badge: "Hình sự Ý",
     cover: "images/ngot-ngat/ke-nhac-tuong.webp",
     summary:
-      "Một kẻ sát nhân thiên tài ẩn mình trong bóng tối, thao túng tâm lý những kẻ thủ ác khác như một người nhắc tuồng trong nhà hát của quỷ dữ. Bầu không khí ẩm ướt, nhớp nhúa và sự bất lực đến nghẹt thở của đội điều tra trước những cái bẫy tinh vi sẽ bám riết lấy tâm trí độc giả. 'Cái ác không cần sáng tạo, nó chỉ cần chờ đợi thời điểm lòng tốt bị lung lay.'",
+      "Sáu cánh tay phải của sáu bé gái bị chặt đứt và chôn thành một vòng tròn bí ẩn trong khu rừng mù sương. Năm thi thể nhanh chóng được tìm thấy, nhưng nạn nhân thứ sáu vẫn bặt vô âm tín.\n\nNữ thanh tra Mila Vasquez - chuyên gia tìm kiếm trẻ em mất tích - cùng nhà tâm lý học tội phạm Goran Gavila bước vào cuộc săn lùng kẻ thủ ác. Tuy nhiên, mỗi manh mối họ tìm được lại dẫn đến một kẻ giết người khác nhau, tựa như có một bóng ma đang nhắc tuồng từ trong bóng tối.\n\nKẻ sát nhân thiên tài thao túng cả cảnh sát lẫn truyền thông, biến mỗi tội ác thành một bức thông điệp tàn nhẫn phơi bày những vết thương đạo đức nhơ nhớp của xã hội.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Khi kẻ nhắc tuồng giật dây những con rối độc ác, ai sẽ là người hạ màn cho vở kịch đẫm máu này trước khi con mồi thứ sáu bị sát hại?",
   },
   {
     id: "nn-5",
@@ -218,7 +218,7 @@ const bookDatabase = [
     badge: "Tội ác & Đạo đức",
     cover: "images/ngot-ngat/khuc-ca-chuoc-toi.webp",
     summary:
-      "Tiếng chuông sám hối vang lên muộn màng trong một câu chuyện đầy rẫy sự ngột ngạt của định kiến xã hội và những tội lỗi bị chôn giấu dưới đáy vực. Mối quan hệ giằng xé giữa các nhân vật phơi bày trần trụi những góc khuất tàn nhẫn nhất của sự trừng phạt và chuộc tội. 'Có những lỗi lầm dù lấy cả sinh mệnh ra đền đáp cũng không đổi lại được sự bình yên.'",
+      "Tiếng chuông sám hối vang lên muộn màng tại một thị trấn nhỏ khi những bí mật bị chôn giấu dưới đáy sông nhiều năm trước bất ngờ nổi lên mặt nước.\n\nMối quan hệ giằng xé giữa các tuyến nhân vật - người thẩm phán mẫu mực, tên tử tù mang nỗi oan khiên và người mẹ mất con - tạo nên một bầu không khí ngột ngạt và căng thẳng tột cùng về sự trả giá.\n\nKhi sự thật được bóc tách từng lớp, ranh giới giữa kẻ phạm tội và người thực thi công lý trở nên mờ mịt, đặt ra câu hỏi cay đắng về sự tha thứ và cứu rỗi lương tâm.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Có những sai lầm dù đánh đổi bằng cả mạng sống liệu có bao giờ đổi lại được sự thanh thản cho tâm hồn?",
   },
   {
     id: "nn-6",
@@ -228,7 +228,7 @@ const bookDatabase = [
     badge: "Án mạng Liên hoàn",
     cover: "images/ngot-ngat/nguoi-ech.jpg",
     summary:
-      "Nỗi hoảng loạn tột độ bao trùm cả thành phố khi những thi thể bị sát hại dã man kèm theo những mẩu giấy viết nguệch ngoạc tựa như trò chơi giết ếch của trẻ nhỏ. Sự giằng xé tàn nhẫn quanh Điều 39 Bộ luật Hình sự tạo nên một áp lực đè nặng lên lương tâm và công lý xã hội. 'Khi công lý bị trói buộc bởi những điều luật vô cảm, nỗi sợ sẽ biến mọi người thành quái vật.'",
+      "Một người phụ nữ bị treo lơ lửng trên tầng cao của tòa chung cư bỏ hoang, quấn chặt trong tấm bạt cùng mẩu giấy viết nguệch ngoạc: 'Hôm nay tôi bắt được một con ếch...'\n\nCả thành phố Tokyo rơi vào cơn hoảng loạn tột độ khi hàng loạt thi thể tiếp tục bị sát hại theo những cách tàn bạo tựa như trò chơi giết ếch của trẻ thơ. Đội điều tra do cảnh sát trẻ Kotegawa dẫn đầu phải đối mặt với một kẻ sát nhân tâm thần vô cùng khó đoán.\n\nVụ án chạm đến ngòi nổ tranh cãi gay gắt về Điều 39 Bộ luật Hình sự - điều khoản miễn trừ trách nhiệm hình sự cho người tâm thần, đẩy xã hội vào trạng thái hoang mang tột cùng giữa luật pháp và công lý bản năng.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Khi công lý bị trói buộc bởi những điều luật vô cảm, nỗi sợ hãi tột cùng sẽ biến con người bình thường thành quái vật ra sao?",
   },
   {
     id: "nn-7",
@@ -238,7 +238,7 @@ const bookDatabase = [
     badge: "Bí mật Bị chôn vùi",
     cover: "images/ngot-ngat/verity-bi-mat-bi-chon-vui.webp",
     summary:
-      "Bản thảo hồi ký chưa xuất bản của một nữ văn sĩ bị bại não hé lộ những sự thật kinh hoàng về cái chết của hai đứa con gái thơ ngây. Một bầu không khí u ám, đồi bại và nghẹt thở bao trùm từng ngóc ngách của căn nhà, đẩy người đọc vào trạng thái nghi hoặc đến tột độ. 'Thế giới này không có quái vật dưới gầm giường, chúng sống ngay trong suy nghĩ của chúng ta.'",
+      "Nữ nhà văn nghèo Lowen Ashleigh nhận được lời đề nghị đổi đời: hoàn thành ba cuốn sách còn dang dở của Verity Crawford - một tiểu thuyết gia đình đám bị bại não sau tai nạn thảm khốc.\n\nChuyển đến sống tại dinh thự của Verity để sắp xếp tư liệu, Lowen tình cờ phát hiện ra bản thảo hồi ký chưa từng công bố của Verity. Từng trang viết phơi bày những sự thật rợn người về cái chết của hai đứa con gái sinh đôi và bản chất đen tối, lệch lạc đến tột cùng của người mẹ.\n\nTrong khi tình cảm giữa Lowen và Jeremy - chồng của Verity - dần chớm nở, Lowen bắt đầu nhận thấy những dấu hiệu kỳ quái rằng người phụ nữ bại não nằm trên lầu kia dường như vẫn đang tỉnh táo và theo dõi mọi cử động của cô.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Bản thảo hồi ký đó là sự thật rùng rợn hay chỉ là một trò chơi tâm lý độc địa nhằm thao túng tâm trí người đọc đến trang cuối cùng?",
   },
   {
     id: "nn-8",
@@ -248,7 +248,7 @@ const bookDatabase = [
     badge: "Cú ngoặt Kinh điển",
     cover: "images/ngot-ngat/vu-am-sat-ong-roger-ackroyd.webp",
     summary:
-      "Một ngôi làng yên bình ở vùng nông thôn nước Anh bỗng trở nên ngột ngạt khi vụ tống tiền và mạng sống của vị điền chủ giàu có bị tước đoạt trong thư phòng kín. Cú lật ngược tình thế chấn động lịch sử văn học trinh thám sẽ khiến người đọc sững sờ nhận ra mình đã bị đánh lừa tinh vi ra sao. 'Sự thật là thứ duy nhất tồn tại sau khi mọi lời dối trá đã tự tiêu diệt lẫn nhau.'",
+      "Ngôi làng yên bình King's Abbot chìm trong bầu không khí ngột ngạt khi Roger Ackroyd - vị điền chủ giàu có và quyền lực nhất vùng - bị đâm chết ngay trong phòng làm việc kín mít sau khi nhận được một bức thư tống tiền bí ẩn.\n\nThám tử Hercule Poirot - lúc này đang sống ẩn dật để trồng bí ngô - được mời vào cuộc điều tra cùng với người bạn đồng hành là bác sĩ James Sheppard, người đồng thời đóng vai trò là người kể lại toàn bộ câu chuyện.\n\nMọi thành viên trong gia đình và người hầu đều có động cơ tài chính lẫn bí mật cần che giấu. Nhưng từng manh mối Poirot thu thập được lại dẫn đến một cú lật ngược tình thế gây chấn động bậc nhất lịch sử văn học trinh thám thế giới.\n\n❓ Mấu chốt bí ẩn chờ bạn khám phá trong sách: Ai là kẻ đã ra tay sát hại Roger Ackroyd ngay trước mũi người kể chuyện? Bạn có đủ tinh tế để nhận ra sự thật ẩn giấu sau những lời tự sự tưởng chừng vô hại nhất?",
   },
 
   // --- Cảm xúc: thau-cam ---
@@ -260,7 +260,7 @@ const bookDatabase = [
     badge: "Tâm hồn Trong trẻo",
     cover: "images/thau-cam/anne-toc-do-duoi-chai-nha-xanh.webp",
     summary:
-      "Cô bé mồ côi Anne Shirley với mái tóc đỏ rực và trí tưởng tượng vô biên đã thắp sáng căn nhà xanh tĩnh lặng của hai anh em luống tuổi làng Avonlea. Tác phẩm là bài ca thấu cảm dịu dàng về tình yêu thương, sự bao dung và niềm tin yêu cuộc sống tha thiết. 'Không phải những ngày tháng hoàn hảo làm nên hạnh phúc, mà là khả năng tìm thấy niềm vui trong những điều giản đơn.'",
+      "Do sự nhầm lẫn của trại trẻ mồ côi, cô bé Anne Shirley gầy gò với mái tóc đỏ rực và trí tưởng tượng bay bổng vô tận đã được gửi đến trang trại Chái Nhà Xanh của hai anh em luống tuổi Matthew và Marilla Cuthbert.\n\nBằng sự lạc quan thuần khiết, tính cách thẳng thắn và tình yêu thiên nhiên tha thiết, Anne đã dần làm tan chảy lớp vỏ nghiêm khắc của Marilla, sưởi ấm trái tim Matthew và mang lại sức sống rực rỡ cho toàn bộ ngôi làng Avonlea.\n\nDẫu trải qua nhiều hiểu lầm vụng dại và thử thách của sự trưởng thành, tâm hồn trong trẻo của Anne vẫn kiên định tìm thấy vẻ đẹp diệu kỳ trong từng nhành cây, ngọn cỏ và tình bạn thủy chung.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Đã bao giờ bạn để trí tưởng tượng và lòng biết ơn thắp sáng những ngày tăm tối nhất? Và một trái tim chân thành có thể biến đổi cả thế giới xung quanh ra sao?",
   },
   {
     id: "tc-2",
@@ -270,7 +270,7 @@ const bookDatabase = [
     badge: "Nổi loạn Tuổi trẻ",
     cover: "images/thau-cam/bat-tre-dong-xanh.webp",
     summary:
-      "Tiếng lòng cô đơn, chán chường nhưng chất chứa khao khát bảo vệ sự thuần khiết của cậu thiếu niên Holden Caulfield giữa một thế giới người lớn giả tạo. Cuốn sách chạm sâu vào những góc khuất yếu đuối nhất của tuổi trưởng thành, nơi ai cũng từng muốn làm người đứng giữ cánh đồng xanh. 'Tôi chỉ muốn đứng ở rìa vực thẳm và đỡ lấy những đứa trẻ đang mải chơi đùa không để ý bước chân.'",
+      "Bị đuổi khỏi trường dự bị đại học Pencey Prep ngay trước kỳ nghỉ Giáng sinh, cậu thiếu niên mười sáu tuổi Holden Caulfield một mình lang thang giữa thành phố New York lạnh giá trong trạng thái cô đơn và lạc lõng cùng cực.\n\nBằng giọng văn bộc trực, cay độc nhưng đong đầy tổn thương, Holden phơi bày sự giả tạo, phù phiếm của thế giới người lớn. Giữa những cuộc gặp gỡ vô nghĩa, niềm an ủi duy nhất của cậu là cô em gái nhỏ Phoebe - biểu tượng thuần khiết cuối cùng còn sót lại.\n\nƯớc mơ cháy bỏng nhưng tuyệt vọng của Holden là trở thành 'người bắt trẻ đồng xanh' - người đứng canh ở rìa vực thẳm để đỡ lấy những đứa trẻ đang mải mê chơi đùa không bị rơi xuống thế giới trần tục.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Có phải ai trong chúng ta cũng từng trải qua những năm tháng hoang mang, lạc lối và tuyệt vọng tìm kiếm một người thấu hiểu tâm hồn mình?",
   },
   {
     id: "tc-3",
@@ -280,7 +280,7 @@ const bookDatabase = [
     badge: "Nỗi đau Trưởng thành",
     cover: "images/thau-cam/cay-cam-ngot-cua-toi.webp",
     summary:
-      "Thế giới tuổi thơ nghèo khó của cậu bé Zezé với tâm hồn nhạy cảm phi thường và người bạn tri kỷ là gốc cam ngọt nơi góc vườn. Nỗi đau xé lòng khi phải đối mặt với sự mất mát đã dạy cho đứa trẻ hiểu được cái giá buốt giá của việc lớn lên. 'Tại sao người ta lại phải nói cho trẻ con biết những điều tàn nhẫn đến thế khi chúng còn quá nhỏ?'",
+      "Cậu bé năm tuổi Zezé sinh ra trong một gia đình nghèo đông con tại vùng ngoại ô Rio de Janeiro, mang trong mình trí thông minh thiên bẩm và tâm hồn nhạy cảm phi thường nhưng luôn phải chịu đựng những trận đòn roi vô cớ từ người lớn.\n\nNơi nương tựa duy nhất của Zezé là gốc cam ngọt nhỏ sau vườn mà cậu đặt tên là Bồ Đào - người bạn biết lắng nghe mọi nỗi niềm thơ dại, trước khi cậu gặp ông Bồ, người đàn ông ngoại quốc đã mang đến cho cậu hơi ấm tình thương mà cậu hằng khao khát.\n\nBiến cố đau đớn ập đến cướp đi người bạn lớn nhất đời cậu, giáng một đòn tàn nhẫn buộc đứa trẻ năm tuổi phải thấu hiểu nỗi đau đớn tột cùng của sự chia ly và cái giá buốt giá của việc lớn lên.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Yêu thương một đứa trẻ có khó đến thế không? Và trong cuộc đời, ta đã từng vô tình làm tổn thương một tâm hồn thuần khiết nào chỉ vì sự thờ ơ của chính mình?",
   },
   {
     id: "tc-4",
@@ -290,7 +290,7 @@ const bookDatabase = [
     badge: "Nghị lực Tri thức",
     cover: "images/thau-cam/chien-binh-cau-vong.webp",
     summary:
-      "Ngôi trường xập xệ trên hòn đảo Belitong nghèo nàn trở thành cái nôi nuôi dưỡng ước mơ phi thường của mười đứa trẻ cùng hai người thầy tận tụy. Tác phẩm truyền tải thông điệp thấu cảm sâu sắc về sức mạnh cứu rỗi của giáo dục và vẻ đẹp cao quý của nhân phẩm con người. 'Học tập không chỉ là con đường thoát nghèo, mà là cách chúng ta tôn trọng nhân phẩm của chính mình.'",
+      "Ngôi trường tiểu học Muhammadiyah xập xệ trên hòn đảo Belitong giàu tài nguyên thiếc nhưng người dân nghèo xơ xác, đứng trước nguy cơ bị đóng cửa vĩnh viễn nếu không tuyển đủ mười học sinh trong ngày khai giảng.\n\nMười đứa trẻ nghèo khó - mười 'chiến binh cầu vồng' - cùng hai người thầy cô giáo nghèo tận tụy đã viết nên khúc ca tráng lệ về khát vọng tri thức, vượt qua những con đường lầy lội, hiểm nguy đầm lầy cá sấu và sự chèn ép của tập đoàn khai thác thiếc.\n\nDẫu số phận sau này đưa mỗi người về những ngã rẽ khác nhau, ngọn lửa tri thức và phẩm giá con người được nhen nhóm dưới mái trường xiêu vẹo ấy vẫn mãi mãi soi sáng tâm hồn họ.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Khi đứng trước nghịch cảnh tưởng chừng không thể vượt qua, liệu bạn có dám giữ vững ước mơ và niềm tin vào sức mạnh cứu rỗi của tri thức?",
   },
   {
     id: "tc-5",
@@ -300,7 +300,7 @@ const bookDatabase = [
     badge: "Bi kịch Chiến tranh",
     cover: "images/thau-cam/chu-be-mang-pyjama-soc.jpg",
     summary:
-      "Tình bạn ngây thơ vượt qua hàng rào dây thép gai giữa con trai một sĩ quan Đức Quốc xã và cậu bé Do Thái trong trại tập trung Auschwitz. Một câu chuyện làm tan nát trái tim bất kỳ ai, thức tỉnh lương tri nhân loại trước sự hủy diệt tàn bạo của thù hận chủng tộc. 'Một hàng rào có thể chia cắt hai thế giới, nhưng không thể ngăn hai tâm hồn tìm thấy sự đồng điệu.'",
+      "Cậu bé chín tuổi Bruno ngây thơ buộc phải rời xa ngôi nhà ấm êm ở Berlin để chuyển đến vùng đất hẻo lánh 'Out-With', nơi cha cậu - một sĩ quan cấp cao của Đức Quốc Xã - nhận nhiệm vụ chỉ huy một khu trại đặc biệt.\n\nTừ cửa sổ phòng mình, Bruno nhìn thấy một hàng rào dây thép gai dài vô tận ngăn cách những con người gầy gò luôn mặc những bộ 'pyjama sọc'. Trong một lần đi thám hiểm, cậu tình cờ kết bạn với Shmuel - một cậu bé Do Thái sinh cùng ngày cùng tháng đang sống ở bên kia hàng rào.\n\nTình bạn thuần khiết vượt qua định kiến và hận thù dẫn Bruno đến một quyết định định mệnh: chui qua hàng rào dây thép gai để giúp bạn tìm kiếm người cha mất tích...\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Chiến tranh và sự cuồng tín chủng tộc có thể hủy diệt nhân tính đến mức nào? Và một hàng rào dây thép gai liệu có thể chia cắt được hai tâm hồn đồng điệu?",
   },
   {
     id: "tc-6",
@@ -310,7 +310,7 @@ const bookDatabase = [
     badge: "Chữa lành Nhân gian",
     cover: "images/thau-cam/dieu-ky-dieu-cua-tap-hoa-namiya.webp",
     summary:
-      "Những lá thư gửi vượt thời gian qua khe cửa tiệm tạp hóa cũ kỹ đã hàn gắn những vết thương lòng và dẫn lối cho những mảnh đời lạc lối. Từng câu chuyện đan xen tinh tế minh chứng cho sự kỳ diệu của việc lắng nghe chân thành và lòng trắc ẩn giữa người với người. 'Bản đồ của bạn dẫu là một tờ giấy trắng, nhưng cũng có nghĩa bạn hoàn toàn tự do vẽ nên tương lai.'",
+      "Ba tên trộm nghiệp dư Atsuya, Shota và Kohei sau khi gây án đã chạy trốn vào một tiệm tạp hóa cũ kỹ bỏ hoang ven đường để trú ẩn qua đêm, không ngờ rằng nơi đây từng là điểm tư vấn tâm lý nổi tiếng của ông lão Namiya tốt bụng.\n\nĐiều kỳ diệu xảy ra khi những lá thư xin tư vấn từ quá khứ ba mươi năm trước bất ngờ rơi qua khe cửa cuốn. Bất đắc dĩ trở thành người gỡ rối tơ lòng, ba kẻ lầm lỡ đã hồi âm cho những số phận trăn trở giữa ngã ba đường: một vận động viên đấu tranh giữa giấc mơ Olympic và người yêu bạo bệnh, một chàng nhạc sĩ nghèo loay hoay với đam mê...\n\nNhững lá thư vượt thời gian đan dệt nên một mạng lưới nhân duyên kỳ diệu, chứng minh rằng sự chân thành lắng nghe có sức mạnh hàn gắn những vết thương lòng sâu sắc nhất.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Bản đồ cuộc đời của bạn dẫu đang là một tờ giấy trắng, nhưng chẳng phải điều đó đồng nghĩa với việc bạn hoàn toàn tự do vẽ nên tương lai của chính mình hay sao?",
   },
   {
     id: "tc-7",
@@ -320,7 +320,7 @@ const bookDatabase = [
     badge: "Ấm áp Tình người",
     cover: "images/thau-cam/nguoi-dan-ong-mang-ten-ove.webp",
     summary:
-      "Đằng sau vẻ ngoài cáu kỉnh, nguyên tắc đến cổ hủ của ông lão Ove là một trái tim tan vỡ vì nhớ thương người vợ quá cố. Sự xuất hiện của những người hàng xóm ồn ào đã dần bóc tách lớp vỏ xù xì, để lộ một tâm hồn ấm áp đến rơi nước mắt. 'Yêu một người cũng giống như chuyển đến một ngôi nhà mới, ban đầu bạn thích nó vì sự mới mẻ, nhưng năm tháng qua đi bạn yêu nó vì những vết nứt.'",
+      "Ông lão Ove năm mươi chín tuổi nổi tiếng khắp khu phố là một kẻ cáu kỉnh, nguyên tắc đến cổ hủ và luôn mang vẻ mặt giận dữ với cả thế giới sau khi bị cho nghỉ hưu và mất đi người vợ thân yêu.\n\nKế hoạch tự tử để đoàn tụ với người vợ quá cố của Ove liên tục bị phá vỡ bởi sự xuất hiện của gia đình người hàng xóm mới chuyển đến - một cô gái Iran hoạt bát, người chồng vụng về cùng hai đứa trẻ ríu rít. Bằng sự kiên trì và ấm áp vụng về, họ dần kéo Ove trở lại với dòng chảy cuộc sống.\n\nTừng lớp vỏ xù xì, gai góc dần được bóc tách để lộ một trái tim nhân hậu, thủy chung son sắt và sẵn sàng hy sinh tất cả vì người khác của một người đàn ông lương thiện bậc nhất.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Đằng sau vẻ ngoài lạnh lùng của một người có thể là những vết nứt sâu hoắm chưa lành; liệu ta có đủ kiên nhẫn để yêu thương họ bằng sự chân thành không phán xét?",
   },
   {
     id: "tc-8",
@@ -330,7 +330,7 @@ const bookDatabase = [
     badge: "Văn học Kinh điển",
     cover: "images/thau-cam/nhung-tam-long-cao-ca.webp",
     summary:
-      "Cuốn nhật ký học trò của cậu bé Enrico ghi lại những bài học dung dị mà thấm thía về tình thầy trò, lòng hiếu thảo và sự trắc ẩn đối với những người kém may mắn. Những trang sách sống mãi cùng thời gian như tấm gương soi chiếu vẻ đẹp thánh thiện của đạo làm người. 'Lòng tốt là thứ ngôn ngữ mà người điếc có thể nghe và người mù có thể nhìn thấy.'",
+      "Dưới hình thức cuốn nhật ký học trò của cậu bé Enrico Bottini mười tuổi, tác phẩm ghi lại trọn vẹn một năm học tại một trường tiểu học ở thành phố Torino, nước Ý thời kỳ thống nhất.\n\nCuốn sách đan xen giữa những trải nghiệm đời thường của Enrico bên thầy cô, bạn bè với những lá thư khuyên răn sâu sắc của cha mẹ và những câu chuyện xúc động về những tấm gương thiếu niên dũng cảm của nước Ý.\n\nTình thầy trò thiêng liêng, tình bạn không phân biệt sang hèn và lòng hiếu thảo được soi chiếu qua từng trang viết dung dị, nuôi dưỡng nên một tâm hồn giàu lòng trắc ẩn và tinh thần trách nhiệm với xã hội.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Lòng tốt là thứ ngôn ngữ mà người điếc có thể nghe và người mù có thể nhìn thấy; ta đã thực sự sống xứng đáng với những tấm lòng cao cả xung quanh mình chưa?",
   },
   {
     id: "tc-9",
@@ -340,7 +340,7 @@ const bookDatabase = [
     badge: "Nỗi buồn Tuổi trẻ",
     cover: "images/thau-cam/rung-nauy.webp",
     summary:
-      "Khúc bi ca thanh xuân đượm buồn về tình yêu, nỗi mất mát và hành trình tìm kiếm điểm tựa linh hồn giữa Tokyo thập niên 60 đầy biến động. Tác phẩm đồng cảm sâu sắc với nỗi cô đơn cùng cực của những người trẻ tuổi đang loay hoay định vị cái tôi trước ranh giới sinh tử. 'Cái chết không phải là điều đối nghịch của sự sống, mà là một phần nằm ngay trong sự sống.'",
+      "Giai điệu bài hát 'Norwegian Wood' của The Beatles bất ngờ vang lên trên một chuyến bay đưa Toru Watanabe ba mươi bảy tuổi chìm sâu vào dòng ký ức thanh xuân u buồn giữa Tokyo thập niên 60 đầy biến động.\n\nToru bị giằng xé giữa hai người phụ nữ: Naoko - người yêu của người bạn thân đã tự sát, một cô gái mang tâm hồn mong manh, vỡ vụn đang điều trị tại viện an dưỡng; và Midori - một ngọn lửa căng tràn sức sống, tự do và bướng bỉnh.\n\nNhững cái chết tự sát liên tiếp của những người trẻ tuổi phơi bày nỗi cô đơn cùng cực, sự trống rỗng và hành trình tìm kiếm điểm tựa linh hồn trước ranh giới mong manh giữa sự sống và cái chết.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Cái chết không phải là điều đối nghịch của sự sống, mà là một phần nằm ngay trong sự sống; ta phải làm sao để bước tiếp khi những người ta yêu thương lần lượt rời đi?",
   },
   {
     id: "tc-10",
@@ -350,7 +350,7 @@ const bookDatabase = [
     badge: "Sử thi & Tri kỷ",
     cover: "images/thau-cam/truong-ca-achilles.webp",
     summary:
-      "Thiên tình sử bi tráng và xúc động giữa chiến binh huyền thoại Achilles và người bạn đồng hành trung trinh Patroclus dưới chân thành Troy rực lửa. Một khúc ca tôn vinh sự thấu hiểu tuyệt đối vượt qua định mệnh thần linh và sự tàn khốc của thời gian. 'Chàng là nửa linh hồn tôi, như các nhà thơ vẫn thường nói, và cái chết cũng không thể chia lìa.'",
+      "Dưới chân thành Troy rực lửa khói chiến tranh, thiên tình sử bi tráng giữa Achilles - chiến binh vĩ đại nhất của người Hy Lạp - và Patroclus, một hoàng tử nhỏ bé bị thất sủng và lưu đày, được tái hiện qua góc nhìn xúc động.\n\nTừ những ngày tháng niên thiếu êm đềm dưới sự bảo bọc của nhân mã Chiron đến chiến trường thành Troy khốc liệt, Patroclus luôn là chiếc mỏ neo dịu dàng gìn giữ phần nhân tính cuối cùng trong linh hồn kiêu hãnh của Achilles.\n\nKhi định mệnh khắc nghiệt và danh dự thần thánh đòi hỏi sự hy sinh, Patroclus khoác lên mình bộ giáp của Achilles để cứu vãn quân đội, dẫn đến cái chết bi tráng làm rung chuyển cả thế giới cổ đại.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Danh vọng bất tử và tình yêu tri kỷ trọn vẹn, điều nào mới thực sự có ý nghĩa khi cát bụi thời gian chôn vùi tất cả vinh quang trần thế?",
   },
   {
     id: "tc-11",
@@ -360,7 +360,7 @@ const bookDatabase = [
     badge: "Hào hùng Dân tộc",
     cover: "images/thau-cam/tuoi-tho-du-doi-1.jpg",
     summary:
-      "Bản tráng ca bi hùng về những chiến sĩ thiếu niên của Trung đoàn Trần Cao Vân quả cảm chiến đấu và ngã xuống trên chiến trường Thừa Thiên - Huế. Nước mắt và lòng tự hào hòa quyện khi chứng kiến tâm hồn trong trắng, kiên trung của những đứa trẻ hiến dâng tuổi xuân cho Tổ quốc. 'Dù phải chết nghìn lần, chúng em cũng quyết không bao giờ phản bội quê hương.'",
+      "Chiến khu Bình Trị Thiên những năm đầu kháng chiến chống thực dân Pháp gian khổ và ác liệt, nơi Đội Thiếu niên trinh sát thuộc Trung đoàn Trần Cao Vân được thành lập với những chiến sĩ chỉ mới mười hai, mười ba tuổi.\n\nTác phẩm khắc họa sinh động chân dung những thiếu niên quả cảm như Lượm sứt, Mừng, Vịnh sưa, Quỳnh sơn ca... Mỗi em mang một hoàn cảnh, một tính cách nhưng đều chung một bầu máu nóng yêu nước và lòng trung thành tuyệt đối với cách mạng.\n\nNhững trận chiến đẫm máu, sự hy sinh lẫm liệt của Vịnh sưa trên nóc kho đạn, hay nỗi oan khiên đứt ruột của em Mừng trước khi trút hơi thở cuối cùng làm rung chuyển trái tim người đọc bằng nước mắt và niềm tự hào dân tộc.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Khi Tổ quốc lâm nguy, tâm hồn trong trắng của những đứa trẻ có thể tỏa sáng rực rỡ đến nhường nào? Và chúng ta hôm nay phải sống sao cho xứng đáng với máu xương của thế hệ đi trước?",
   },
 
   // --- Cảm xúc: xao-xuyen ---
@@ -372,7 +372,7 @@ const bookDatabase = [
     badge: "Hào quang Hollywood",
     cover: "images/xao-xuyen/bay-nguoi-chong-cua-evelyn-hugo.webp",
     summary:
-      "Phía sau ánh đèn flash chói lòa và bảy cuộc hôn nhân gây chấn động Hollywood là một tình yêu thầm kín, khắc cốt ghi tâm kéo dài suốt đời của minh tinh Evelyn Hugo. Những thổ lộ chân thành bóc trần sự đánh đổi nghiệt ngã giữa danh vọng rực rỡ và hạnh phúc đích thực. 'Đừng bao giờ xin lỗi vì đã yêu ai đó bằng cả trái tim mình, dù người đó là ai đi chăng nữa.'",
+      "Minh tinh màn bạc Hollywood huyền thoại Evelyn Hugo ở tuổi xế chiều bất ngờ quyết định phá vỡ sự im lặng bấy lâu, chọn Monique Grant - một nữ phóng viên vô danh - để kể lại toàn bộ sự thật về cuộc đời mình.\n\nĐằng sau hào quang rực rỡ và bảy cuộc hôn nhân gây chấn động truyền thông là một hành trình đầy toan tính, tham vọng và đánh đổi nghiệt ngã để bảo vệ tình yêu đích thực duy nhất của đời bà: mối tình đồng giới thầm kín với nữ diễn viên Celia St. James.\n\nKhi bức màn nhung hạ xuống, lý do thực sự đằng sau việc Evelyn chọn Monique để trao gửi bản hồi ký được hé lộ, phơi bày một món nợ quá khứ đau đớn gắn kết số phận hai người phụ nữ.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Giữa hào quang danh vọng của cả thế giới và quyền được yêu thương người mình chọn bằng cả trái tim, ta sẵn sàng trả cái giá đắt đến mức nào?",
   },
   {
     id: "xx-2",
@@ -382,7 +382,7 @@ const bookDatabase = [
     badge: "Tình yêu Hoang dại",
     cover: "images/xao-xuyen/doi-gio-hu.webp",
     summary:
-      "Cơn lốc tình yêu mãnh liệt, cuồng bạo và nhuốm màu hủy diệt giữa Heathcliff và Catherine trên đồng hoang gió lộng xứ Yorkshire. Một kiệt tác bất hủ làm xao xuyến bao thế hệ bởi thứ tình cảm vượt qua giới hạn của trần thế và sự sống. 'Dù tâm hồn chúng tôi được làm bằng chất liệu gì, tâm hồn chàng và tôi đều cùng một loại.'",
+      "Giữa vùng đồng hoang hoang vu, lạnh giá và gió lộng xứ Yorkshire, hai gia đình Earnshaw tại Đồi Gió Hú và Linton tại Trang viên Vành Khuyên bị cuốn vào một bi kịch truyền đời đẫm thù hận.\n\nMối tình thuở thiếu thời giữa chàng trai mồ côi Heathcliff và nàng Catherine Earnshaw nồng nhiệt nhưng đầy bản năng hoang dã. Khi Catherine quyết định kết hôn với Edgar Linton vì địa vị xã hội, trái tim tan vỡ của Heathcliff đã biến thành ngọn lửa phục thù tàn bạo nuốt chửng cả hai thế hệ.\n\nSự thù hận tột cùng không thể dập tắt nỗi ám ảnh về tình yêu, dẫn đến cái chết bi thương và cuộc hội ngộ siêu nhiên của hai linh hồn trên đồng hoang vĩnh cửu.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Dù tâm hồn chúng ta được tạo nên từ chất liệu gì, có những tình yêu mãnh liệt đến mức vượt qua ranh giới giữa sự sống, cái chết và cả đạo đức trần thế hay không?",
   },
   {
     id: "xx-3",
@@ -392,7 +392,7 @@ const bookDatabase = [
     badge: "Lãng mạn Thuần khiết",
     cover: "images/xao-xuyen/em-se-den-cung-con-mua.webp",
     summary:
-      "Lời hẹn ước dịu dàng của người mẹ quá cố trở về bên chồng con trong suốt sáu tuần mùa mưa rơi tí tách ngoài hiên cửa. Sự ấm áp, thuần khiết và nỗi luyến lưu nhẹ nhàng thấm sâu vào lòng độc giả như từng giọt mưa mùa hạ trong trẻo. 'Được gặp em, yêu em và có em trong đời là điều kỳ diệu nhất mà thượng đế đã ban tặng cho anh.'",
+      "Một năm sau khi người vợ trẻ Mio qua đời, người chồng vụng về Takumi và cậu con trai sáu tuổi Yuji sống trong sự trống vắng, chỉ biết bám víu vào lời hẹn ước kỳ lạ trước lúc lâm chung của cô: 'Khi mùa mưa năm sau đến, mẹ sẽ trở về xem hai bố con sống thế nào.'\n\nĐúng vào ngày đầu tiên của mùa mưa, tại nhà xưởng bỏ hoang trong rừng, một người phụ nữ có ngoại hình giống hệt Mio bất ngờ xuất hiện nhưng đã mất đi toàn bộ ký ức. Takumi đón cô về nhà và kể lại cho cô nghe câu chuyện tình yêu vụng dại thuở thiếu thời của họ.\n\nSáu tuần mùa mưa trôi qua tựa như một giấc mộng thiên đường êm đềm, cho đến khi mùa mưa kết thúc và cuốn nhật ký của Mio hé lộ sự thật cảm động về sự lựa chọn dũng cảm của tình yêu.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Nếu biết trước tương lai hạnh phúc sẽ chỉ ngắn ngủi và kết thúc bằng chia ly, bạn có còn dám can đảm bước vào tình yêu ấy một lần nữa?",
   },
   {
     id: "xx-4",
@@ -402,7 +402,7 @@ const bookDatabase = [
     badge: "Khí phách Phụ nữ",
     cover: "images/xao-xuyen/jane-eyre.webp",
     summary:
-      "Hành trình khẳng định nhân phẩm, tự do và tình yêu mãnh liệt nhưng liêm khiết của cô gái mồ côi Jane Eyre tại dinh thự u uất Thornfield. Tình cảm sâu sắc giữa nàng và ngài Rochester là biểu tượng rực rỡ của sự đồng điệu giữa hai tâm hồn bình đẳng. 'Tôi không phải là một con chim; và không có chiếc bẫy nào có thể giam cầm được một linh hồn tự do.'",
+      "Cô bé mồ côi Jane Eyre lớn lên trong sự ngược đãi của gia đình dì dượng và sự khắc nghiệt của trường nội trú Lowood, nhưng chưa bao giờ để hoàn cảnh dập tắt lòng tự trọng và khát vọng tự do cháy bỏng.\n\nTrở thành gia sư tại dinh thự u uất Thornfield, Jane tìm thấy sự đồng điệu tâm hồn sâu sắc với ngài Rochester - một người đàn ông quyền quý, bí ẩn và đầy thương tổn. Tình cảm chân thành vượt qua rào cản giai cấp đưa họ đến gần ngưỡng cửa hôn nhân.\n\nSự thật kinh hoàng về người vợ điên bị giam cầm trên gác mái được phơi bày ngay trong lễ cưới, buộc Jane phải đưa ra quyết định đau đớn: rời bỏ người mình yêu để giữ gìn phẩm giá và nguyên tắc đạo đức của bản thân.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Khi tình yêu đòi hỏi bạn phải đánh đổi lòng tự trọng và nhân phẩm, bạn sẽ chọn khuất phục trước đam mê hay kiên định đứng vững như một linh hồn tự do?",
   },
   {
     id: "xx-5",
@@ -412,7 +412,7 @@ const bookDatabase = [
     badge: "Thanh xuân Dang dở",
     cover: "images/xao-xuyen/khi-loi-thuoc-ve-cac-vi-sao.webp",
     summary:
-      "Mối tình nồng nhiệt, hóm hỉnh nhưng đẫm nước mắt giữa hai người trẻ tuổi mang trong mình căn bệnh ung thư quái ác. Họ đã gom góp những ngày ngắn ngủi còn lại để trao cho nhau một cõi vĩnh hằng thu nhỏ đầy ý nghĩa. 'Em đã trao cho anh một cõi vĩnh hằng chỉ trong những ngày hữu hạn, và anh mãi mãi biết ơn vì điều đó.'",
+      "Hazel Grace Lancaster - cô gái mười sáu tuổi mang trong mình căn bệnh ung thư tuyến giáp giai đoạn cuối luôn phải kè kè bình dưỡng khí - tình cờ gặp Augustus Waters, một chàng trai điển trai đã vượt qua ung thư xương nhưng phải cưa mất một bên chân, tại một hội hỗ trợ bệnh nhân ung thư.\n\nTình yêu giữa hai người trẻ tuổi nảy nở bằng sự hóm hỉnh, thông minh và niềm say mê chung dành cho một cuốn sách dang dở. Họ cùng nhau gom góp những ngày tháng ngắn ngủi còn lại để thực hiện chuyến đi đến Amsterdam gặp tác giả cuốn sách.\n\nCăn bệnh ung thư bất ngờ tái phát và hủy hoại cơ thể Augustus, nhưng không thể dập tắt ngọn lửa tình yêu thuần khiết và lòng biết ơn sâu sắc mà họ dành cho nhau trong từng khoảnh khắc hữu hạn.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Ta không thể chọn mình có bị tổn thương trên thế giới này hay không, nhưng ta hoàn toàn có quyền lựa chọn ai là người sẽ làm tổn thương mình; bạn đã sống trọn vẹn cho tình yêu hôm nay chưa?",
   },
   {
     id: "xx-6",
@@ -422,7 +422,7 @@ const bookDatabase = [
     badge: "Cổ điển Hoàng gia",
     cover: "images/xao-xuyen/kieu-hanh-va-dinh-kien.webp",
     summary:
-      "Vũ điệu tình yêu tinh tế, sắc sảo giữa nàng Elizabeth thông minh bướng bỉnh và chàng Darcy cao ngạo quyền quý vùng thôn dã nước Anh. Tác phẩm chinh phục trái tim độc giả qua những cuộc đối thoại trí tuệ và sự hóa giải ngọt ngào giữa lòng kiêu hãnh và những định kiến sai lầm. 'Em đã bỏ bùa mê cả thể xác lẫn tâm hồn tôi, và tôi yêu em, yêu em say đắm.'",
+      "Vùng nông thôn nước Anh thế kỷ 19 xôn xao trước sự xuất hiện của hai quý tộc giàu có Bingley và Darcy, châm ngòi cho những toan tính hôn nhân của các gia đình quý tộc trung lưu, đặc biệt là gia đình bà Bennet với năm cô con gái chưa chồng.\n\nNàng Elizabeth Bennet thông minh, cá tính và độc lập nhanh chóng nảy sinh định kiến sâu sắc với Fitzwilliam Darcy - một người đàn ông giàu có nhưng mang vẻ ngoài kiêu ngạo, lạnh lùng. Ngược lại, Darcy lại dần bị mê hoặc bởi đôi mắt sáng ngời và sự thẳng thắn của nàng.\n\nQua những hiểu lầm dở khóc dở cười và những biến cố gia đình kịch tính, cả hai dần nhận ra những khiếm khuyết trong tính cách của mình: Darcy học cách rũ bỏ lòng kiêu hãnh, còn Elizabeth can đảm gạt bỏ những định kiến sai lầm để đón nhận tình yêu chân thành.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Đã bao giờ lòng kiêu hãnh hay những định kiến vội vàng ngăn cản bạn nhận ra vẻ đẹp thực sự của một tâm hồn đang hướng về mình?",
   },
   {
     id: "xx-7",
@@ -432,7 +432,7 @@ const bookDatabase = [
     badge: "Hoài niệm Quê hương",
     cover: "images/xao-xuyen/mat-biec.webp",
     summary:
-      "Mối tình si trọn một đời của Ngạn dành cho Hà Lan dưới bóng râm của rừng sim và ngôi trường làng Đo Đo thơ mộng. Đôi mắt biếc trong veo như nỗi buồn thăm thẳm mang theo những tiếc nuối khôn nguôi về một thời thanh xuân đã lùi vào dĩ vãng. 'Tôi gửi tình yêu cho mùa hè, nhưng mùa hè không giữ; mùa hè nghiêng mình để tình yêu rơi vào mắt biếc.'",
+      "Làng Đo Đo thơ mộng với rừng sim tím, giàn hoa thiên lý và ngôi trường làng đơn sơ là nơi chứng kiến tình bạn trong veo thuở ấu thơ giữa Ngạn và Hà Lan - cô bạn gái có đôi mắt biếc biếc thăm thẳm như chứa cả trời thu.\n\nLớn lên, cả hai cùng rời làng lên thành phố học tập. Trong khi Hà Lan nhanh chóng bị choáng ngợp bởi ánh đèn phồn hoa đô hội và ngã vào vòng tay của Dũng, Ngạn vẫn ôm trọn mối tình đơn phương thủy chung, lặng lẽ đứng bên lề cuộc đời cô như một chiếc bóng.\n\nKhi bi kịch xảy đến với Hà Lan và đứa con gái Trà Long ra đời mang đôi mắt biếc giống hệt mẹ, Ngạn dành trọn tình thương chăm sóc cho cô bé, nhưng cuối cùng anh nhận ra mình không thể tìm kiếm hình bóng của người xưa trong đôi mắt của thế hệ sau.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Một đời si tình ôm giữ những hoài niệm dĩ vãng là sự cao thượng thuần khiết hay chỉ là nỗi chấp niệm xót xa của một kẻ mãi không chịu lớn lên?",
   },
   {
     id: "xx-8",
@@ -442,7 +442,7 @@ const bookDatabase = [
     badge: "Vượt qua Thời gian",
     cover: "images/xao-xuyen/vo-cua-nguoi-du-hanh-thoi-gian.webp",
     summary:
-      "Một câu chuyện tình phi thời gian kỳ lạ và da diết giữa Henry - người đàn ông bị dịch chuyển thời gian ngoài tầm kiểm soát, và Clare - người phụ nữ dành cả đời để kiên nhẫn đợi chờ anh. Tình yêu của họ trở thành chiếc mỏ neo duy nhất giữa dòng chảy hỗn loạn của năm tháng. 'Anh yêu em từ trước khi anh hiểu thế nào là tình yêu, và anh sẽ yêu em đến tận cùng của thời gian.'",
+      "Henry DeTamble mắc phải một hội chứng di truyền kỳ lạ khiến anh bị dịch chuyển thời gian ngoài tầm kiểm soát, xuất hiện trần trụi và đơn độc ở những thời điểm và không gian ngẫu nhiên trong quá khứ hoặc tương lai.\n\nClare Abshire gặp Henry lần đầu năm cô sáu tuổi tại đồng cỏ sau nhà, khi một phiên bản trung niên của Henry xuất hiện từ tương lai. Cô dành cả tuổi thanh xuân kiên nhẫn chờ đợi, để rồi khi gặp lại Henry ở tuổi hai mươi tám (khi anh mới hai mươi), tình yêu của họ phải đối mặt với muôn vàn nghịch lý thời gian và sự chia ly bất ngờ.\n\nDù biết trước những bi kịch nghiệt ngã đang chờ đợi phía trước, tình yêu sâu sắc và lòng chung thủy kiên định của Clare đã trở thành chiếc mỏ neo duy nhất giúp Henry tìm đường trở về giữa dòng chảy hỗn loạn của năm tháng.\n\n❓ Điều đọng lại sau trang sách dành cho bạn: Khi thời gian có thể chia cắt thể xác nhưng không thể lay chuyển được tình yêu, ta sẽ trân trọng từng phút giây hiện tại bên người mình thương yêu đến nhường nào?",
   },
 ];
 
@@ -660,11 +660,32 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================================================
      SECTION 4: FOCUS MODAL & FAVORITE HEART LOGIC
      ========================================================================== */
-  // Cập nhật giao diện trái tim trong Modal theo localStorage
+  // Lấy User Key duy nhất của tài khoản đang đăng nhập
+  const getCurrentUserKey = () => {
+    try {
+      const raw = localStorage.getItem("currentUser");
+      if (!raw) return null;
+      const user = JSON.parse(raw);
+      return (
+        (user && (user.username || user.email || user.name || user.id)) || null
+      );
+    } catch {
+      return null;
+    }
+  };
+
+  // Cập nhật giao diện trái tim trong Modal theo localStorage của tài khoản hiện tại
   const updateModalHeartUI = (bookId) => {
     if (!heartBtn) return;
+    const userKey = getCurrentUserKey();
+    if (!userKey) {
+      heartBtn.classList.remove("is-loved");
+      heartBtn.setAttribute("aria-pressed", "false");
+      return;
+    }
+    const favKey = `favorites_${userKey}`;
     try {
-      const raw = localStorage.getItem("favoriteBooks");
+      const raw = localStorage.getItem(favKey);
       const favs = raw ? JSON.parse(raw) : [];
       const isFav = favs.some((b) => String(b.id) === String(bookId));
       if (isFav) {
@@ -675,7 +696,7 @@ document.addEventListener("DOMContentLoaded", () => {
         heartBtn.setAttribute("aria-pressed", "false");
       }
     } catch (err) {
-      console.error("Lỗi đọc favoriteBooks:", err);
+      console.error(`Lỗi đọc ${favKey}:`, err);
     }
   };
 
@@ -757,14 +778,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Tương tác Thả tim trong Modal
+  // Tương tác Thả tim trong Modal (Gắn liền với User ID / Strict Auth)
   if (heartBtn) {
     heartBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       if (!currentActiveBook) return;
 
+      const userKey = getCurrentUserKey();
+      // Yêu cầu đăng nhập nếu là khách vãng lai
+      if (!userKey) {
+        alert("Vui lòng đăng nhập để lưu cuốn sách này vào danh sách yêu thích của bạn!");
+        window.location.href = "auth.html";
+        return;
+      }
+
+      const favKey = `favorites_${userKey}`;
       try {
-        const raw = localStorage.getItem("favoriteBooks");
+        const raw = localStorage.getItem(favKey);
         let favs = raw ? JSON.parse(raw) : [];
         const idx = favs.findIndex(
           (b) => String(b.id) === String(currentActiveBook.id),
@@ -782,9 +812,9 @@ document.addEventListener("DOMContentLoaded", () => {
           heartBtn.setAttribute("aria-pressed", "true");
         }
 
-        localStorage.setItem("favoriteBooks", JSON.stringify(favs));
+        localStorage.setItem(favKey, JSON.stringify(favs));
       } catch (err) {
-        console.error("Lỗi cập nhật favoriteBooks:", err);
+        console.error(`Lỗi cập nhật ${favKey}:`, err);
       }
     });
   }
@@ -910,8 +940,22 @@ function addToHistory(bookCardElement) {
 
   const bookObj = { id, title, author, cover };
 
+  // Xác định userKey của tài khoản đang đăng nhập (khách thì lưu tạm viewHistory_guest)
+  let userKey = "guest";
   try {
-    const rawHistory = localStorage.getItem("readHistory");
+    const raw = localStorage.getItem("currentUser");
+    if (raw) {
+      const u = JSON.parse(raw);
+      userKey = (u && (u.username || u.email || u.name || u.id)) || "guest";
+    }
+  } catch {
+    userKey = "guest";
+  }
+
+  const historyKey = `viewHistory_${userKey}`;
+
+  try {
+    const rawHistory = localStorage.getItem(historyKey);
     let history = rawHistory ? JSON.parse(rawHistory) : [];
 
     // Loại bỏ bản ghi cũ nếu đã có
@@ -922,8 +966,8 @@ function addToHistory(bookCardElement) {
 
     // Cắt mảng tối đa 12 cuốn gần nhất
     const limitedHistory = history.slice(0, 12);
-    localStorage.setItem("readHistory", JSON.stringify(limitedHistory));
+    localStorage.setItem(historyKey, JSON.stringify(limitedHistory));
   } catch (error) {
-    console.error("Lỗi khi cập nhật readHistory:", error);
+    console.error(`Lỗi khi cập nhật ${historyKey}:`, error);
   }
 }
