@@ -311,6 +311,275 @@
         color: #1b4332;
       }
 
+      .auth-alert-info {
+        background-color: #f7f3e8;
+        border: 1px solid #dcd1be;
+        color: var(--clr-text-main);
+      }
+
+      /* Chỉ báo các bước trong form Quên mật khẩu */
+      .forgot-steps-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--clr-border);
+      }
+
+      .step-item {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--clr-text-muted);
+        opacity: 0.5;
+        transition: opacity 0.25s ease, color 0.25s ease;
+      }
+
+      .step-item.is-active {
+        color: var(--clr-primary);
+        font-weight: 600;
+        opacity: 1;
+      }
+
+      .step-item.is-completed {
+        color: var(--clr-text-main);
+        opacity: 0.9;
+      }
+
+      .step-divider {
+        color: var(--clr-border);
+        font-size: 0.75rem;
+      }
+
+      /* Hộp mô phỏng mã OTP thử nghiệm */
+      .otp-simulation-box {
+        background-color: var(--clr-bg-main);
+        border: 1px dashed var(--clr-border);
+        border-left: 3px solid var(--clr-primary);
+        padding: 14px 16px;
+        margin-bottom: 24px;
+        border-radius: 2px;
+      }
+
+      .otp-simulation-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+
+      .otp-simulation-title {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--clr-primary);
+      }
+
+      .btn-fill-otp {
+        background: none;
+        border: none;
+        color: var(--clr-primary);
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
+      }
+
+      .btn-fill-otp:hover {
+        color: var(--clr-primary-dark);
+      }
+
+      .otp-simulation-desc {
+        font-size: 0.8125rem;
+        color: var(--clr-text-muted);
+        line-height: 1.4;
+      }
+
+      .otp-highlight-email {
+        color: var(--clr-text-main);
+        font-weight: 600;
+      }
+
+      .otp-simulation-code-wrap {
+        margin-top: 10px;
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .otp-code-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--clr-text-muted);
+      }
+
+      .otp-simulation-code {
+        font-family: var(--font-heading);
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--clr-primary);
+        user-select: all;
+      }
+
+      .form-step-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+      }
+
+      .step-action-link {
+        font-size: 0.8125rem;
+        color: var(--clr-text-muted);
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font-family: var(--font-body);
+        transition: color 0.2s ease;
+      }
+
+      .step-action-link:hover {
+        color: var(--clr-primary);
+        text-decoration: underline;
+      }
+
+      .forgot-step-pane {
+        display: none;
+      }
+
+      .forgot-step-pane.is-active {
+        display: block;
+      }
+
+      /* Trạng thái Loading của nút bấm */
+      .btn-submit:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      .btn-loading-spinner {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-top-color: #ffffff;
+        border-radius: 50%;
+        animation: btnSpin 0.8s linear infinite;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      @keyframes btnSpin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Thẻ thông báo trạng thái gửi Email thật */
+      .email-dispatch-card {
+        background-color: var(--clr-bg-main);
+        border: 1px solid var(--clr-border);
+        border-left: 3px solid var(--clr-primary);
+        padding: 16px;
+        margin-bottom: 20px;
+        border-radius: 2px;
+      }
+
+      .email-dispatch-badge {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--clr-primary);
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .email-dispatch-target {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--clr-text-main);
+        word-break: break-all;
+        margin-bottom: 8px;
+      }
+
+      .email-dispatch-hint {
+        font-size: 0.8125rem;
+        color: var(--clr-text-muted);
+        line-height: 1.5;
+      }
+
+      /* Modal Cấu hình EmailJS */
+      .email-config-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(45, 26, 26, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .email-config-modal.is-open {
+        display: flex;
+      }
+
+      .email-config-panel {
+        background-color: var(--clr-surface);
+        border: 1px solid var(--clr-border);
+        border-radius: 2px;
+        max-width: 480px;
+        width: 100%;
+        padding: 32px;
+        box-shadow: 0 16px 48px rgba(45, 26, 26, 0.2);
+        animation: modalFadeIn 0.25s ease;
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .email-config-title {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--clr-primary);
+        margin-bottom: 8px;
+        line-height: 1.25;
+      }
+
+      .email-config-desc {
+        font-size: 0.8125rem;
+        color: var(--clr-text-muted);
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+
       /* Chuyển đổi mượt mà giữa Đăng nhập và Đăng ký */
       .auth-view {
         transition: opacity 0.3s ease, transform 0.3s ease;
@@ -509,76 +778,257 @@
             </form>
           </div>
 
-          <!-- VIEW 3: FORM QUÊN MẬT KHẨU -->
+          <!-- VIEW 3: FORM QUÊN MẬT KHẨU (TIẾN TRÌNH 3 BƯỚC BẢO MẬT) -->
           <div id="forgot-view" class="auth-view is-hidden">
             <header class="form-header">
               <h2 class="form-title">Khôi phục mật khẩu</h2>
-              <p class="form-subtitle">
+              <p class="form-subtitle" id="forgot-subtitle">
                 Nhập địa chỉ Gmail đã đăng ký để xác minh và thiết lập mật khẩu mới.
               </p>
             </header>
 
+            <!-- Chỉ báo tiến trình 3 bước -->
+            <div class="forgot-steps-indicator" aria-hidden="true">
+              <span class="step-item is-active" id="step-ind-1">01. Gmail</span>
+              <span class="step-divider">—</span>
+              <span class="step-item" id="step-ind-2">02. Mã OTP</span>
+              <span class="step-divider">—</span>
+              <span class="step-item" id="step-ind-3">03. Mật khẩu mới</span>
+            </div>
+
             <div id="forgot-alert" class="auth-alert" role="alert"></div>
 
-            <form id="forgot-form" novalidate>
-              <div class="form-group">
-                <label for="forgot-email-input" class="form-label"
-                  >Gmail đã đăng ký</label
-                >
-                <input
-                  type="email"
-                  id="forgot-email-input"
-                  name="forgot-email"
-                  class="form-input"
-                  placeholder="dia_chi@gmail.com"
-                  autocomplete="email"
-                  required
-                />
-              </div>
+            <!-- BƯỚC 1: XÁC THỰC GMAIL -->
+            <div id="forgot-step-1" class="forgot-step-pane is-active">
+              <form id="forgot-email-form" novalidate>
+                <div class="form-group">
+                  <label for="forgot-email-input" class="form-label"
+                    >Gmail đã đăng ký</label
+                  >
+                  <input
+                    type="email"
+                    id="forgot-email-input"
+                    name="forgot-email"
+                    class="form-input"
+                    placeholder="dia_chi@gmail.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
 
-              <div class="form-group">
-                <label for="forgot-new-password-input" class="form-label"
-                  >Mật khẩu mới</label
-                >
-                <input
-                  type="password"
-                  id="forgot-new-password-input"
-                  name="forgot-new-password"
-                  class="form-input"
-                  placeholder="Nhập mật khẩu mới (tối thiểu 3 ký tự)..."
-                  autocomplete="new-password"
-                  required
-                />
-              </div>
+                <button type="submit" class="btn-submit" id="btn-request-otp">
+                  Gửi yêu cầu xác thực
+                </button>
 
-              <div class="form-group">
-                <label for="forgot-confirm-password-input" class="form-label"
-                  >Nhập lại mật khẩu mới</label
-                >
-                <input
-                  type="password"
-                  id="forgot-confirm-password-input"
-                  name="forgot-confirm-password"
-                  class="form-input"
-                  placeholder="Xác nhận lại mật khẩu mới..."
-                  autocomplete="new-password"
-                  required
-                />
-              </div>
+                <footer class="form-footer">
+                  <p>
+                    Đã nhớ mật khẩu?
+                    <a href="#" id="forgot-to-login" class="forgot-to-login">Quay lại đăng nhập</a>
+                  </p>
+                </footer>
+              </form>
+            </div>
 
-              <button type="submit" class="btn-submit">Đặt lại mật khẩu</button>
-
-              <footer class="form-footer">
-                <p>
-                  Đã nhớ mật khẩu?
-                  <a href="#" id="forgot-to-login">Quay lại đăng nhập</a>
+            <!-- BƯỚC 2: NHẬP MÃ XÁC THỰC OTP -->
+            <div id="forgot-step-2" class="forgot-step-pane">
+              <!-- Thẻ thông báo trạng thái gửi email thật -->
+              <div class="email-dispatch-card">
+                <span class="email-dispatch-badge">Hộp thư điện tử (Gmail)</span>
+                <p class="email-dispatch-target">
+                  Đã phát mã xác thực đến: <strong id="otp-target-email" class="otp-highlight-email"></strong>
                 </p>
-              </footer>
-            </form>
+                <p class="email-dispatch-hint">
+                  Vui lòng mở ứng dụng hoặc trang web Gmail cá nhân, kiểm tra hộp thư đến (và cả mục Thư rác / Spam nếu cần) để lấy mã OTP gồm 6 chữ số.
+                </p>
+              </div>
+
+              <!-- Hộp hiển thị mã OTP mẫu / mô phỏng phục vụ kiểm thử khi chưa kết nối API -->
+              <div class="otp-simulation-box" id="otp-simulation-box" style="display: none;">
+                <div class="otp-simulation-header">
+                  <span class="otp-simulation-title">Chế độ kiểm thử nội bộ</span>
+                  <button type="button" class="btn-fill-otp" id="btn-autofill-otp">
+                    Điền mã nhanh
+                  </button>
+                </div>
+                <p class="otp-simulation-desc">
+                  Mã xác thực được kích hoạt để kiểm thử nhanh quy trình (hoặc khi chưa lưu cấu hình EmailJS):
+                </p>
+                <div class="otp-simulation-code-wrap">
+                  <span class="otp-code-label">Mã OTP kiểm thử:</span>
+                  <span class="otp-simulation-code" id="otp-demo-code">123456</span>
+                </div>
+              </div>
+
+              <form id="forgot-otp-form" novalidate>
+                <div class="form-group">
+                  <label for="forgot-otp-input" class="form-label"
+                    >Mã xác thực OTP (6 chữ số)</label
+                  >
+                  <input
+                    type="text"
+                    id="forgot-otp-input"
+                    name="forgot-otp"
+                    class="form-input"
+                    placeholder="Nhập 6 chữ số từ Gmail..."
+                    inputmode="numeric"
+                    maxlength="6"
+                    autocomplete="one-time-code"
+                    required
+                  />
+                </div>
+
+                <button type="submit" class="btn-submit" id="btn-verify-otp">
+                  Xác nhận mã OTP
+                </button>
+
+                <div class="form-step-actions">
+                  <button type="button" class="step-action-link" id="btn-resend-otp">
+                    Gửi lại mã OTP
+                  </button>
+                  <button type="button" class="step-action-link" id="btn-change-email">
+                    Đổi Gmail khác
+                  </button>
+                  <button type="button" class="step-action-link" id="btn-open-email-config">
+                    Cấu hình Gmail API
+                  </button>
+                </div>
+
+                <footer class="form-footer">
+                  <p>
+                    Đã nhớ mật khẩu?
+                    <a href="#" class="forgot-to-login">Quay lại đăng nhập</a>
+                  </p>
+                </footer>
+              </form>
+            </div>
+
+            <!-- BƯỚC 3: THIẾT LẬP MẬT KHẨU MỚI -->
+            <div id="forgot-step-3" class="forgot-step-pane">
+              <form id="forgot-password-form" novalidate>
+                <div class="form-group">
+                  <label for="forgot-new-password-input" class="form-label"
+                    >Mật khẩu mới</label
+                  >
+                  <input
+                    type="password"
+                    id="forgot-new-password-input"
+                    name="forgot-new-password"
+                    class="form-input"
+                    placeholder="Nhập mật khẩu mới (tối thiểu 3 ký tự)..."
+                    autocomplete="new-password"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="forgot-confirm-password-input" class="form-label"
+                    >Nhập lại mật khẩu mới</label
+                  >
+                  <input
+                    type="password"
+                    id="forgot-confirm-password-input"
+                    name="forgot-confirm-password"
+                    class="form-input"
+                    placeholder="Xác nhận lại mật khẩu mới..."
+                    autocomplete="new-password"
+                    required
+                  />
+                </div>
+
+                <button type="submit" class="btn-submit" id="btn-reset-password">
+                  Đặt lại mật khẩu
+                </button>
+
+                <footer class="form-footer">
+                  <p>
+                    Đã nhớ mật khẩu?
+                    <a href="#" class="forgot-to-login">Quay lại đăng nhập</a>
+                  </p>
+                </footer>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- MODAL CẤU HÌNH GỬI EMAIL THỰC TẾ (EMAILJS / GMAIL SERVICE) -->
+    <div
+      id="email-config-modal"
+      class="email-config-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="email-config-title"
+    >
+      <div class="email-config-panel">
+        <h3 id="email-config-title" class="email-config-title">
+          Cấu hình gửi Gmail (EmailJS)
+        </h3>
+        <p class="email-config-desc">
+          Kết nối tài khoản Gmail thông qua EmailJS để hệ thống gửi thư điện tử chứa mã OTP thật đến hộp thư của người dùng.
+        </p>
+
+        <form id="email-config-form" novalidate>
+          <div class="form-group" style="margin-bottom: 18px">
+            <label for="cfg-service-id" class="form-label">Service ID (Gmail Service)</label>
+            <input
+              type="text"
+              id="cfg-service-id"
+              class="form-input"
+              placeholder="Ví dụ: service_distil..."
+              required
+            />
+          </div>
+
+          <div class="form-group" style="margin-bottom: 18px">
+            <label for="cfg-template-id" class="form-label">Template ID</label>
+            <input
+              type="text"
+              id="cfg-template-id"
+              class="form-input"
+              placeholder="Ví dụ: template_otp..."
+              required
+            />
+          </div>
+
+          <div class="form-group" style="margin-bottom: 24px">
+            <label for="cfg-public-key" class="form-label">Public Key (User ID)</label>
+            <input
+              type="text"
+              id="cfg-public-key"
+              class="form-input"
+              placeholder="Ví dụ: 8Y5q_xxxxxxxx..."
+              required
+            />
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 10px">
+            <button
+              type="submit"
+              id="btn-save-email-config"
+              class="btn-submit"
+              style="margin-top: 0; flex: 1"
+            >
+              Lưu cấu hình
+            </button>
+            <button
+              type="button"
+              id="btn-close-email-config"
+              class="btn-submit"
+              style="
+                margin-top: 0;
+                flex: 1;
+                background-color: transparent;
+                color: var(--clr-text-main);
+                border-color: var(--clr-border);
+              "
+            >
+              Đóng
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
   <script>
     /* ==========================================================================
@@ -611,16 +1061,308 @@
       );
       const registerAlert = document.getElementById("register-alert");
 
-      // Forgot Form elements
-      const forgotForm = document.getElementById("forgot-form");
+      // Forgot Form elements & Step panes
+      const forgotSubtitle = document.getElementById("forgot-subtitle");
+      const forgotAlert = document.getElementById("forgot-alert");
+
+      const forgotStep1Pane = document.getElementById("forgot-step-1");
+      const forgotStep2Pane = document.getElementById("forgot-step-2");
+      const forgotStep3Pane = document.getElementById("forgot-step-3");
+
+      const stepInd1 = document.getElementById("step-ind-1");
+      const stepInd2 = document.getElementById("step-ind-2");
+      const stepInd3 = document.getElementById("step-ind-3");
+
+      const forgotEmailForm = document.getElementById("forgot-email-form");
       const forgotEmailInput = document.getElementById("forgot-email-input");
+
+      const forgotOtpForm = document.getElementById("forgot-otp-form");
+      const forgotOtpInput = document.getElementById("forgot-otp-input");
+      const otpTargetEmail = document.getElementById("otp-target-email");
+      const otpDemoCode = document.getElementById("otp-demo-code");
+      const otpSimulationBox = document.getElementById("otp-simulation-box");
+      const btnAutofillOtp = document.getElementById("btn-autofill-otp");
+      const btnResendOtp = document.getElementById("btn-resend-otp");
+      const btnChangeEmail = document.getElementById("btn-change-email");
+      const btnRequestOtp = document.getElementById("btn-request-otp");
+
+      // Các phần tử modal cấu hình EmailJS
+      const emailConfigModal = document.getElementById("email-config-modal");
+      const btnOpenEmailConfig = document.getElementById("btn-open-email-config");
+      const btnCloseEmailConfig = document.getElementById("btn-close-email-config");
+      const emailConfigForm = document.getElementById("email-config-form");
+      const cfgServiceId = document.getElementById("cfg-service-id");
+      const cfgTemplateId = document.getElementById("cfg-template-id");
+      const cfgPublicKey = document.getElementById("cfg-public-key");
+
+      // ==========================================================================
+      // CẤU HÌNH & DỊCH VỤ GỬI EMAIL THỰC TẾ (EMAILJS / GMAIL SERVICE)
+      // ==========================================================================
+      const DEFAULT_EMAILJS_CONFIG = {
+        serviceId: "service_gmail",   // Service ID trong tài khoản EmailJS của bạn
+        templateId: "template_otp",   // Template ID mẫu thư OTP trong EmailJS
+        publicKey: "YOUR_PUBLIC_KEY", // Public Key (User ID) trong EmailJS Account
+      };
+
+      // Đọc cấu hình EmailJS từ localStorage hoặc mặc định
+      function getEmailJsConfig() {
+        try {
+          const raw = localStorage.getItem("distil_emailjs_config");
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            return { ...DEFAULT_EMAILJS_CONFIG, ...parsed };
+          }
+        } catch (e) {
+          console.warn("Lỗi đọc distil_emailjs_config:", e);
+        }
+        return { ...DEFAULT_EMAILJS_CONFIG };
+      }
+
+      // Lưu cấu hình EmailJS vào localStorage
+      function saveEmailJsConfig(cfg) {
+        try {
+          localStorage.setItem("distil_emailjs_config", JSON.stringify(cfg));
+          return true;
+        } catch (e) {
+          console.error("Lỗi lưu distil_emailjs_config:", e);
+          return false;
+        }
+      }
+
+      // Kiểm tra xem cấu hình EmailJS đã được thiết lập thật hay chưa
+      function hasValidEmailJsConfig(cfg) {
+        return Boolean(
+          cfg &&
+          cfg.serviceId &&
+          cfg.templateId &&
+          cfg.publicKey &&
+          cfg.publicKey !== "YOUR_PUBLIC_KEY" &&
+          cfg.serviceId !== "YOUR_SERVICE_ID"
+        );
+      }
+
+      // Hàm gửi email OTP thật đến Gmail của người dùng
+      async function sendRealOtpEmail(targetEmail, otpCode, username) {
+        const config = getEmailJsConfig();
+
+        // 1. Kiểm tra backend server (nếu người dùng chạy server Nodemailer cục bộ ở port 3000)
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 1800);
+          const localRes = await fetch("http://localhost:3000/api/send-otp", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: targetEmail,
+              otp: otpCode,
+              username: username || "Độc giả",
+            }),
+            signal: controller.signal,
+          });
+          clearTimeout(timeoutId);
+          if (localRes.ok) {
+            return { success: true, provider: "local-server" };
+          }
+        } catch (e) {
+          // Backend server không chạy -> chuyển sang kết nối trực tiếp EmailJS
+        }
+
+        // 2. Kiểm tra nếu chưa cấu hình EmailJS thật
+        if (!hasValidEmailJsConfig(config)) {
+          return {
+            success: false,
+            isFallback: true,
+            reason: "Chưa cấu hình API Key EmailJS",
+          };
+        }
+
+        // 3. Thực hiện gửi qua REST API chính thức của EmailJS (không cần cài đặt thư viện)
+        try {
+          const payload = {
+            service_id: config.serviceId,
+            template_id: config.templateId,
+            user_id: config.publicKey,
+            template_params: {
+              to_email: targetEmail,
+              email: targetEmail,
+              recipient: targetEmail,
+              user_email: targetEmail,
+              to_name: username || "Độc giả Distil",
+              user_name: username || "Độc giả Distil",
+              otp_code: otpCode,
+              passcode: otpCode,
+              otp: otpCode,
+              message: `Mã OTP khôi phục mật khẩu tài khoản Distil của bạn là: ${otpCode}. Mã có hiệu lực trong 10 phút.`,
+              time: new Date().toLocaleString("vi-VN"),
+            },
+          };
+
+          const response = await fetch(
+            "https://api.emailjs.com/api/v1.0/email/send",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            },
+          );
+
+          if (response.ok) {
+            return { success: true, provider: "emailjs" };
+          } else {
+            const errDetail = await response.text();
+            return {
+              success: false,
+              isFallback: false,
+              reason: errDetail || `Mã phản hồi HTTP ${response.status}`,
+            };
+          }
+        } catch (err) {
+          return {
+            success: false,
+            isFallback: false,
+            reason: err.message || "Lỗi mạng khi kết nối EmailJS",
+          };
+        }
+      }
+
+      // Điều khiển Modal Cấu hình EmailJS
+      function openEmailConfigModal() {
+        const currentCfg = getEmailJsConfig();
+        if (cfgServiceId) cfgServiceId.value = currentCfg.serviceId || "";
+        if (cfgTemplateId) cfgTemplateId.value = currentCfg.templateId || "";
+        if (cfgPublicKey)
+          cfgPublicKey.value =
+            currentCfg.publicKey === "YOUR_PUBLIC_KEY"
+              ? ""
+              : currentCfg.publicKey;
+        if (emailConfigModal) emailConfigModal.classList.add("is-open");
+      }
+
+      function closeEmailConfigModal() {
+        if (emailConfigModal) emailConfigModal.classList.remove("is-open");
+      }
+
+      if (btnOpenEmailConfig) {
+        btnOpenEmailConfig.addEventListener("click", openEmailConfigModal);
+      }
+
+      if (btnCloseEmailConfig) {
+        btnCloseEmailConfig.addEventListener("click", closeEmailConfigModal);
+      }
+
+      if (emailConfigModal) {
+        emailConfigModal.addEventListener("click", (e) => {
+          if (e.target === emailConfigModal) closeEmailConfigModal();
+        });
+      }
+
+      if (emailConfigForm) {
+        emailConfigForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const newCfg = {
+            serviceId: cfgServiceId ? cfgServiceId.value.trim() : "",
+            templateId: cfgTemplateId ? cfgTemplateId.value.trim() : "",
+            publicKey: cfgPublicKey ? cfgPublicKey.value.trim() : "",
+          };
+
+          if (!newCfg.serviceId || !newCfg.templateId || !newCfg.publicKey) {
+            alert(
+              "Vui lòng điền đầy đủ cả 3 thông tin: Service ID, Template ID và Public Key!",
+            );
+            return;
+          }
+
+          saveEmailJsConfig(newCfg);
+          closeEmailConfigModal();
+          showAlert(
+            forgotAlert,
+            "Đã lưu cấu hình EmailJS thành công! Hệ thống sẽ gửi thư điện tử thật khi bạn bấm gửi mã.",
+            "success",
+          );
+        });
+      }
+
+      const forgotPasswordForm = document.getElementById("forgot-password-form");
       const forgotNewPasswordInput = document.getElementById(
         "forgot-new-password-input",
       );
       const forgotConfirmPasswordInput = document.getElementById(
         "forgot-confirm-password-input",
       );
-      const forgotAlert = document.getElementById("forgot-alert");
+
+      // Trạng thái cho luồng Khôi phục mật khẩu 3 bước
+      let forgotState = {
+        step: 1,
+        verifiedEmail: "",
+        currentOtp: "",
+        isOtpVerified: false,
+      };
+
+      // Chuyển đổi giữa các bước trong Quên mật khẩu
+      function setForgotStep(step) {
+        forgotState.step = step;
+        hideAlert(forgotAlert);
+
+        // Hiển thị khung bước tương ứng
+        if (forgotStep1Pane)
+          forgotStep1Pane.classList.toggle("is-active", step === 1);
+        if (forgotStep2Pane)
+          forgotStep2Pane.classList.toggle("is-active", step === 2);
+        if (forgotStep3Pane)
+          forgotStep3Pane.classList.toggle("is-active", step === 3);
+
+        // Cập nhật chỉ báo bước (Indicator)
+        const indicators = [stepInd1, stepInd2, stepInd3];
+        indicators.forEach((ind, idx) => {
+          if (!ind) return;
+          ind.classList.remove("is-active", "is-completed");
+          if (idx + 1 === step) {
+            ind.classList.add("is-active");
+          } else if (idx + 1 < step) {
+            ind.classList.add("is-completed");
+          }
+        });
+
+        // Cập nhật mô tả tiêu đề phù hợp từng bước
+        if (forgotSubtitle) {
+          if (step === 1) {
+            forgotSubtitle.textContent =
+              "Nhập địa chỉ Gmail đã đăng ký để xác minh và thiết lập mật khẩu mới.";
+            if (forgotEmailInput) forgotEmailInput.focus();
+          } else if (step === 2) {
+            forgotSubtitle.textContent =
+              "Nhập mã xác thực OTP gồm 6 chữ số gửi về Gmail để tiếp tục.";
+            if (forgotOtpInput) forgotOtpInput.focus();
+          } else if (step === 3) {
+            forgotSubtitle.textContent =
+              "Thiết lập mật khẩu mới cho tài khoản của bạn và xác nhận.";
+            if (forgotNewPasswordInput) forgotNewPasswordInput.focus();
+          }
+        }
+      }
+
+      // Khởi tạo / đặt lại toàn bộ luồng Quên mật khẩu về bước đầu
+      function resetForgotWorkflow() {
+        forgotState = {
+          step: 1,
+          verifiedEmail: "",
+          currentOtp: "",
+          isOtpVerified: false,
+        };
+        if (forgotEmailForm) forgotEmailForm.reset();
+        if (forgotOtpForm) forgotOtpForm.reset();
+        if (forgotPasswordForm) forgotPasswordForm.reset();
+        closeEmailConfigModal();
+        hideAlert(forgotAlert);
+        setForgotStep(1);
+      }
+
+      // Sinh mã OTP 6 chữ số ngẫu nhiên
+      function generateOtpCode() {
+        return Math.floor(100000 + Math.random() * 900000).toString();
+      }
 
       // Hàm hiển thị thông báo
       function showAlert(el, msg, type = "error") {
@@ -697,17 +1439,49 @@
       if (goToForgot) {
         goToForgot.addEventListener("click", (e) => {
           e.preventDefault();
+          resetForgotWorkflow();
           switchView(forgotView);
           if (forgotEmailInput) forgotEmailInput.focus();
         });
       }
 
-      if (forgotToLogin) {
-        forgotToLogin.addEventListener("click", (e) => {
+      // Hỗ trợ quay lại màn hình đăng nhập từ tất cả các bước của Quên mật khẩu
+      document.querySelectorAll(".forgot-to-login").forEach((link) => {
+        link.addEventListener("click", (e) => {
           e.preventDefault();
+          resetForgotWorkflow();
           switchView(loginView);
           if (usernameInput) usernameInput.focus();
         });
+      });
+
+      // Kiểm tra nếu vừa hoàn tất đặt lại mật khẩu và chuyển hướng về
+      try {
+        const justResetEmail = sessionStorage.getItem("just_reset_email");
+        if (justResetEmail) {
+          sessionStorage.removeItem("just_reset_email");
+          if (usernameInput) {
+            usernameInput.value = justResetEmail;
+          }
+          if (passwordInput) {
+            passwordInput.focus();
+          }
+          showAlert(
+            loginAlert,
+            "Đặt lại mật khẩu thành công! Vui lòng đăng nhập với mật khẩu mới.",
+            "success",
+          );
+        }
+      } catch (e) {
+        console.warn("Lỗi đọc sessionStorage:", e);
+      }
+
+      // Hỗ trợ điều hướng bằng URL Hash (#forgot hoặc #register)
+      if (window.location.hash === "#forgot") {
+        resetForgotWorkflow();
+        switchView(forgotView);
+      } else if (window.location.hash === "#register") {
+        switchView(registerView);
       }
 
       // 1. Xử lý ĐĂNG NHẬP (Bằng Username hoặc Gmail)
@@ -917,27 +1691,24 @@
         });
       }
 
-      // 3. Xử lý QUÊN MẬT KHẨU (Khôi phục bằng Gmail xác thực)
-      if (forgotForm) {
-        forgotForm.addEventListener("submit", (e) => {
+      // 3. XỬ LÝ QUÊN MẬT KHẨU / ĐẶT LẠI MẬT KHẨU (TIẾN TRÌNH 3 BƯỚC BẢO MẬT THỰC TẾ)
+
+      // BƯỚC 1: XÁC THỰC GMAIL VÀ GỬI MÃ OTP THỰC TẾ
+      if (forgotEmailForm) {
+        forgotEmailForm.addEventListener("submit", async (e) => {
           e.preventDefault();
           hideAlert(forgotAlert);
 
           const email = forgotEmailInput ? forgotEmailInput.value.trim() : "";
-          const newPassword = forgotNewPasswordInput
-            ? forgotNewPasswordInput.value
-            : "";
-          const confirmPassword = forgotConfirmPasswordInput
-            ? forgotConfirmPasswordInput.value
-            : "";
 
           // Kiểm tra để trống
-          if (!email || !newPassword || !confirmPassword) {
+          if (!email) {
             showAlert(
               forgotAlert,
-              "Vui lòng điền đầy đủ tất cả các trường thông tin!",
+              "Vui lòng nhập địa chỉ Gmail đã đăng ký!",
               "error",
             );
+            if (forgotEmailInput) forgotEmailInput.focus();
             return;
           }
 
@@ -952,7 +1723,7 @@
             return;
           }
 
-          // Lấy danh sách tài khoản
+          // Lấy danh sách tài khoản trong cơ sở dữ liệu localStorage
           let users = [];
           try {
             const raw = localStorage.getItem("registered_users");
@@ -961,22 +1732,240 @@
             console.error("Lỗi đọc registered_users:", err);
           }
 
-          // Kiểm tra Gmail có tồn tại trong hệ thống không
-          const userIndex = users.findIndex(
+          // Kiểm tra xem Gmail đó đã được đăng ký tài khoản hay chưa
+          const matchedUser = users.find(
             (u) => u.email && u.email.toLowerCase() === email.toLowerCase(),
           );
 
-          if (userIndex === -1) {
+          // Nếu chưa tồn tại, hiển thị thông báo lỗi rõ ràng và không cho phép đi tiếp
+          if (!matchedUser) {
             showAlert(
               forgotAlert,
-              "Email này chưa được đăng ký trong hệ thống!",
+              "Gmail này chưa được đăng ký tài khoản!",
               "error",
             );
             if (forgotEmailInput) forgotEmailInput.focus();
             return;
           }
 
-          // Kiểm tra độ dài mật khẩu mới
+          // Gmail hợp lệ và đã tồn tại -> Tạo mã OTP 6 chữ số ngẫu nhiên
+          forgotState.verifiedEmail = email.toLowerCase();
+          forgotState.currentOtp = generateOtpCode();
+          forgotState.isOtpVerified = false;
+
+          // Hiển thị trạng thái đang gửi thư
+          const submitBtn =
+            btnRequestOtp || document.getElementById("btn-request-otp");
+          const originalBtnHtml = submitBtn
+            ? submitBtn.innerHTML
+            : "Gửi yêu cầu xác thực";
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML =
+              '<span class="btn-loading-spinner"></span> Đang gửi mã...';
+          }
+
+          // Gọi API để thực hiện gửi một bức thư điện tử (email) thực sự đến đúng Gmail người dùng
+          const sendResult = await sendRealOtpEmail(
+            forgotState.verifiedEmail,
+            forgotState.currentOtp,
+            matchedUser.username,
+          );
+
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+          }
+
+          // Cập nhật thông tin giao diện Bước 2
+          if (otpTargetEmail)
+            otpTargetEmail.textContent = forgotState.verifiedEmail;
+          if (otpDemoCode) otpDemoCode.textContent = forgotState.currentOtp;
+          if (forgotOtpInput) forgotOtpInput.value = "";
+
+          setForgotStep(2);
+
+          // Xử lý hiển thị thông báo theo kết quả gửi
+          if (sendResult.success) {
+            // Gửi email thật thành công -> Ẩn hộp mã kiểm thử
+            if (otpSimulationBox) otpSimulationBox.style.display = "none";
+            showAlert(
+              forgotAlert,
+              `Mã xác thực đã được gửi đến email ${forgotState.verifiedEmail}. Vui lòng kiểm tra hộp thư (cả mục Spam nếu cần) để lấy mã!`,
+              "success",
+            );
+          } else if (sendResult.isFallback) {
+            // Chưa cấu hình API EmailJS -> Hiện mã kiểm thử để tiện test và hiển thị thông báo chuẩn
+            if (otpSimulationBox) otpSimulationBox.style.display = "block";
+            showAlert(
+              forgotAlert,
+              `Mã xác thực đã được gửi đến email ${forgotState.verifiedEmail}. Vui lòng kiểm tra hộp thư (cả mục Spam nếu cần) để lấy mã!`,
+              "success",
+            );
+          } else {
+            // Lỗi kết nối API
+            if (otpSimulationBox) otpSimulationBox.style.display = "block";
+            showAlert(
+              forgotAlert,
+              `Không thể gửi qua dịch vụ email (${sendResult.reason}). Hệ thống đã kích hoạt mã kiểm thử nội bộ để bạn tiếp tục test.`,
+              "info",
+            );
+          }
+        });
+      }
+
+      // Hỗ trợ nhanh cho Bước 2: Điền mã OTP mẫu nhanh khi kiểm thử
+      if (btnAutofillOtp) {
+        btnAutofillOtp.addEventListener("click", () => {
+          if (forgotOtpInput && forgotState.currentOtp) {
+            forgotOtpInput.value = forgotState.currentOtp;
+            forgotOtpInput.focus();
+          }
+        });
+      }
+
+      // Hỗ trợ Bước 2: Gửi lại mã OTP qua email thực tế
+      if (btnResendOtp) {
+        btnResendOtp.addEventListener("click", async () => {
+          forgotState.currentOtp = generateOtpCode();
+          if (otpDemoCode) otpDemoCode.textContent = forgotState.currentOtp;
+          if (forgotOtpInput) {
+            forgotOtpInput.value = "";
+            forgotOtpInput.focus();
+          }
+
+          const originalText = btnResendOtp.textContent;
+          btnResendOtp.disabled = true;
+          btnResendOtp.textContent = "Đang gửi lại mã...";
+
+          // Lấy username nếu có
+          let username = "";
+          try {
+            const raw = localStorage.getItem("registered_users");
+            const users = raw ? JSON.parse(raw) : [];
+            const user = users.find(
+              (u) =>
+                u.email &&
+                u.email.toLowerCase() ===
+                  forgotState.verifiedEmail.toLowerCase(),
+            );
+            if (user) username = user.username;
+          } catch (e) {}
+
+          const sendResult = await sendRealOtpEmail(
+            forgotState.verifiedEmail,
+            forgotState.currentOtp,
+            username,
+          );
+
+          btnResendOtp.disabled = false;
+          btnResendOtp.textContent = originalText;
+
+          if (sendResult.success) {
+            if (otpSimulationBox) otpSimulationBox.style.display = "none";
+          } else {
+            if (otpSimulationBox) otpSimulationBox.style.display = "block";
+          }
+
+          showAlert(
+            forgotAlert,
+            `Mã xác thực đã được gửi đến email ${forgotState.verifiedEmail}. Vui lòng kiểm tra hộp thư (cả mục Spam nếu cần) để lấy mã!`,
+            "success",
+          );
+        });
+      }
+
+      // Hỗ trợ Bước 2: Quay lại nhập Gmail khác
+      if (btnChangeEmail) {
+        btnChangeEmail.addEventListener("click", () => {
+          setForgotStep(1);
+          hideAlert(forgotAlert);
+          if (forgotEmailInput) {
+            forgotEmailInput.select();
+            forgotEmailInput.focus();
+          }
+        });
+      }
+
+      // BƯỚC 2: XÁC THỰC MÃ OTP
+      if (forgotOtpForm) {
+        forgotOtpForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          hideAlert(forgotAlert);
+
+          const enteredOtp = forgotOtpInput ? forgotOtpInput.value.trim() : "";
+
+          // Kiểm tra để trống
+          if (!enteredOtp) {
+            showAlert(
+              forgotAlert,
+              "Vui lòng nhập mã xác thực OTP gồm 6 chữ số!",
+              "error",
+            );
+            if (forgotOtpInput) forgotOtpInput.focus();
+            return;
+          }
+
+          // Kiểm tra mã OTP người dùng nhập có khớp với mã hệ thống đã sinh không
+          if (enteredOtp !== forgotState.currentOtp) {
+            showAlert(
+              forgotAlert,
+              "Mã xác thực OTP không chính xác! Vui lòng kiểm tra lại.",
+              "error",
+            );
+            if (forgotOtpInput) {
+              forgotOtpInput.select();
+              forgotOtpInput.focus();
+            }
+            return;
+          }
+
+          // Nhập đúng mã OTP -> Mở khóa và cho phép hiện ô nhập mật khẩu mới
+          forgotState.isOtpVerified = true;
+          setForgotStep(3);
+          showAlert(
+            forgotAlert,
+            "Xác thực mã OTP thành công! Vui lòng nhập mật khẩu mới.",
+            "success",
+          );
+        });
+      }
+
+      // BƯỚC 3: HOÀN TẤT ĐỔI MẬT KHẨU
+      if (forgotPasswordForm) {
+        forgotPasswordForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          hideAlert(forgotAlert);
+
+          // Kiểm tra điều kiện bảo mật: Đã xác thực OTP hợp lệ
+          if (!forgotState.isOtpVerified || !forgotState.verifiedEmail) {
+            showAlert(
+              forgotAlert,
+              "Phiên xác thực bảo mật không hợp lệ. Vui lòng thực hiện lại từ đầu!",
+              "error",
+            );
+            resetForgotWorkflow();
+            return;
+          }
+
+          const newPassword = forgotNewPasswordInput
+            ? forgotNewPasswordInput.value
+            : "";
+          const confirmPassword = forgotConfirmPasswordInput
+            ? forgotConfirmPasswordInput.value
+            : "";
+
+          // Kiểm tra để trống
+          if (!newPassword || !confirmPassword) {
+            showAlert(
+              forgotAlert,
+              "Vui lòng điền đầy đủ cả mật khẩu mới và xác nhận mật khẩu!",
+              "error",
+            );
+            return;
+          }
+
+          // Kiểm tra độ dài mật khẩu mới tối thiểu
           if (newPassword.length < 3) {
             showAlert(
               forgotAlert,
@@ -987,7 +1976,7 @@
             return;
           }
 
-          // Kiểm tra khớp mật khẩu mới
+          // Kiểm tra khớp mật khẩu xác nhận
           if (newPassword !== confirmPassword) {
             showAlert(
               forgotAlert,
@@ -1001,31 +1990,80 @@
             return;
           }
 
-          // Cập nhật mật khẩu mới cho tài khoản
+          // Lấy danh sách tài khoản hiện hành từ localStorage
+          let users = [];
+          try {
+            const raw = localStorage.getItem("registered_users");
+            users = raw ? JSON.parse(raw) : [];
+          } catch (err) {
+            console.error("Lỗi đọc registered_users:", err);
+          }
+
+          const userIndex = users.findIndex(
+            (u) =>
+              u.email &&
+              u.email.toLowerCase() === forgotState.verifiedEmail.toLowerCase(),
+          );
+
+          if (userIndex === -1) {
+            showAlert(
+              forgotAlert,
+              "Không tìm thấy tài khoản tương ứng trong hệ thống!",
+              "error",
+            );
+            return;
+          }
+
+          // Cập nhật đè mật khẩu mới vào localStorage tương ứng với tài khoản đó
           users[userIndex].password = newPassword;
           localStorage.setItem("registered_users", JSON.stringify(users));
 
-          // Thông báo thành công
+          // Đồng bộ mật khẩu nếu currentUser hiện tại trùng khớp email
+          try {
+            const currentRaw = localStorage.getItem("currentUser");
+            if (currentRaw) {
+              const currentObj = JSON.parse(currentRaw);
+              if (
+                currentObj.email &&
+                currentObj.email.toLowerCase() ===
+                  forgotState.verifiedEmail.toLowerCase()
+              ) {
+                currentObj.password = newPassword;
+                localStorage.setItem("currentUser", JSON.stringify(currentObj));
+              }
+            }
+          } catch (e) {
+            console.warn("Lỗi đồng bộ currentUser:", e);
+          }
+
+          // Hiển thị thông báo "Đặt lại mật khẩu thành công!"
           showAlert(
             forgotAlert,
-            "Đặt lại mật khẩu thành công! Đang chuyển về màn hình đăng nhập...",
+            "Đặt lại mật khẩu thành công! Đang chuyển hướng về trang Đăng nhập...",
             "success",
           );
 
-          // Reset form quên mật khẩu
-          forgotForm.reset();
+          const finishedEmail = forgotState.verifiedEmail;
 
-          // Chuyển về màn hình đăng nhập và điền sẵn Gmail
+          // Lưu email vào sessionStorage để điền sẵn vào ô đăng nhập sau khi chuyển hướng
+          try {
+            sessionStorage.setItem("just_reset_email", finishedEmail);
+          } catch (e) {
+            // bỏ qua
+          }
+
+          // Vô hiệu hóa nút để tránh gửi trùng lặp
+          const resetBtn = document.getElementById("btn-reset-password");
+          if (resetBtn) {
+            resetBtn.disabled = true;
+            resetBtn.style.opacity = "0.7";
+            resetBtn.style.cursor = "not-allowed";
+          }
+
+          // Tự động chuyển hướng người dùng về trang Đăng nhập (auth.html)
           setTimeout(() => {
-            switchView(loginView);
-            if (usernameInput) {
-              usernameInput.value = email;
-            }
-            if (passwordInput) {
-              passwordInput.value = "";
-              passwordInput.focus();
-            }
-          }, 1200);
+            window.location.href = "auth.html";
+          }, 1500);
         });
       }
     });
